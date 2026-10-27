@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>All Subjects – Study Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EEF2F5; --paper:#FFFFFF; --ink:#1F2B37; --soft:#52606E; --line:#C8D3DC;
+  --core:#2F80ED; --junior:#2F9E5B; --mine:#7B61FF;
+}
+@media (prefers-color-scheme: dark){
+  :root{color-scheme:dark;--bg:#131A21;--paper:#1C252F;--ink:#E7EDF2;--soft:#A8B5C1;--line:#33414F}
+}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Lexend",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:19px;line-height:1.6}
+main{max-width:860px;margin:0 auto;padding:28px 16px 60px}
+h1{font-size:2rem;line-height:1.2;margin:8px 0 4px}
+.sub{color:var(--soft);margin:0 0 8px}
+h2{font-size:1.25rem;margin:32px 0 12px;display:flex;align-items:center;gap:10px}
+h2::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--c)}
+section{--c:var(--line)}
+#core{--c:var(--core)} #junior{--c:var(--junior)}
+ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+li{background:var(--paper);border:2px solid var(--line);border-top:8px solid var(--c);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.name{font-weight:700;line-height:1.3}
+.code{display:inline-block;font-size:.75rem;font-weight:700;padding:1px 8px;border-radius:6px;background:var(--bg);color:var(--soft);margin-top:4px}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.links a{font-size:.85rem;font-weight:600;text-decoration:none;padding:6px 12px;border-radius:8px;border:2px solid var(--ink);color:var(--ink)}
+.links a:hover,.links a:focus-visible{background:var(--ink);color:var(--paper);outline:none}
+.links a.mine{border-color:var(--mine);background:var(--mine);color:#fff}
+.links a.mine:hover,.links a.mine:focus-visible{filter:brightness(1.1)}
+.key{display:flex;flex-wrap:wrap;gap:16px;font-size:.85rem;color:var(--soft);margin-top:10px}
+footer{color:var(--soft);font-size:.85rem;margin-top:36px}
+</style>
+</head>
+<body>
+<main>
+  <h1>📚 Study Home</h1>
+  <p class="sub">Tak Sun Secondary School · All subjects</p>
+  <div class="key"><span>🏫 School site = the subject's school page</span><span>📂 My study files = our own notes and quizzes</span></div>
+
+  <section id="core">
+    <h2>Core Subjects</h2>
+    <ul id="core-list"></ul>
+  </section>
+
+  <section id="junior">
+    <h2>Junior Form Subjects</h2>
+    <ul id="junior-list"></ul>
+  </section>
+
+  <footer>"My study files" appears by itself when a subject folder is added to this site.</footer>
+</main>
+<script>
+const OWNER="kylectw8-dot", REPO="study";
+const CORE=[
+  ["English Language","ENG","https://sites.google.com/tsss.edu.hk/tssseng"],
+  ["Chinese Language","CHI","https://sites.google.com/tsss.edu.hk/chi?usp=sharing"],
+  ["Mathematics","MATHS","https://sites.google.com/tsss.edu.hk/tsssmath/home"],
+  ["Citizenship and Social Development","CSD","https://sites.google.com/tsss.edu.hk/self-regulatedlearningplatform/video-shortcut?authuser=0&pli=1"]
+];
+const JUNIOR=[
+  ["Integrated Science","IS","https://sites.google.com/d/13js8I6CKQ6AB168k7iTtDvqkAxU0GDcI/p/1oa8vTAs_XeYgx-cZdUNKkeBowkwcvlgg/edit"],
+  ["Computer Literacy","CL","https://sites.google.com/tsss.edu.hk/tsss-cl-srl-v2/home"],
+  ["Citizenship, Economics and Society","CES","https://sites.google.com/tsss.edu.hk/tssslandssrl/%E4%B8%BB%E9%A0%81-home/%E8%AA%B2%E7%A8%8B%E5%85%A7%E5%AE%B9%E5%8F%8A%E5%8A%9F%E8%AA%B2%E5%BD%B1%E7%89%87-subject-content-homework?authuser=0"],
+  ["Chinese History","CHIST","https://sites.google.com/tsss.edu.hk/chist/%E5%88%9D%E4%B8%AD%E8%AA%B2%E7%A8%8B?authuser=0"],
+  ["Geography","GEOG","https://sites.google.com/tsss.edu.hk/srl--geography-/home"],
+  ["Putonghua","PTH","https://sites.google.com/tsss.edu.hk/pth/%E4%BD%8F%E5%AE%85"],
+  ["Music","MUSIC","https://sites.google.com/tsss.edu.hk/music/subject-content-homework-keyboard-skills?authuser=0"],
+  ["Visual Arts","VA","https://sites.google.com/tsss.edu.hk/va-junior-form/subject-content-homework"],
+  ["Physical Education","PE","https://sites.google.com/tsss.edu.hk/pe-f-1-f-3/home"],
+  ["Religious Studies and Ethics","RSE","https://sites.google.com/tsss.edu.hk/self-regulated-learning-rse/home?authuser=0"]
+];
+function draw(listId,items,folders){
+  const ul=document.getElementById(listId); ul.innerHTML="";
+  items.forEach(([name,code,url])=>{
+    const li=document.createElement("li");
+    const top=document.createElement("div");
+    const n=document.createElement("div");n.className="name";n.textContent=name;
+    const c=document.createElement("span");c.className="code";c.textContent=code;
+    top.append(n,c);
+    const links=document.createElement("div");links.className="links";
+    const folder=folders.get(code.toUpperCase());
+    if(folder){const m=document.createElement("a");m.className="mine";m.href=encodeURIComponent(folder)+"/";m.textContent="📂 My study files";links.appendChild(m);}
+    const s=document.createElement("a");s.href=url;s.target="_blank";s.rel="noopener";s.textContent="🏫 School site";links.appendChild(s);
+    li.append(top,links);ul.appendChild(li);
+  });
+}
+async function load(){
+  let folders=new Map();
+  try{
+    const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/?ref=main`);
+    if(r.ok){(await r.json()).filter(f=>f.type==="dir").forEach(f=>folders.set(f.name.toUpperCase(),f.name));
+      try{localStorage.setItem("folders",JSON.stringify([...folders]));}catch(e){}}
+    else throw 0;
+  }catch(e){try{folders=new Map(JSON.parse(localStorage.getItem("folders")||"[]"));}catch(_){}}
+  // MATHS / MATH and GEOG / GEO count as the same subject
+  [["MATHS","MATH"],["GEOG","GEO"]].forEach(([a,b])=>{if(!folders.has(a)&&folders.has(b))folders.set(a,folders.get(b));});
+  draw("core-list",CORE,folders);draw("junior-list",JUNIOR,folders);
+}
+draw("core-list",CORE,new Map());draw("junior-list",JUNIOR,new Map());
+load();
+</script>
+</body>
+</html>
