@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>F1 Integrated Science Unit 1 – Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EEF2F5; --paper:#FFFFFF; --ink:#1F2B37; --soft:#52606E; --line:#C8D3DC;
+  --tip:#FFF6CC; --tipline:#E0C24A; --ans:#E5F4E9; --ansline:#4E9C62; --warn:#2F80ED;
+  --s11:#7B61FF; --s12:#00A3A3; --s13:#E2574C; --s14a:#F2994A; --s14b:#2F9E5B;
+  --glass:#7FB8E6; --water:#BFE0F7; --metal:#6B7785;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#131A21; --paper:#1C252F; --ink:#E7EDF2; --soft:#A8B5C1; --line:#33414F;
+    --tip:#3A3418; --tipline:#B89B2A; --ans:#1B3224; --ansline:#4FA866;
+    --glass:#7FB8E6; --water:#2B5778; --metal:#9AA6B3;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#131A21; --paper:#1C252F; --ink:#E7EDF2; --soft:#A8B5C1; --line:#33414F;
+  --tip:#3A3418; --tipline:#B89B2A; --ans:#1B3224; --ansline:#4FA866;
+  --glass:#7FB8E6; --water:#2B5778; --metal:#9AA6B3;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Lexend","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:19px;line-height:1.7}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.zh{font-family:"Noto Sans TC","Lexend",sans-serif;color:var(--soft);font-size:.9em}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:2px solid var(--line)}
+nav .in{max-width:840px;margin:0 auto;padding:10px 16px;display:flex;gap:8px;overflow-x:auto}
+nav a{flex:none;text-decoration:none;color:var(--ink);font-weight:600;font-size:.85rem;padding:6px 12px;border-radius:999px;border:2px solid var(--line)}
+nav a:hover,nav a:focus-visible{border-color:var(--ink)}
+main{max-width:840px;margin:0 auto;padding:24px 16px 80px}
+.hero h1{font-size:2.1rem;line-height:1.2;margin:16px 0 8px}
+.hero p{margin:0 0 6px;color:var(--soft)}
+.howto{background:var(--paper);border-radius:10px;padding:16px 20px;margin:20px 0;border:2px solid var(--line)}
+.howto ol{margin:6px 0 0;padding-left:24px}
+article{background:var(--paper);border-radius:12px;padding:22px 22px 18px;margin:26px 0;border:2px solid var(--line);border-top:10px solid var(--c,var(--line))}
+#s11{--c:var(--s11)} #s12{--c:var(--s12)} #s13{--c:var(--s13)} #s14a{--c:var(--s14a)} #s14b{--c:var(--s14b)} #exam{--c:var(--ink)} #vocab{--c:var(--soft)}
+.ws{display:inline-block;font-size:.8rem;font-weight:700;padding:2px 10px;border-radius:6px;background:var(--bg);border:2px solid var(--line);margin-bottom:6px}
+article h2{font-size:1.45rem;line-height:1.3;margin:4px 0 4px}
+article h3{font-size:1.1rem;margin:20px 0 6px}
+.q{color:var(--soft);margin:0 0 12px;font-size:.95rem}
+.keys{border-left:6px solid var(--c,var(--ink));padding:6px 14px;margin:14px 0;background:var(--bg);border-radius:0 8px 8px 0}
+.keys p{margin:4px 0}
+ul.facts{padding-left:22px;margin:10px 0}
+ul.facts li{margin:6px 0}
+mark{background:none;color:inherit;font-weight:700;border-bottom:3px solid var(--tipline)}
+.tip{background:var(--tip);border:2px dashed var(--tipline);border-radius:10px;padding:10px 14px;margin:14px 0}
+.tip::before{content:"💡 Remember: ";font-weight:700}
+.warn{border:2px solid var(--warn);border-radius:10px;padding:10px 14px;margin:14px 0}
+.warn::before{content:"⚠️ Careful: ";font-weight:700}
+.frame{background:var(--bg);border-radius:10px;padding:10px 14px;margin:12px 0;font-weight:600}
+.frame em{color:var(--soft);font-weight:400}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;min-width:480px;font-size:.95rem}
+th,td{border:2px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:10px 0}
+.steps li{counter-increment:s;position:relative;padding:4px 0 8px 44px}
+.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:32px;height:32px;border-radius:50%;background:var(--c,var(--ink));color:#fff;display:grid;place-items:center;font-weight:700;font-size:.9rem}
+.tri{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.tri span{flex:1 1 140px;text-align:center;font-weight:700;padding:12px;border-radius:10px;border:3px solid var(--s13)}
+.diagram{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start;margin:12px 0}
+.diagram svg{flex:1 1 300px;max-width:420px;width:100%;height:auto;background:var(--paper);border:2px solid var(--line);border-radius:10px}
+.diagram .side{flex:1 1 240px}
+.check{margin-top:18px}
+.check h4{margin:0 0 8px;font-size:1.05rem}
+details{border:2px solid var(--ansline);border-radius:10px;margin:8px 0;background:var(--paper)}
+summary{cursor:pointer;padding:10px 14px;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"❓ "}
+details[open] summary::before{content:"✅ "}
+summary:focus-visible{outline:3px solid var(--warn);outline-offset:2px;border-radius:8px}
+details .a{background:var(--ans);padding:10px 14px;border-radius:0 0 8px 8px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+button{font:inherit;font-size:.9rem;font-weight:600;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:8px;padding:6px 14px;cursor:pointer}
+button:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin:10px 0}
+.vgrid div{background:var(--bg);border-radius:8px;padding:6px 10px;font-size:.92rem}
+.vgrid b{display:block}
+footer{color:var(--soft);font-size:.9rem;margin-top:40px}
+svg text{font-family:"Lexend",sans-serif;fill:var(--ink);font-size:13px}
+svg .ln{stroke:var(--ink);stroke-width:2;fill:none}
+svg .lab{stroke:var(--soft);stroke-width:1.2}
+@media (max-width:560px){body{font-size:18px}.hero h1{font-size:1.7rem}article{padding:18px 16px}}
+@media print{nav,.tools{display:none}body{background:#fff;color:#000;font-size:13pt}article{break-inside:avoid}details .a{display:block}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections"><div class="in">
+  <a href="#s11">1.1 Science</a>
+  <a href="#s12">1.2 Fair test</a>
+  <a href="#s13">1.3 Safety</a>
+  <a href="#s14a">1.4A Apparatus</a>
+  <a href="#s14b">1.4B Measuring</a>
+  <a href="#exam">Test tips</a>
+  <a href="#vocab">Key terms</a>
+</div></nav>
+
+<main>
+<header class="hero">
+  <h1>Unit 1 Introducing Science<br>Study Guide</h1>
+  <p>Form 1 Integrated Science · For the Uniform Test (20 minutes, 30 marks)</p>
+</header>
+
+<div class="howto">
+  <b>How to use this guide</b>
+  <ol>
+    <li>Study one coloured box at a time.</li>
+    <li>Learn the <b>sentence patterns</b>. They give you marks.</li>
+    <li>Try each ❓ before you tap it to see the answer.</li>
+  </ol>
+  <div class="tools">
+    <button type="button" id="openAll">Show all answers</button>
+    <button type="button" id="closeAll">Hide all answers</button>
+  </div>
+</div>
+
+<!-- 1.1 -->
+<article id="s11">
+  <span class="ws">WS1 + WS4</span>
+  <h2>1.1 Learning about Science</h2>
+  <p class="q">What is science? Discovery or invention?</p>
+  <ul class="facts">
+    <li>Through studying <mark>science</mark> <span class="zh">科學</span>, we understand how the natural world works.</li>
+    <li>Science is based on <mark>evidence</mark> <span class="zh">證據</span>. Doing <mark>experiments</mark> <span class="zh">實驗</span> is one way to collect evidence.</li>
+    <li>Scientific knowledge is <mark>subject to change</mark> when new evidence is found.</li>
+    <li>If scientific inventions are <b>misused</b>, they can harm us.</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Discovery <span class="zh">發現</span></th><th>Invention <span class="zh">發明</span></th></tr></thead>
+    <tbody>
+      <tr><th>Meaning</th><td>Finding something that <b>already exists</b> in nature</td><td>Making something <b>new</b> that did not exist</td></tr>
+      <tr><th>Example</th><td>Marie Curie found radium and polonium (1898)</td><td>Thomas Edison's light bulb (1879)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip"><b>Dis</b>covery = un<b>covering</b> what is already there. <b>In</b>vention = <b>in</b>vent something new.</div>
+  <p><b>Qualities of a good scientist</b> (like Marie Curie): hardworking, cares for others, does not give up easily.</p>
+  <div class="check"><h4>Check yourself</h4>
+    <details><summary>Science is based on ______.</summary><div class="a"><b>evidence</b></div></details>
+    <details><summary>Scientific knowledge is ______ ______ ______ when new evidence is found.</summary><div class="a"><b>subject to change</b></div></details>
+    <details><summary>Edison's light bulb: discovery or invention?</summary><div class="a"><b>Invention</b></div></details>
+    <details><summary>Marie Curie and radium: discovery or invention?</summary><div class="a"><b>Discovery</b></div></details>
+  </div>
+</article>
+
+<!-- 1.2 -->
+<article id="s12">
+  <span class="ws">WS4 (WS3 of 3)</span>
+  <h2>1.2 Practice of science and fair tests</h2>
+  <p class="q">How do scientists investigate?</p>
+  <h3>Steps in a scientific investigation <span class="zh">科學探究</span></h3>
+  <ol class="steps">
+    <li>Making <mark>observations</mark> <span class="zh">觀察</span></li>
+    <li>Asking a question</li>
+    <li>Proposing a <mark>hypothesis</mark> <span class="zh">假說</span></li>
+    <li><mark>Carrying out</mark> experiments</li>
+    <li>Drawing a <mark>conclusion</mark> <span class="zh">結論</span></li>
+  </ol>
+  <div class="tip">"<b>O</b>nly <b>Q</b>uiet <b>H</b>amsters <b>E</b>at <b>C</b>heese" → Observe, Question, Hypothesis, Experiment, Conclusion.</div>
+  <h3>Three types of variables</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Variable</th><th>What we do</th><th>Memory hook</th></tr></thead>
+    <tbody>
+      <tr><td><b>Independent variable</b> <span class="zh">自變量</span></td><td>We <b>change</b> it (only ONE)</td><td>"I change it"</td></tr>
+      <tr><td><b>Dependent variable</b> <span class="zh">因變量</span></td><td>We <b>measure</b> it</td><td>It <b>depends</b> on the change</td></tr>
+      <tr><td><b>Controlled variables</b> <span class="zh">控制變量</span></td><td>We <b>keep the same</b></td><td>We <b>control</b> them</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip">Look for the words in the question. "<b>different</b> mass" → mass is the independent variable. "time taken" → time is the dependent variable.</div>
+  <h3>Fair test sentence patterns (bonus mark!)</h3>
+  <div class="frame">✅ It is a fair test because there is only one variable changed, which is the <em>(type of flame)</em>.</div>
+  <div class="frame">❌ It is not a fair test because there is more than one variable changed. The <em>(volume of water)</em> should be kept the same.</div>
+  <div class="check"><h4>Check yourself</h4>
+    <details><summary>Objects of different mass fall from a fixed height. Find IV and DV.</summary><div class="a">IV: <b>mass of the object</b>. DV: <b>time taken to fall to the ground</b>.</div></details>
+    <details><summary>Angle of an inclined plane and time for a ball to roll down. Find IV and DV.</summary><div class="a">IV: <b>angle of the inclined plane</b>. DV: <b>time for the ball to reach the ground</b>.</div></details>
+    <details><summary>Density of water at different temperatures. Find IV and DV.</summary><div class="a">IV: <b>temperature of water</b>. DV: <b>density of water</b>.</div></details>
+    <details><summary>Blue vs yellow flame, Group A: same beakers, same water level. Fair test?</summary><div class="a"><b>Yes.</b> It is a fair test because there is only one variable changed, which is the type of flame.</div></details>
+    <details><summary>Group B: one beaker has more water. Fair test?</summary><div class="a"><b>No.</b> It is not a fair test because there is more than one variable changed. The volume of water should be kept the same.</div></details>
+    <details><summary>Washing powder (Jamie): list IV, controlled variables, DV.</summary><div class="a">IV: <b>brand of washing powder</b>. Controlled: <b>mass of powder (20 g), volume of water (5 L)</b>, type of cloth, water temperature. DV: <b>time taken to remove the stain</b>.</div></details>
+    <details><summary>Is Jamie's conclusion reasonable?</summary><div class="a"><b>No.</b> It is not a fair test. The stains are different sizes (the stain in the Super Clean tub is bigger). The size of the stain should be kept the same.</div></details>
+    <details><summary>Luke's cups (metal, glass, plastic): IV? Fair test?</summary><div class="a">IV: <b>material of the cup</b>. <b>Not</b> a fair test: the shape of the cup and the volume of water also changed.</div></details>
+  </div>
+</article>
+
+<!-- 1.3 -->
+<article id="s13">
+  <span class="ws">WS1</span>
+  <h2>1.3 Safety in the laboratory</h2>
+  <p class="q">Hazard labels, fire and safe work.</p>
+  <p>We usually do experiments in the <mark>laboratory</mark> <span class="zh">實驗室</span>. <mark>Hazard warning labels</mark> <span class="zh">危險警告標記</span> on reagent bottles warn us about dangerous chemicals.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Picture on label</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td>☠️ Skull and crossbones</td><td><b>Toxic</b> <span class="zh">有毒</span></td></tr>
+      <tr><td>🔥 Flame</td><td><b>Flammable</b> <span class="zh">易燃</span></td></tr>
+      <tr><td>💧✋ Liquid dripping on a hand and a surface</td><td><b>Corrosive</b> <span class="zh">腐蝕性</span></td></tr>
+      <tr><td>💥 Exploding object</td><td><b>Explosive</b> <span class="zh">爆炸性</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn">The dripping-on-hand symbol is <b>corrosive</b>, not flammable. This was a true/false question in the mock test.</div>
+  <h3>The fire triangle <span class="zh">火三角</span></h3>
+  <div class="tri"><span>🪵 Fuel</span><span>💨 Oxygen</span><span>🌡️ High temperature</span></div>
+  <p>To put out a fire, remove <b>at least one</b> part of the fire triangle.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Wildfire method</th><th>Which part is removed?</th></tr></thead>
+    <tbody>
+      <tr><td>Backfiring (burning in front of the fire)</td><td>Removes the <b>fuel</b></td></tr>
+      <tr><td>Water</td><td>Cools the fire and removes the <b>high temperature</b></td></tr>
+      <tr><td>Foam</td><td>Forms a blanket that cuts off <b>oxygen</b></td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Fire-fighting equipment:</b> fire extinguisher <span class="zh">滅火筒</span>, fire blanket <span class="zh">滅火氈</span>, sand bucket <span class="zh">滅火沙桶</span>.<br>
+  <b>Not</b> for fires: eye wash bottle <span class="zh">洗眼瓶</span>, first aid box <span class="zh">急救箱</span>.</p>
+  <h3>Mary's experiment</h3>
+  <ul class="facts">
+    <li>👍 Good: she wears <b>safety spectacles</b>, uses a <b>test tube holder</b>, and her hair is tied up.</li>
+    <li>👎 Mistake: the <b>flammable</b> chemical X is placed <b>near the flame</b>. It may catch fire.</li>
+  </ul>
+  <div class="check"><h4>Check yourself</h4>
+    <details><summary>Name the three parts of the fire triangle.</summary><div class="a"><b>Fuel, oxygen, high temperature</b></div></details>
+    <details><summary>How does backfiring stop a wildfire?</summary><div class="a">By <b>removing the fuel</b> in front of the wildfire.</div></details>
+    <details><summary>Why is foam used on fires?</summary><div class="a">It forms a blanket over surfaces and <b>cuts off the oxygen</b> supply.</div></details>
+    <details><summary>Which can put out a small lab fire: fire blanket, eye wash, sand bucket, first aid box?</summary><div class="a"><b>Fire blanket and sand bucket</b> (mock test answer B)</div></details>
+  </div>
+</article>
+
+<!-- 1.4A -->
+<article id="s14a">
+  <span class="ws">WS2 (WS1 of 3)</span>
+  <h2>1.4A Laboratory apparatus</h2>
+  <p class="q">Name it. Say what it is for.</p>
+  <div class="frame">We can use a/an <em>(apparatus)</em> to <em>(hold / support / heat / transfer / stir …)</em>.</div>
+  <div class="tbl"><table>
+    <thead><tr><th>Apparatus</th><th>What it looks like</th><th>Use (with the verb)</th></tr></thead>
+    <tbody>
+      <tr><td><b>Test tube</b> <span class="zh">試管</span></td><td>Thin glass tube, round bottom</td><td><b>hold</b> small amounts of liquids or solids</td></tr>
+      <tr><td><b>Boiling tube</b> <span class="zh">大試管</span></td><td>Wider, thicker test tube</td><td><b>heat</b> liquids or solids strongly</td></tr>
+      <tr><td><b>Beaker</b> <span class="zh">燒杯</span></td><td>Glass cup with a spout</td><td><b>hold</b> liquids; heating larger volumes</td></tr>
+      <tr><td><b>Conical flask</b> <span class="zh">錐形瓶</span></td><td>Triangle shape, narrow neck</td><td><b>hold</b> and mix liquids by swirling</td></tr>
+      <tr><td><b>Insulating mat</b> <span class="zh">隔熱墊</span></td><td>Flat board</td><td>protect the bench from heat</td></tr>
+      <tr><td><b>Tripod</b> <span class="zh">三腳架</span></td><td>Three legs, triangle top</td><td><b>support</b> the wire gauze and beaker</td></tr>
+      <tr><td><b>Wire gauze</b> <span class="zh">鐵絲網</span></td><td>Square metal net</td><td><b>support</b> the beaker and spread heat evenly</td></tr>
+      <tr><td><b>Bunsen burner</b> <span class="zh">本生燈</span></td><td>Metal tube on a base, gas pipe</td><td><b>heat</b> substances</td></tr>
+      <tr><td><b>Dropper</b> <span class="zh">滴管</span></td><td>Glass tube with rubber bulb</td><td><b>transfer</b> a small amount of liquid</td></tr>
+      <tr><td><b>Glass rod</b> <span class="zh">玻璃棒</span></td><td>Thin glass stick</td><td><b>stir</b> liquids or mixtures</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Labelled sectional diagram (heating water + measuring temperature)</h3>
+  <div class="diagram">
+    <svg viewBox="0 0 420 330" role="img" aria-label="Sectional diagram: thermometer in a beaker of water on wire gauze on a tripod, Bunsen burner underneath, all on an insulating mat">
+      <!-- insulating mat -->
+      <rect x="40" y="290" width="230" height="10" class="ln"/>
+      <!-- bunsen -->
+      <path d="M140 290 L130 278 L180 278 L170 290" class="ln"/>
+      <line x1="150" y1="278" x2="150" y2="215" class="ln"/><line x1="160" y1="278" x2="160" y2="215" class="ln"/>
+      <!-- tripod -->
+      <line x1="80" y1="290" x2="100" y2="190" class="ln"/><line x1="230" y1="290" x2="210" y2="190" class="ln"/>
+      <rect x="80" y="182" width="150" height="8" class="ln"/>
+      <!-- gauze -->
+      <line x1="85" y1="176" x2="225" y2="176" class="ln"/>
+      <text x="98" y="181" style="font-size:11px">x x x x x x x x x x x</text>
+      <!-- beaker + water -->
+      <rect x="110" y="128" width="90" height="44" fill="var(--water)" stroke="none"/>
+      <path d="M110 70 L110 172 L200 172 L200 70" class="ln"/>
+      <line x1="110" y1="128" x2="200" y2="128" stroke="var(--glass)" stroke-width="2"/>
+      <!-- thermometer -->
+      <rect x="150" y="40" width="10" height="118" rx="5" class="ln"/>
+      <circle cx="155" cy="155" r="6" fill="var(--ink)"/>
+      <!-- labels -->
+      <line x1="160" y1="55" x2="290" y2="45" class="lab"/><text x="295" y="49">thermometer</text>
+      <line x1="200" y1="90" x2="290" y2="85" class="lab"/><text x="295" y="89">beaker</text>
+      <line x1="185" y1="145" x2="290" y2="128" class="lab"/><text x="295" y="132">water</text>
+      <line x1="225" y1="176" x2="290" y2="170" class="lab"/><text x="295" y="174">wire gauze</text>
+      <line x1="220" y1="230" x2="290" y2="212" class="lab"/><text x="295" y="216">tripod</text>
+      <line x1="160" y1="250" x2="290" y2="252" class="lab"/><text x="295" y="256">Bunsen burner</text>
+      <line x1="270" y1="295" x2="290" y2="295" class="lab"/><text x="295" y="299">insulating mat</text>
+    </svg>
+    <div class="side">
+      <b>How to get full marks</b>
+      <ul class="facts">
+        <li>Use a <b>pencil and ruler</b>. No wavy lines.</li>
+        <li>Draw <b>water</b> in the beaker with a straight line.</li>
+        <li>The thermometer bulb is <b>in the water</b>, not touching the bottom.</li>
+        <li>Keep sizes sensible (beaker smaller than tripod top).</li>
+        <li>Label <b>all 7</b>: thermometer, beaker, water, wire gauze, tripod, Bunsen burner, insulating mat.</li>
+        <li>Label lines are straight and do not cross.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="tip">"Sectional" = a side view cut in half. Draw the beaker as <b>3 sides of a box</b> (open top). For a conical flask, draw a <b>triangle with a neck</b>.</div>
+  <h3>W, X, Y, Z drawings</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Shape</th><th>Name</th><th>Best for</th></tr></thead>
+    <tbody>
+      <tr><td>W: thin tube, round bottom</td><td>Test tube</td><td>Mixing two liquids of about 1 cm³</td></tr>
+      <tr><td>X: triangle with neck</td><td><b>Conical flask</b></td><td>Mixing two liquids of about 100 cm³ (swirl, no spilling)</td></tr>
+      <tr><td>Y: tall tube on a base</td><td>Measuring cylinder</td><td>Finding the volume of a coin</td></tr>
+      <tr><td>Z: wide, open box shape</td><td>Beaker</td><td>Heating about 200 cm³ of water</td></tr>
+    </tbody>
+  </table></div>
+  <div class="check"><h4>Check yourself</h4>
+    <details><summary>What is the use of a wire gauze?</summary><div class="a">We can use a wire gauze to <b>support</b> a beaker and spread the heat evenly.</div></details>
+    <details><summary>What is the use of a dropper?</summary><div class="a">We can use a dropper to <b>transfer</b> a small amount of liquid.</div></details>
+    <details><summary>What is the use of a glass rod?</summary><div class="a">We can use a glass rod to <b>stir</b> a liquid.</div></details>
+    <details><summary>True or false: a dropper should be held upside down after it is filled.</summary><div class="a"><b>False.</b> Liquid would run into the rubber bulb.</div></details>
+    <details><summary>Order to light a Bunsen burner: (1) light match, (2) open air hole, (3) turn on gas, (4) close air hole</summary><div class="a"><b>(4) → (1) → (3) → (2)</b>. Close the air hole, light the match, turn on the gas, then open the air hole.</div></details>
+  </div>
+  <div class="keys">
+    <p><b>Luminous flame</b> <span class="zh">光焰</span>: yellow, air hole <b>closed</b>, sooty, not very hot. Safe "resting" flame.</p>
+    <p><b>Non-luminous flame</b> <span class="zh">無光焰</span>: blue, air hole <b>open</b>, much hotter. Use it for heating.</p>
+  </div>
+</article>
+
+<!-- 1.4B -->
+<article id="s14b">
+  <span class="ws">WS3 (WS2 of 3)</span>
+  <h2>1.4B Basic practical skills: measuring</h2>
+  <p class="q">Which instrument? Which unit?</p>
+  <div class="frame">We can measure the <em>(quantity)</em> with a/an <em>(instrument)</em> in <em>(unit)</em>.</div>
+  <div class="tbl"><table>
+    <thead><tr><th>Quantity</th><th>Instrument</th><th>Unit</th></tr></thead>
+    <tbody>
+      <tr><td>Temperature</td><td><b>Thermometer</b> <span class="zh">溫度計</span></td><td>degrees Celsius (°C)</td></tr>
+      <tr><td>Volume of a liquid</td><td><b>Measuring cylinder</b> <span class="zh">量筒</span></td><td>cm³ or mL</td></tr>
+      <tr><td>Mass</td><td><b>Electronic balance</b> <span class="zh">電子天平</span> / triple beam balance</td><td>grams (g)</td></tr>
+      <tr><td>Curved length (circumference)</td><td><b>Measuring tape</b> <span class="zh">軟尺</span></td><td>cm or mm</td></tr>
+      <tr><td>Time</td><td><b>Stopwatch</b> <span class="zh">秒錶</span></td><td>seconds (s)</td></tr>
+      <tr><td>Straight length</td><td><b>Metre rule</b> <span class="zh">米尺</span> / ruler</td><td>cm, m</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn">Always write the <b>unit</b>. No unit = lose a mark. 1 mL = 1 cm³.</div>
+  <h3>Reading a measuring cylinder</h3>
+  <ul class="facts">
+    <li>Put your eye <b>level with</b> the liquid surface (not above, not below).</li>
+    <li>Read the <b>bottom of the meniscus</b> <span class="zh">彎液面</span> (the curved surface).</li>
+    <li>Count what <b>one small mark</b> is worth first. Example: 2 big numbers 28 → 30 with 10 small gaps → each gap = 0.2 mL.</li>
+  </ul>
+  <h3>Reading a thermometer</h3>
+  <ul class="facts">
+    <li>Keep the bulb <b>in the liquid</b> while reading.</li>
+    <li><b>Wait</b> until the reading stops changing.</li>
+    <li>Give the answer to <b>1 decimal place</b>, e.g. 36.4 °C.</li>
+  </ul>
+  <h3>Volume by displacement (objects that sink or float)</h3>
+  <ol class="steps">
+    <li>Read the water level first.</li>
+    <li>Put the object in. Read the new level.</li>
+    <li><b>Volume of object = new reading − first reading</b></li>
+  </ol>
+  <p>For a <b>floating cork</b>: tie it to plasticine so it <b>sinks</b> fully.<br>
+  Volume of cork = (water + plasticine + cork) − (water + plasticine).</p>
+  <div class="tip">Repeat the measurement 3 times and take the <b>average</b> to make the result <b>more accurate</b> (reduce errors).</div>
+  <div class="check"><h4>Check yourself</h4>
+    <details><summary>Mock test: water only = 42 mL, water + plasticine = 44 mL. Volume of plasticine?</summary><div class="a">44 − 42 = <b>2 mL</b> (show the subtraction, write the unit)</div></details>
+    <details><summary>Why tie the cork to plasticine?</summary><div class="a">The cork <b>floats</b>. The plasticine makes it <b>sink completely</b> under the water.</div></details>
+    <details><summary>Sam takes the thermometer out after a few seconds. Give two suggestions.</summary><div class="a">1. <b>Wait until the reading is steady</b> before reading. 2. <b>Read it while the bulb is still in the water</b>.</div></details>
+    <details><summary>Karen uses the same dropper for liquid A and B. What is wrong?</summary><div class="a">Mistake: she did <b>not wash the dropper</b> (or use a clean one). Problem: liquid A gets into the bottle of liquid B and <b>contaminates</b> it.</div></details>
+    <details><summary>Which student reads a ruler correctly: X (from left), Y (straight above), Z (from right)?</summary><div class="a"><b>Y only</b>. Eye directly above the mark.</div></details>
+    <details><summary>How do you measure the circumference of a beaker?</summary><div class="a">We can measure the circumference of a beaker with a <b>measuring tape</b> in <b>centimetres (cm)</b>.</div></details>
+    <details><summary>How do you measure a 100 m runner's time?</summary><div class="a">We can measure the time with a <b>stopwatch</b> in <b>seconds (s)</b>.</div></details>
+  </div>
+</article>
+
+<!-- EXAM -->
+<article id="exam">
+  <span class="ws">Uniform Test</span>
+  <h2>Test tips</h2>
+  <ul class="facts">
+    <li>⏱️ 20 minutes, 30 marks. Do the true/false and MC first.</li>
+    <li>✏️ Bring a <b>pencil, ruler and eraser</b> for the diagram.</li>
+    <li>📏 Every number needs a <b>unit</b>.</li>
+    <li>🧾 Calculations: write the <b>subtraction</b> step, then the answer.</li>
+    <li>🗣️ Use the sentence patterns: "We can use a … to …", "We can measure … with … in …", "It is (not) a fair test because …".</li>
+    <li>🔍 Underline key words in the question (<i>change</i>, <i>measure</i>, <i>explain</i>, <i>two</i>).</li>
+  </ul>
+</article>
+
+<!-- VOCAB -->
+<article id="vocab">
+  <h2>Key terms <span class="zh">關鍵詞</span></h2>
+  <div class="vgrid">
+    <div><b>science</b><span class="zh">科學</span></div><div><b>experiment</b><span class="zh">實驗</span></div>
+    <div><b>discovery</b><span class="zh">發現</span></div><div><b>invention</b><span class="zh">發明</span></div>
+    <div><b>hypothesis</b><span class="zh">假說</span></div><div><b>conclusion</b><span class="zh">結論</span></div>
+    <div><b>fair test</b><span class="zh">公平測試</span></div><div><b>independent variable</b><span class="zh">自變量</span></div>
+    <div><b>dependent variable</b><span class="zh">因變量</span></div><div><b>controlled variable</b><span class="zh">控制變量</span></div>
+    <div><b>laboratory</b><span class="zh">實驗室</span></div><div><b>safety spectacles</b><span class="zh">安全眼鏡</span></div>
+    <div><b>fire extinguisher</b><span class="zh">滅火筒</span></div><div><b>sand bucket</b><span class="zh">滅火沙桶</span></div>
+    <div><b>fire blanket</b><span class="zh">滅火氈</span></div><div><b>fume cupboard</b><span class="zh">通風櫥</span></div>
+    <div><b>hazard warning symbol</b><span class="zh">危險警告標記</span></div><div><b>fire triangle</b><span class="zh">火三角</span></div>
+    <div><b>test tube</b><span class="zh">試管</span></div><div><b>boiling tube</b><span class="zh">大試管</span></div>
+    <div><b>beaker</b><span class="zh">燒杯</span></div><div><b>conical flask</b><span class="zh">錐形瓶</span></div>
+    <div><b>Bunsen burner</b><span class="zh">本生燈</span></div><div><b>insulating mat</b><span class="zh">隔熱墊</span></div>
+    <div><b>tripod</b><span class="zh">三腳架</span></div><div><b>wire gauze</b><span class="zh">鐵絲網</span></div>
+    <div><b>glass rod</b><span class="zh">玻璃棒</span></div><div><b>dropper</b><span class="zh">滴管</span></div>
+    <div><b>measuring cylinder</b><span class="zh">量筒</span></div><div><b>meniscus</b><span class="zh">彎液面</span></div>
+    <div><b>electronic balance</b><span class="zh">電子天平</span></div><div><b>thermometer</b><span class="zh">溫度計</span></div>
+    <div><b>stopwatch</b><span class="zh">秒錶</span></div><div><b>metre rule</b><span class="zh">米尺</span></div>
+    <div><b>error</b><span class="zh">誤差</span></div><div><b>luminous flame</b><span class="zh">光焰</span></div>
+    <div><b>non-luminous flame</b><span class="zh">無光焰</span></div><div><b>strike back</b><span class="zh">回擊</span></div>
+  </div>
+</article>
+
+<footer>Based on Unit 1 worksheets (WS1–WS4), the key terms list and the Uniform Test sample paper.</footer>
+</main>
+<script>
+document.getElementById('openAll').addEventListener('click',()=>document.querySelectorAll('details').forEach(d=>d.open=true));
+document.getElementById('closeAll').addEventListener('click',()=>document.querySelectorAll('details').forEach(d=>d.open=false));
+</script>
+</body>
+</html>
