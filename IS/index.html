@@ -59,10 +59,10 @@ document.title=subjectName+" – Study Files";
 document.getElementById("title").textContent=subjectName;
 
 const TYPES=[
-  {key:"quiz",match:/quiz/i,label:"Quizzes",icon:"🎯",color:"var(--quiz)"},
-  {key:"guide",match:/guide|revision/i,label:"Study guides",icon:"📘",color:"var(--guide)"},
-  {key:"notes",match:/note/i,label:"Notes",icon:"📝",color:"var(--notes)"},
-  {key:"other",match:/./,label:"Other",icon:"📄",color:"var(--other)"}
+  {key:"quiz",match:/quiz/i,label:"Quizzes",one:"Quiz",icon:"🎯",color:"var(--quiz)"},
+  {key:"guide",match:/guide|revision/i,label:"Study guides",one:"Study guide",icon:"📘",color:"var(--guide)"},
+  {key:"notes",match:/note/i,label:"Notes",one:"Notes",icon:"📝",color:"var(--notes)"},
+  {key:"other",match:/./,label:"Other",one:"File",icon:"📄",color:"var(--other)"}
 ];
 function typeOf(n){return TYPES.find(t=>t.match.test(n));}
 function nice(file){
@@ -93,7 +93,7 @@ function render(){
       a.innerHTML='<span class="icon" aria-hidden="true"></span><span><span class="name"></span><span class="meta"></span></span>';
       a.querySelector(".icon").textContent=t.icon;
       a.querySelector(".name").textContent=n.title;
-      a.querySelector(".meta").textContent=[n.form,t.label.replace(/s$/,"")].filter(Boolean).join(" · ");
+      a.querySelector(".meta").textContent=[n.form,t.one].filter(Boolean).join(" · ");
       li.appendChild(a);ul.appendChild(li);
     });
     list.appendChild(ul);
