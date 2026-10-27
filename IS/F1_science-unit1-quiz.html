@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Science Unit 1 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EEF3F6; --paper:#FFFFFF; --ink:#1E2A38; --soft:#4F5D6C; --line:#C9D5DE;
+  --good:#E3F4E7; --goodline:#3F9A55; --bad:#FDE8E4; --badline:#D0533C; --pick:#2F80ED;
+  --tip:#FFF6CC; --tipline:#E3C84A;
+  --u1:#7B61FF; --u2:#E2574C;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#141B22; --paper:#1D2630; --ink:#E8EEF3; --soft:#A9B6C2; --line:#33414F;
+    --good:#1C3324; --goodline:#4FB067; --bad:#3A1F1A; --badline:#E0705A; --pick:#5C9DF2;
+    --tip:#3A3418; --tipline:#B89B2A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#141B22; --paper:#1D2630; --ink:#E8EEF3; --soft:#A9B6C2; --line:#33414F;
+  --good:#1C3324; --goodline:#4FB067; --bad:#3A1F1A; --badline:#E0705A; --pick:#5C9DF2;
+  --tip:#3A3418; --tipline:#B89B2A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Lexend","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:19px;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.8rem;line-height:1.2;margin:10px 0 6px}
+.sub{color:var(--soft);margin:0 0 20px}
+.card{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:22px}
+.hidden{display:none !important}
+.choose{display:grid;gap:12px;margin:16px 0}
+.big{font:inherit;font-weight:700;font-size:1.05rem;text-align:left;width:100%;
+  padding:16px 18px;border-radius:12px;border:3px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.big:hover{border-color:var(--ink)}
+.big:focus-visible,.btn:focus-visible{outline:3px solid var(--pick);outline-offset:3px}
+.big small{display:block;font-weight:400;color:var(--soft);font-size:.9rem}
+.u1{border-left:12px solid var(--u1)}.u2{border-left:12px solid var(--u2)}.u3{border-left:12px solid #2F9E5B}
+.toggle{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:.95rem}
+.toggle input{width:22px;height:22px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;font-weight:600;font-size:.95rem}
+.bar{height:14px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:18px}
+.bar span{display:block;height:100%;background:var(--goodline);width:0;transition:width .3s}
+.tag{display:inline-block;font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:6px;background:var(--bg);border:2px solid var(--line)}
+.qtext{font-size:1.3rem;font-weight:700;line-height:1.4;margin:12px 0 4px}
+.zh{font-family:"Noto Sans TC",sans-serif;color:var(--soft);font-size:.95rem;margin:0 0 14px}
+.opts{display:grid;gap:12px;margin-top:16px}
+.opt{font:inherit;font-size:1.05rem;text-align:left;padding:14px 16px;border-radius:12px;
+  border:3px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;display:flex;gap:12px;align-items:center}
+.opt .l{flex:none;width:34px;height:34px;border-radius:8px;background:var(--bg);display:grid;place-items:center;font-weight:700}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt:focus-visible{outline:3px solid var(--pick);outline-offset:3px}
+.opt:disabled{cursor:default}
+.opt.right{background:var(--good);border-color:var(--goodline)}
+.opt.wrong{background:var(--bad);border-color:var(--badline)}
+.opt.dim{opacity:.55}
+.fb{margin-top:16px;padding:14px 16px;border-radius:12px;font-size:1rem}
+.fb.ok{background:var(--good);border:2px solid var(--goodline)}
+.fb.no{background:var(--bad);border:2px solid var(--badline)}
+.fb b{display:block;font-size:1.1rem;margin-bottom:4px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{font:inherit;font-weight:700;font-size:1rem;padding:12px 20px;border-radius:10px;border:3px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer}
+.btn.alt{background:var(--paper);color:var(--ink)}
+.btn.speak{padding:8px 14px;font-size:.9rem}
+.score{font-size:3rem;font-weight:700;margin:6px 0}
+.stars{font-size:2.2rem;letter-spacing:6px}
+.tip{background:var(--tip);border:2px dashed var(--tipline);border-radius:10px;padding:10px 14px;margin:14px 0}
+.result-list{margin:14px 0 0;padding-left:22px}
+.result-list li{margin:8px 0}
+@media (max-width:520px){body{font-size:18px}.qtext{font-size:1.15rem}.card{padding:18px 14px}}
+@media (prefers-reduced-motion:reduce){.bar span{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- START -->
+<section id="start">
+  <h1>Science Unit 1 Quiz 🧪</h1>
+  <p class="sub">Introducing Science. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose">
+      <button class="big u1" data-set="1">1.1 + 1.2 Science and fair tests<small>Discovery, invention, steps, variables</small></button>
+      <button class="big u2" data-set="2">1.3 + 1.4A Safety and apparatus<small>Hazard labels, fire triangle, lab equipment</small></button>
+      <button class="big u3" data-set="3">1.4B Measuring<small>Instruments, units, readings, mistakes</small></button>
+      <button class="big" data-set="all">Everything (mock test practice)<small>All questions</small></button>
+    </div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic">1.1 Urban areas</span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+
+<!-- END -->
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+
+</div>
+<script>
+const Q = [
+ // ---------- 1.1 + 1.2 ----------
+ {u:1,t:"1.1 Science",q:"Science is based on ______.",zh:"科學是建基於…",o:["evidence","guessing","opinions","luck"],a:0,e:"Science is based on evidence (證據). Doing experiments is one way to collect evidence."},
+ {u:1,t:"1.1 Science",q:"Scientific knowledge is ______ when new evidence is found.",zh:"新證據出現時，科學知識…",o:["subject to change","never changed","always wrong","thrown away"],a:0,e:"Scientific knowledge is subject to change when new evidence is found."},
+ {u:1,t:"1.1 Science",q:"Marie Curie found radium and polonium in 1898. This was a…",zh:"居里夫人找到鐳和釙",o:["discovery","invention"],a:0,e:"A discovery (發現) is finding something that already exists in nature."},
+ {u:1,t:"1.1 Science",q:"Thomas Edison made the light bulb in 1879. This was an…",zh:"愛迪生的燈泡",o:["invention","discovery"],a:0,e:"An invention (發明) is making something new that did not exist before."},
+ {u:1,t:"1.1 Science",q:"True or false: If scientific inventions are misused, they can be harmful to us.",zh:"對或錯",o:["True","False"],a:0,e:"True. Inventions can harm us if they are misused."},
+ {u:1,t:"1.1 Science",q:"Which qualities should a good scientist like Marie Curie have?",zh:"好科學家的特質",o:["Hardworking, cares for others, does not give up easily","Hardworking only","Cares for others only","None of these"],a:0,e:"All three: hardworking, cares for others, does not give up easily (mock test answer D)."},
+ {u:1,t:"1.2 Investigation",q:"What is the FIRST step in a scientific investigation?",zh:"科學探究的第一步",o:["Making observations","Drawing a conclusion","Carrying out experiments","Proposing a hypothesis"],a:0,e:"Order: observations → question → hypothesis → experiments → conclusion."},
+ {u:1,t:"1.2 Investigation",q:"What is the LAST step in a scientific investigation?",zh:"科學探究的最後一步",o:["Drawing a conclusion","Asking a question","Making observations","Proposing a hypothesis"],a:0,e:"We draw a conclusion (結論) at the end."},
+ {u:1,t:"1.2 Investigation",q:"A possible answer to a scientific question that we test is called a…",zh:"假說",o:["hypothesis","conclusion","variable","fair test"],a:0,e:"A hypothesis (假說) is an idea we test with experiments."},
+ {u:1,t:"1.2 Variables",q:"The variable we CHANGE is the…",zh:"我們改變的變量",o:["independent variable","dependent variable","controlled variable"],a:0,e:"Independent variable (自變量) = the one we change. Only one!"},
+ {u:1,t:"1.2 Variables",q:"The variable we MEASURE is the…",zh:"我們量度的變量",o:["dependent variable","independent variable","controlled variable"],a:0,e:"Dependent variable (因變量) = the one we measure."},
+ {u:1,t:"1.2 Variables",q:"The variables we KEEP THE SAME are the…",zh:"保持不變的變量",o:["controlled variables","independent variables","dependent variables"],a:0,e:"Controlled variables (控制變量) are kept the same."},
+ {u:1,t:"1.2 Variables",q:"Objects of different mass fall from a fixed height. What is the independent variable?",zh:"自變量",o:["Mass of the object","Time taken to fall","Height","The ground"],a:0,e:"We change the mass. We measure the time taken to fall."},
+ {u:1,t:"1.2 Variables",q:"How does the angle of a slope affect the time for a ball to roll down? What is the dependent variable?",zh:"因變量",o:["Time for the ball to reach the ground","Angle of the slope","Size of the ball","Colour of the ball"],a:0,e:"We measure the time. The angle is the independent variable."},
+ {u:1,t:"1.2 Variables",q:"Density of water at different temperatures. What is the independent variable?",zh:"自變量",o:["Temperature of water","Density of water","Colour of water","Amount of time"],a:0,e:"We change the temperature and measure the density."},
+ {u:1,t:"1.2 Fair test",q:"Group A: blue flame vs yellow flame, same beakers, same amount of water. Is it a fair test?",zh:"公平測試？",o:["Yes, only the type of flame is changed","No, the beakers are different","No, there is too much water"],a:0,e:"It is a fair test because there is only one variable changed, which is the type of flame."},
+ {u:1,t:"1.2 Fair test",q:"Group B: one beaker has more water than the other. Is it a fair test?",zh:"公平測試？",o:["No, the volume of water should be kept the same","Yes, only the flame is changed","Yes, more water is better"],a:0,e:"It is not a fair test because more than one variable changed. The volume of water should be kept the same."},
+ {u:1,t:"1.2 Fair test",q:"Jamie tests two washing powders. What is the independent variable?",zh:"洗衣粉實驗",o:["Brand of washing powder","Time to remove the stain","Volume of water","Mass of powder"],a:0,e:"He changes the brand of washing powder."},
+ {u:1,t:"1.2 Fair test",q:"Why is Jamie's conclusion NOT reasonable?",zh:"為甚麼結論不合理？",o:["The stains are different sizes","He used 5 L of water in both","He used 20 g of powder in both","He timed both tubs"],a:0,e:"The stain sizes are different, so it is not a fair test. The size of the stain should be kept the same."},
+ {u:1,t:"1.2 Fair test",q:"Luke compares metal, glass and plastic cups, but the cups have different shapes and water volumes. Is it fair?",zh:"公平測試？",o:["No, shape and volume of water also changed","Yes, only the material changed"],a:0,e:"Not fair. Only the material should change. Shape and volume of water should be kept the same."},
+ // ---------- 1.3 + 1.4A ----------
+ {u:2,t:"1.3 Safety",q:"A label with a skull and crossbones ☠️ means…",zh:"骷髏標記",o:["Toxic","Flammable","Corrosive","Explosive"],a:0,e:"Skull and crossbones = toxic (有毒)."},
+ {u:2,t:"1.3 Safety",q:"A label showing liquid dripping onto a hand and a surface means…",zh:"液體滴在手上的標記",o:["Corrosive","Flammable","Toxic","Explosive"],a:0,e:"This is corrosive (腐蝕性). It is NOT flammable — a mock test trap!"},
+ {u:2,t:"1.3 Safety",q:"A label with a flame 🔥 means…",zh:"火焰標記",o:["Flammable","Corrosive","Toxic","Explosive"],a:0,e:"Flame = flammable (易燃). Keep it away from fire."},
+ {u:2,t:"1.3 Fire",q:"What are the three parts of the fire triangle?",zh:"火三角",o:["Fuel, oxygen, high temperature","Water, air, sand","Fuel, water, oxygen","Wood, paper, fire"],a:0,e:"Fuel, oxygen and high temperature. Remove at least one to put out a fire."},
+ {u:2,t:"1.3 Fire",q:"Backfiring stops a wildfire by removing the…",zh:"逆火",o:["fuel","oxygen","high temperature"],a:0,e:"Backfiring burns the fuel in front of the wildfire, so there is nothing left to burn."},
+ {u:2,t:"1.3 Fire",q:"Water puts out fires mainly by removing the…",zh:"水",o:["high temperature","fuel","oxygen"],a:0,e:"Water cools the fire, removing the high temperature."},
+ {u:2,t:"1.3 Fire",q:"Foam puts out fires mainly by removing the…",zh:"泡沫",o:["oxygen","fuel","high temperature"],a:0,e:"Foam forms a blanket over surfaces and cuts off the oxygen."},
+ {u:2,t:"1.3 Fire",q:"Which TWO can help put out a small fire in the lab?",zh:"哪兩項可撲滅細小火警？",o:["Fire blanket and sand bucket","Eye wash bottle and first aid box","Fire blanket and eye wash bottle","First aid box and sand bucket"],a:0,e:"Fire blanket (滅火氈) and sand bucket (滅火沙桶). Fire extinguishers too."},
+ {u:2,t:"1.3 Safety",q:"Mary heats a test tube. A bottle of flammable chemical is next to the flame. What is the problem?",zh:"Mary的錯誤",o:["The flammable chemical may catch fire","The chemical will freeze","The flame will go out","Nothing is wrong"],a:0,e:"Flammable chemicals must be kept away from flames."},
+ {u:2,t:"1.4A Apparatus",q:"Which apparatus is used to SUPPORT a beaker and spread heat evenly?",zh:"支撐燒杯、平均傳熱",o:["Wire gauze","Glass rod","Dropper","Test tube"],a:0,e:"We can use a wire gauze to support a beaker and spread the heat evenly."},
+ {u:2,t:"1.4A Apparatus",q:"Which apparatus is used to STIR a liquid?",zh:"攪拌",o:["Glass rod","Tripod","Dropper","Beaker"],a:0,e:"We can use a glass rod to stir a liquid."},
+ {u:2,t:"1.4A Apparatus",q:"Which apparatus is used to TRANSFER a small amount of liquid?",zh:"轉移少量液體",o:["Dropper","Wire gauze","Insulating mat","Tripod"],a:0,e:"We can use a dropper to transfer a small amount of liquid."},
+ {u:2,t:"1.4A Apparatus",q:"Which apparatus is used to HEAT substances?",zh:"加熱",o:["Bunsen burner","Glass rod","Measuring cylinder","Dropper"],a:0,e:"We can use a Bunsen burner to heat substances."},
+ {u:2,t:"1.4A Apparatus",q:"What protects the bench from heat under a Bunsen burner?",zh:"保護桌面",o:["Insulating mat","Wire gauze","Beaker","Test tube rack"],a:0,e:"The insulating mat (隔熱墊) protects the bench from heat."},
+ {u:2,t:"1.4A Apparatus",q:"A glass container shaped like a triangle with a narrow neck is a…",zh:"三角形、窄頸",o:["conical flask","beaker","boiling tube","measuring cylinder"],a:0,e:"That is a conical flask (錐形瓶). It is good for mixing liquids by swirling."},
+ {u:2,t:"1.4A Apparatus",q:"Which apparatus is best to heat about 200 cm³ of water?",zh:"加熱約200 cm³水",o:["Beaker","Test tube","Dropper","Glass rod"],a:0,e:"A beaker holds large volumes and can be heated on a wire gauze."},
+ {u:2,t:"1.4A Apparatus",q:"Which apparatus is best to mix two liquids of about 1 cm³ each?",zh:"混合約1 cm³液體",o:["Test tube","Beaker","Measuring cylinder","Tripod"],a:0,e:"A test tube is best for small amounts."},
+ {u:2,t:"1.4A Bunsen burner",q:"What is the correct order to light a Bunsen burner?",zh:"點燃本生燈的次序",o:["Close air hole → light match → turn on gas → open air hole","Open air hole → turn on gas → light match → close air hole","Light match → open air hole → turn on gas → close air hole","Turn on gas → light match → close air hole → open air hole"],a:0,e:"Close the air hole first, light the match, turn on the gas, then open the air hole (mock answer D)."},
+ {u:2,t:"1.4A Bunsen burner",q:"A blue, very hot flame with the air hole open is a…",zh:"藍色火焰",o:["non-luminous flame","luminous flame"],a:0,e:"Non-luminous flame (無光焰): blue and hot. Luminous flame (光焰) is yellow, air hole closed."},
+ {u:2,t:"1.4A Apparatus",q:"True or false: A dropper should be held upside down after it is filled with a liquid.",zh:"對或錯",o:["False","True"],a:0,e:"False. The liquid would run into the rubber bulb."},
+ {u:2,t:"1.4A Diagram",q:"In a sectional diagram for heating water, what should you use to draw?",zh:"畫切面圖",o:["Pencil and ruler","Pen and freehand lines","Coloured markers","Crayons"],a:0,e:"Use a pencil and ruler. No wavy lines. Draw the water and label every part."},
+ // ---------- 1.4B ----------
+ {u:3,t:"1.4B Measuring",q:"Temperature is measured with a ______ in ______.",zh:"溫度",o:["thermometer, °C","stopwatch, s","ruler, cm","balance, g"],a:0,e:"We can measure temperature with a thermometer in degrees Celsius (°C)."},
+ {u:3,t:"1.4B Measuring",q:"The volume of a drink is measured with a ______.",zh:"飲品的體積",o:["measuring cylinder","measuring tape","stopwatch","thermometer"],a:0,e:"We can measure volume with a measuring cylinder in cm³ or mL."},
+ {u:3,t:"1.4B Measuring",q:"The finishing time for a 100 m runner is measured with a ______ in ______.",zh:"100米跑時間",o:["stopwatch, seconds (s)","metre rule, metres (m)","thermometer, °C","balance, grams (g)"],a:0,e:"We can measure time with a stopwatch in seconds (s)."},
+ {u:3,t:"1.4B Measuring",q:"The mass of a beaker is measured with an ______ in ______.",zh:"燒杯的質量",o:["electronic balance, grams (g)","measuring cylinder, mL","ruler, cm","stopwatch, s"],a:0,e:"We can measure mass with an electronic balance in grams (g)."},
+ {u:3,t:"1.4B Measuring",q:"The circumference (distance around) of a beaker is measured with a…",zh:"燒杯的圓周",o:["measuring tape","metre rule","thermometer","stopwatch"],a:0,e:"A measuring tape can bend around curves. Unit: cm or mm."},
+ {u:3,t:"1.4B Measuring",q:"The balance with three arms and sliding weights is a…",zh:"三桿天平",o:["triple beam balance","spring balance","top pan balance","lever balance"],a:0,e:"It is a triple beam balance (mock test answer A)."},
+ {u:3,t:"1.4B Reading",q:"When reading a measuring cylinder, you read the…",zh:"讀量筒",o:["bottom of the meniscus, at eye level","top of the liquid, from above","side of the cylinder, from below","highest mark"],a:0,e:"Eye level with the liquid, read the bottom of the meniscus (彎液面)."},
+ {u:3,t:"1.4B Reading",q:"A measuring cylinder has 28 and 30 mL marks with 10 small gaps between them. How much is one small gap?",zh:"每一小格",o:["0.2 mL","1 mL","0.1 mL","2 mL"],a:0,e:"2 mL ÷ 10 gaps = 0.2 mL per gap. Always work this out first!"},
+ {u:3,t:"1.4B Reading",q:"Mock test: the meniscus is 3 small marks above 28 (each mark 0.2 mL). What is the volume?",zh:"讀數",o:["28.6 mL","28.3 mL","28.5 mL","28.8 mL"],a:0,e:"28 + 3 × 0.2 = 28.6 mL (mock test answer C)."},
+ {u:3,t:"1.4B Reading",q:"Three students read a ruler: X from the left, Y from directly above, Z from the right. Who is correct?",zh:"誰讀得正確？",o:["Y only","X only","Z only","X, Y and Z"],a:0,e:"Your eye must be directly above (perpendicular to) the mark."},
+ {u:3,t:"1.4B Displacement",q:"Water only = 42 mL. Water + plasticine = 44 mL. What is the volume of the plasticine?",zh:"膠泥的體積",o:["2 mL","44 mL","86 mL","42 mL"],a:0,e:"44 − 42 = 2 mL. Show the subtraction and write the unit."},
+ {u:3,t:"1.4B Displacement",q:"How do you find the volume of a cork that is tied to plasticine?",zh:"水松塞的體積",o:["(water + plasticine + cork) − (water + plasticine)","(water + cork) + plasticine","water − cork","water + plasticine"],a:0,e:"Take away the reading with only the plasticine from the reading with both."},
+ {u:3,t:"1.4B Displacement",q:"Why does Ben tie the cork stopper to plasticine?",zh:"為甚麼綁上膠泥？",o:["The cork floats, so plasticine makes it sink","To make the cork lighter","To change its colour","To make the water warmer"],a:0,e:"The cork floats. The plasticine makes it sink completely under the water."},
+ {u:3,t:"1.4B Displacement",q:"Why does Ben repeat the measurement 3 times and take the average?",zh:"為甚麼重複三次取平均？",o:["To get a more accurate result","To make it faster","To use more water","To change the answer"],a:0,e:"Repeating and averaging reduces errors (誤差) and makes the result more accurate."},
+ {u:3,t:"1.4B Mistakes",q:"Sam takes the thermometer out of hot water after a few seconds. What should he do instead?",zh:"Sam應該怎樣做？",o:["Wait until the reading is steady and read it while it is still in the water","Take it out even faster","Hold it in the air to cool","Put it in cold water"],a:0,e:"Two suggestions: wait until the reading stops changing, and read it while the bulb is still in the water."},
+ {u:3,t:"1.4B Mistakes",q:"Karen uses the same dropper for liquid A and then liquid B. What is the problem?",zh:"Karen的錯誤",o:["Liquid A contaminates liquid B","The dropper will break","Liquid B becomes hotter","There is no problem"],a:0,e:"She should wash the dropper or use a clean one. Otherwise liquid A gets into the bottle of liquid B."},
+ {u:3,t:"1.4B Units",q:"Which is equal to 1 mL?",zh:"1 mL 等於",o:["1 cm³","1 m","1 g","1 s"],a:0,e:"1 mL = 1 cm³. Always remember to write your unit!"}
+];
+
+const $ = id => document.getElementById(id);
+let list=[], idx=0, score=0, wrong=[], lastSet="all", answered=false;
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function speak(text){
+  try{ if(!('speechSynthesis' in window)) return; speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text.replace(/_+/g,"blank")); u.lang="en-GB"; u.rate=.85; speechSynthesis.speak(u);}catch(e){}
+}
+function show(id){["start","quiz","end"].forEach(s=>$(s).classList.toggle("hidden",s!==id));window.scrollTo(0,0);}
+
+function begin(qs){
+  list=shuffle(qs).map(q=>{const order=shuffle(q.o.map((_,i)=>i));return {...q,order};});
+  idx=0;score=0;wrong=[];show("quiz");render();
+}
+function render(){
+  answered=false;
+  const q=list[idx];
+  $("count").textContent=`Question ${idx+1} of ${list.length}`;
+  $("pts").textContent=`⭐ ${score}`;
+  $("barFill").style.width=(idx/list.length*100)+"%";
+  $("topic").textContent=q.t;
+  $("qtext").textContent=q.q;
+  $("qzh").textContent=q.zh||"";
+  $("qzh").classList.toggle("hidden",!$("zhToggle").checked);
+  $("fb").className="fb hidden";
+  $("nextBtn").classList.add("hidden");
+  const box=$("opts"); box.innerHTML="";
+  const letters="ABCD";
+  q.order.forEach((oi,k)=>{
+    const b=document.createElement("button");
+    b.type="button";b.className="opt";b.dataset.oi=oi;
+    b.innerHTML=`<span class="l">${letters[k]}</span><span></span>`;
+    b.lastChild.textContent=q.o[oi];
+    b.addEventListener("click",()=>choose(b,oi));
+    box.appendChild(b);
+  });
+  if($("autoRead").checked) speak(q.q+". "+q.order.map((oi,k)=>letters[k]+", "+q.o[oi]).join(". "));
+  box.firstChild.focus({preventScroll:true});
+}
+function choose(btn,oi){
+  if(answered) return; answered=true;
+  const q=list[idx], ok=oi===q.a;
+  document.querySelectorAll(".opt").forEach(b=>{
+    b.disabled=true; const v=+b.dataset.oi;
+    if(v===q.a) b.classList.add("right"); else if(b===btn) b.classList.add("wrong"); else b.classList.add("dim");
+  });
+  const fb=$("fb");
+  if(ok){score++; fb.className="fb ok"; fb.innerHTML="<b>✅ Correct! Great job.</b>";}
+  else{wrong.push(q); fb.className="fb no"; fb.innerHTML="<b>Not quite. That's OK!</b>The answer is: <strong></strong>";
+    fb.querySelector("strong").textContent=q.o[q.a]+".";}
+  const e=document.createElement("div"); e.textContent="💡 "+q.e; e.style.marginTop="6px"; fb.appendChild(e);
+  $("pts").textContent=`⭐ ${score}`;
+  const n=$("nextBtn"); n.textContent= idx===list.length-1?"See my score":"Next question"; n.classList.remove("hidden"); n.focus({preventScroll:true});
+}
+function next(){ if(idx<list.length-1){idx++;render();} else finish(); }
+function finish(){
+  $("barFill").style.width="100%";
+  const pct=score/list.length;
+  $("final").textContent=`${score} / ${list.length}`;
+  $("stars").textContent= pct>=.9?"⭐⭐⭐":pct>=.6?"⭐⭐":"⭐";
+  $("msg").textContent= pct>=.9?"Excellent! You are ready for the quiz.":pct>=.6?"Good work! Practise the ones below once more.":"Good try! Read the notes again, then try your wrong ones.";
+  const rb=$("reviewBox"); rb.innerHTML="";
+  if(wrong.length){
+    const t=document.createElement("div"); t.className="tip"; t.innerHTML="<b>Things to remember:</b>";
+    const ul=document.createElement("ul"); ul.className="result-list";
+    wrong.forEach(q=>{const li=document.createElement("li"); li.textContent=`${q.t}: ${q.o[q.a]} — ${q.e}`; ul.appendChild(li);});
+    t.appendChild(ul); rb.appendChild(t);
+  }
+  $("retryWrong").classList.toggle("hidden",!wrong.length);
+  show("end");
+}
+document.querySelectorAll("[data-set]").forEach(b=>b.addEventListener("click",()=>{
+  lastSet=b.dataset.set; begin(lastSet==="all"?Q:Q.filter(q=>q.u==+lastSet));
+}));
+$("nextBtn").addEventListener("click",next);
+$("speakBtn").addEventListener("click",()=>{const q=list[idx];speak(q.q+". "+q.order.map((oi,k)=>"ABCD"[k]+", "+q.o[oi]).join(". "));});
+$("zhToggle").addEventListener("change",()=>$("qzh").classList.toggle("hidden",!$("zhToggle").checked));
+$("retryWrong").addEventListener("click",()=>begin(wrong.map(({order,...q})=>q)));
+$("again").addEventListener("click",()=>begin(lastSet==="all"?Q:Q.filter(q=>q.u==+lastSet)));
+$("home").addEventListener("click",()=>show("start"));
+document.addEventListener("keydown",e=>{
+  if($("quiz").classList.contains("hidden")) return;
+  const k=e.key.toUpperCase(), opts=[...document.querySelectorAll(".opt")];
+  if("ABCD".includes(k)&&k.length===1&&!answered){const b=opts["ABCD".indexOf(k)]; if(b) b.click();}
+});
+</script>
+</body>
+</html>
