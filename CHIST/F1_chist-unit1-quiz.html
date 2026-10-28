@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中國歷史 第1課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 中史</a> · <a href="F1_chist-unit1-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>中史 第1課小測 📜</h1>
+  <p class="sub">傳疑時代及周朝封建。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">禪讓<small>傳疑時代</small></button><button class="big u2" data-set="2">周初封建<small>天子與諸侯</small></button><button class="big u3" data-set="3">兩次分封<small>封國與目的</small></button><button class="big" data-set="all">全部題目<small>共 17 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "禪讓", "q": "「禪讓」傳位時考慮的是甚麼？", "zh": "abdication", "o": ["才德", "血緣關係", "財富", "年齡"], "a": 0, "e": "不考慮血緣，選有才德的人。"}, {"u": 1, "t": "禪讓", "q": "禪讓被後世稱頌，主要因為…", "zh": "ideal system", "o": ["天下為公，選賢與能，百姓安居樂業", "君主可傳位給兒子", "國家領土擴大", "軍隊強大"], "a": 0, "e": "讓有才德的人管治天下。"}, {"u": 1, "t": "禪讓", "q": "開始「家天下」世襲制度的是誰？", "zh": "hereditary", "o": ["啟", "堯", "舜", "周公"], "a": 0, "e": "禹的兒子啟繼位。"}, {"u": 2, "t": "封建", "q": "天子的領土面積是？", "zh": "territory", "o": ["方一千里", "方一百里", "方七十里", "方五十里"], "a": 0, "e": "公、侯只有方一百里。"}, {"u": 2, "t": "封建", "q": "天子擁有多少軍？", "zh": "army", "o": ["六軍（75 000 人）", "三軍（37 500 人）", "一軍", "十軍"], "a": 0, "e": "諸侯（公、侯）只有三軍。"}, {"u": 2, "t": "封建", "q": "公、侯的軍制是？", "zh": "army", "o": ["三軍（37 500 人）", "六軍（75 000 人）", "沒有軍隊", "九軍"], "a": 0, "e": "天子六軍，公侯三軍。"}, {"u": 2, "t": "封建", "q": "公、侯的三卿由誰任命？", "zh": "ministers", "o": ["天子", "諸侯自己", "百姓", "其他諸侯"], "a": 0, "e": "全由天子任命。"}, {"u": 2, "t": "封建", "q": "以下哪項是天子的權利或責任？", "zh": "emperor", "o": ["向諸侯分封土地，定期巡視", "向天子納貢", "出兵勤王", "朝見天子"], "a": 0, "e": "其餘是諸侯的義務。"}, {"u": 2, "t": "封建", "q": "以下哪項不是諸侯的義務？", "zh": "duties", "o": ["分封土地給天子", "向天子納貢", "定期朝見天子", "出兵勤王"], "a": 0, "e": "分封土地是天子做的事。"}, {"u": 2, "t": "封建", "q": "五等爵位由高至低是？", "zh": "ranks", "o": ["公、侯、伯、子、男", "侯、公、子、伯、男", "男、子、伯、侯、公", "公、伯、侯、男、子"], "a": 0, "e": "記法：公侯伯子男。"}, {"u": 2, "t": "封建", "q": "禮樂制度規定貴族在祭祀、婚姻、喪葬時要按甚麼行事？", "zh": "ritual", "o": ["等級", "喜好", "財富", "年齡"], "a": 0, "e": "以維持尊卑關係和秩序。"}, {"u": 3, "t": "分封", "q": "第一次封建中，「監視殷民」的封國是？", "zh": "first enfeoffment", "o": ["管、蔡、霍", "魯、燕、齊", "杞、祝", "宋"], "a": 0, "e": "稱為「三監」。"}, {"u": 3, "t": "分封", "q": "第一次封建中，「安撫殷民」的封國是？", "zh": "placate Shang", "o": ["殷", "宋", "衞", "魯"], "a": 0, "e": "封紂王之子武庚。"}, {"u": 3, "t": "分封", "q": "第二次封建中，「安撫殷民」的封國是？", "zh": "placate Shang", "o": ["宋", "殷", "管", "燕"], "a": 0, "e": "封微子於宋。"}, {"u": 3, "t": "分封", "q": "第二次封建中，「監視殷民」的封國是？", "zh": "monitor Shang", "o": ["衞、曹", "管、蔡、霍", "杞、祝", "魯、燕"], "a": 0, "e": "三監叛亂後改封衞、曹。"}, {"u": 3, "t": "分封", "q": "第二次封建中，「控馭東方」的封國是？", "zh": "control the East", "o": ["魯、燕、齊", "管、蔡、霍", "杞、祝", "宋、衞"], "a": 0, "e": "齊是呂尚（姜太公）的封國。"}, {"u": 3, "t": "分封", "q": "封杞、祝的目的是？", "zh": "win hearts", "o": ["籠絡人心", "監視殷民", "控馭東方", "酬報功臣"], "a": 0, "e": "杞、祝是古帝王的後裔。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

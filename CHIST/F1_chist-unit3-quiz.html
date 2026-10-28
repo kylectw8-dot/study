@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中國歷史 第3課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 中史</a> · <a href="F1_chist-unit3-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>中史 第3課小測 📜</h1>
+  <p class="sub">秦統一天下的原因。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">統一原因<small>地理優勢與其他原因</small></button><button class="big u2" data-set="2">秦始皇措施<small>郡縣、統一、工程</small></button><button class="big" data-set="all">全部題目<small>共 13 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "地理", "q": "根據資料一，作者認為秦能統一天下的原因是？", "zh": "reason", "o": ["地理優勢", "六國兵弱", "秦軍強大", "交通發達"], "a": 0, "e": "黃仁宇認為秦得到地理之便。"}, {"u": 1, "t": "地理", "q": "秦國位處哪一帶？", "zh": "location", "o": ["關中、巴蜀", "江南", "東北", "嶺南"], "a": 0, "e": "僻處西方。"}, {"u": 1, "t": "地理", "q": "以下哪個是保護秦國的關隘？", "zh": "pass", "o": ["函谷關", "山海關", "嘉峪關", "雁門關"], "a": 0, "e": "還有武關、散關、蕭關。"}, {"u": 1, "t": "地理", "q": "以下哪個是包圍秦國的天險？", "zh": "barrier", "o": ["秦嶺", "泰山", "長江三角洲", "珠江"], "a": 0, "e": "還有崤山、岐山、隴山、黃土高原。"}, {"u": 1, "t": "地理", "q": "秦國的地理環境有甚麼好處？", "zh": "advantage", "o": ["易守難攻", "容易被攻打", "方便航海", "土地貧瘠"], "a": 0, "e": "秦可開關迎敵，他國難以進入。"}, {"u": 1, "t": "原因", "q": "除地理優勢外，哪項也是秦統一天下的重要原因？", "zh": "other reasons", "o": ["商鞅變法令秦國富強", "秦國實行禪讓", "秦國尊王攘夷", "秦國人口最少"], "a": 0, "e": "富國強兵是關鍵。"}, {"u": 1, "t": "原因", "q": "秦國對六國採用的外交策略是？", "zh": "diplomacy", "o": ["遠交近攻", "尊王攘夷", "禪讓", "合縱"], "a": 0, "e": "合縱是六國聯合抗秦的策略。"}, {"u": 2, "t": "措施", "q": "秦始皇建立甚麼制度，加強中央對地方的控制？", "zh": "system", "o": ["郡縣制", "封建制", "禪讓制", "世襲制"], "a": 0, "e": "郡縣官員由中央任免。"}, {"u": 2, "t": "措施", "q": "統一文字、度量衡、貨幣有甚麼作用？", "zh": "unify", "o": ["促進各地交流，有利文化融和", "令各地更分裂", "增加戰爭", "減少貿易"], "a": 0, "e": "方便溝通和貿易。"}, {"u": 2, "t": "措施", "q": "秦朝的首都是？", "zh": "capital", "o": ["咸陽", "洛陽", "北京", "南京"], "a": 0, "e": "位於關中。"}, {"u": 2, "t": "措施", "q": "秦長城西起哪裏？", "zh": "Great Wall", "o": ["臨洮", "咸陽", "山海關", "北京"], "a": 0, "e": "用來抵禦北方的匈奴。"}, {"u": 2, "t": "措施", "q": "靈渠連接湘江和哪條江？", "zh": "Lingqu", "o": ["漓江", "黃河", "長江", "淮河"], "a": 0, "e": "方便運送軍糧往嶺南。"}, {"u": 2, "t": "措施", "q": "秦朝統一使用的文字是？", "zh": "script", "o": ["小篆", "楷書", "行書", "甲骨文"], "a": 0, "e": "書同文。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

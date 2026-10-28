@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中國歷史 第2課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 中史</a> · <a href="F1_chist-unit2-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>中史 第2課小測 📜</h1>
+  <p class="sub">春秋戰國局面的形成。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">春秋到戰國<small>周室地位、稱霸與稱王</small></button><button class="big u2" data-set="2">商鞅變法<small>措施與意義</small></button><button class="big" data-set="all">全部題目<small>共 13 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "春秋", "q": "春秋時期霸主的旗號是？", "zh": "slogan", "o": ["尊王攘夷", "天下為公", "合縱連橫", "焚書坑儒"], "a": 0, "e": "尊周天子、抵抗外族。"}, {"u": 1, "t": "春秋", "q": "根據資料一，春秋時期周天子…", "zh": "Zhou king", "o": ["仍被尊為共主", "被霸主取代", "擴張了領土", "不再受尊重"], "a": 0, "e": "霸主沒有取代天子的想法。"}, {"u": 1, "t": "春秋", "q": "春秋時期強大諸侯的目標主要是？", "zh": "goal", "o": ["稱霸", "稱王", "取代周天子", "分封土地"], "a": 0, "e": "戰國時期才紛紛稱王。"}, {"u": 1, "t": "春秋", "q": "周室東遷後出現甚麼情況？", "zh": "after moving east", "o": ["王畿縮小，人口銳減", "領土擴大", "軍隊增加", "諸侯更尊重天子"], "a": 0, "e": "周室實力下降。"}, {"u": 1, "t": "戰國", "q": "根據資料二，戰國時期政局出現甚麼變化？", "zh": "change", "o": ["諸侯紛紛稱王，周室不再受尊重", "各國爭相稱霸", "周天子重新強大", "諸侯尊王攘夷"], "a": 0, "e": "兩個正確選項：稱王、不受尊重。"}, {"u": 1, "t": "戰國", "q": "哪兩件事令天下不再尊重周天子？", "zh": "events", "o": ["三家分晉、田氏篡齊", "焚書坑儒、修長城", "禪讓、世襲", "東征、分封"], "a": 0, "e": "這兩件事竟獲周天子承認。"}, {"u": 1, "t": "戰國", "q": "前 325 年，哪國國君自立為王？", "zh": "325 BC", "o": ["秦", "魏", "趙", "燕"], "a": 0, "e": "前 334 年魏、齊互相稱王。"}, {"u": 1, "t": "戰國", "q": "周天子承認「三家分晉」，等於…", "zh": "meaning", "o": ["周天子自己破壞禮法", "加強了封建制度", "令諸侯更尊重天子", "統一天下"], "a": 0, "e": "這不單是諸侯破壞君臣綱紀。"}, {"u": 2, "t": "商鞅", "q": "「如要繼承爵位，必須建立軍功」主要針對哪類人？", "zh": "target", "o": ["貴族子弟", "平民百姓", "商人", "外國人"], "a": 0, "e": "沒有軍功的貴族子弟不可繼承爵位。"}, {"u": 2, "t": "商鞅", "q": "「按軍功大小賞賜爵位、官職、田宅」主要針對哪類人？", "zh": "target", "o": ["平民百姓", "貴族子弟", "周天子", "諸侯"], "a": 0, "e": "鼓勵百姓當兵。"}, {"u": 2, "t": "商鞅", "q": "措施一（繼承爵位要有軍功）的影響是？", "zh": "impact", "o": ["抑制宗室貴族", "平民階級興起", "商業發達", "周室復興"], "a": 0, "e": "打破封建貴族制度的束縛。"}, {"u": 2, "t": "商鞅", "q": "措施二（按軍功賞賜）的影響是？", "zh": "impact", "o": ["平民階級興起，勇於參與戰鬥", "抑制平民", "貴族更有權", "人民不願當兵"], "a": 0, "e": "建立軍力強大的政權。"}, {"u": 2, "t": "商鞅", "q": "錢穆認為商鞅變法的意義是？", "zh": "significance", "o": ["破棄封建貴族制度的束縛，建設強調軍事的政權", "恢復周朝禮樂", "發展商業", "推行禪讓"], "a": 0, "e": "兩層意義。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>
