@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Science Unit 4 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← IS</a> · <a href="F1_science-unit4-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Science Unit 4 Quiz 🧪</h1>
+  <p class="sub">Cells and Human Reproduction. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">4.1 Microscope<small>Parts, magnification, images</small></button><button class="big u2" data-set="2">4.2 Cell parts<small>Plant and animal cells, slides</small></button><button class="big u3" data-set="3">4.3 &amp; 4.6 Reproduction<small>Sex cells, puberty, heredity</small></button><button class="big" data-set="all">Everything<small>All 28 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "4.1 Microscope", "q": "The basic unit of living things is the…", "zh": "生物的基本單位", "o": ["cell", "atom", "organ", "tissue"], "a": 0, "e": "All living things are made up of cells."}, {"u": 1, "t": "4.1 Microscope", "q": "Living things made up of more than one cell are…", "zh": "多於一個細胞", "o": ["multicellular", "unicellular", "invertebrates", "micro-organisms"], "a": 0, "e": "Multi = many. Uni = one."}, {"u": 1, "t": "4.1 Microscope", "q": "Total magnification of a microscope is…", "zh": "總放大倍數", "o": ["eyepiece × objective", "eyepiece + objective", "objective − eyepiece", "eyepiece ÷ objective"], "a": 0, "e": "Multiply the two lenses."}, {"u": 1, "t": "4.1 Microscope", "q": "Eyepiece 10X and objective 4X. Total magnification?", "zh": "總放大倍數", "o": ["40X", "14X", "6X", "400X"], "a": 0, "e": "10 × 4 = 40X."}, {"u": 1, "t": "4.1 Microscope", "q": "To get 600X, choose objective ___ and eyepiece ___.", "zh": "600X", "o": ["40X and 15X", "10X and 15X", "40X and 10X", "4X and 15X"], "a": 0, "e": "40 × 15 = 600."}, {"u": 1, "t": "4.1 Microscope", "q": "To get 20X, choose objective ___ and eyepiece ___.", "zh": "20X", "o": ["4X and 5X", "10X and 10X", "4X and 15X", "40X and 5X"], "a": 0, "e": "4 × 5 = 20."}, {"u": 1, "t": "4.1 Microscope", "q": "The longer the eyepiece, the ______ the magnification.", "zh": "目鏡越長", "o": ["lower", "higher", "same"], "a": 0, "e": "Long eyepiece = low power. (Objectives are the other way round.)"}, {"u": 1, "t": "4.1 Microscope", "q": "The longer the objective, the ______ the magnification.", "zh": "物鏡越長", "o": ["higher", "lower", "same"], "a": 0, "e": "Long objective = high power."}, {"u": 1, "t": "4.1 Microscope", "q": "Higher magnification makes the field of view…", "zh": "視野", "o": ["smaller", "larger", "the same"], "a": 0, "e": "You zoom in, so you see a smaller area with fewer cells."}, {"u": 1, "t": "4.1 Microscope", "q": "The letter \"d\" is viewed under a microscope. It looks like…", "zh": "字母 d", "o": ["p", "b", "q", "d"], "a": 0, "e": "The image is inverted: upside down and left–right reversed."}, {"u": 1, "t": "4.1 Microscope", "q": "Which knob is used for SMALL adjustments in focusing?", "zh": "微調", "o": ["Fine adjustment knob", "Coarse adjustment knob", "Eyepiece", "Stage"], "a": 0, "e": "Fine = small. Coarse = large."}, {"u": 2, "t": "4.2 Cells", "q": "Which structure controls the cell and contains genetic materials?", "zh": "控制細胞", "o": ["Nucleus", "Cell wall", "Vacuole", "Cytoplasm"], "a": 0, "e": "The nucleus is the control centre."}, {"u": 2, "t": "4.2 Cells", "q": "Which structure carries out photosynthesis?", "zh": "光合作用", "o": ["Chloroplast", "Nucleus", "Cell membrane", "Cytoplasm"], "a": 0, "e": "Chloroplasts are green and make food using light."}, {"u": 2, "t": "4.2 Cells", "q": "Which structure supports and protects a plant cell?", "zh": "支持和保護", "o": ["Cell wall", "Cell membrane", "Nucleus", "Chloroplast"], "a": 0, "e": "The cell wall gives the plant cell its shape."}, {"u": 2, "t": "4.2 Cells", "q": "Which structure is found in onion cells but NOT in animal cells?", "zh": "動物細胞沒有", "o": ["Cell wall", "Nucleus", "Cell membrane", "Cytoplasm"], "a": 0, "e": "Animal cells have no cell wall."}, {"u": 2, "t": "4.2 Cells", "q": "Cell X has a regular shape, a cell wall and green dots. It is from…", "zh": "細胞X", "o": ["a green leaf", "a cat’s mouth", "human blood", "an onion"], "a": 0, "e": "Cell wall + chloroplasts = green plant cell."}, {"u": 2, "t": "4.2 Cells", "q": "What is the correct order to prepare an onion slide? (C = peel skin, A = spread on slide, D = add iodine, E = cover slip, B = soak up extra iodine)", "zh": "製作玻片的次序", "o": ["C → A → D → E → B", "C → D → A → B → E", "C → E → A → D → B", "C → A → E → D → B"], "a": 0, "e": "Peel, spread, stain, cover, soak up."}, {"u": 2, "t": "4.2 Cells", "q": "Why add iodine solution to onion cells?", "zh": "碘液", "o": ["To stain the cells so parts are seen clearly", "To kill bacteria", "To make the cells bigger", "To make them green"], "a": 0, "e": "Iodine stains the nucleus so it shows up."}, {"u": 2, "t": "4.2 Cells", "q": "A cover slip prevents onion cells from…", "zh": "蓋玻片", "o": ["drying out", "growing", "turning green", "moving"], "a": 0, "e": "It also keeps the sample flat."}, {"u": 2, "t": "4.2 Cells", "q": "When drawing cells, you should…", "zh": "畫細胞圖", "o": ["use clear pencil lines and no shading", "shade the nucleus darkly", "cross the label lines", "use a pen"], "a": 0, "e": "Clear lines, no shading, straight label lines that do not cross."}, {"u": 2, "t": "4.2 Cells", "q": "Which statement about cells is correct?", "zh": "哪項正確？", "o": ["All living things are made up of cells", "Cells are flat", "All cells have a cell wall", "All cells are round"], "a": 0, "e": "Cells are 3-D and come in many shapes."}, {"u": 3, "t": "4.3 Reproduction", "q": "The male sex cell is the…", "zh": "男性性細胞", "o": ["sperm", "egg", "ovary", "chromosome"], "a": 0, "e": "Sperm is small with a tail and can swim."}, {"u": 3, "t": "4.3 Reproduction", "q": "Compare sperm and egg sizes.", "zh": "比較大小", "o": ["Sperm is smaller than the egg", "Sperm is larger than the egg", "They are the same size"], "a": 0, "e": "The egg is about 100 micrometres; the sperm is much smaller."}, {"u": 3, "t": "4.3 Reproduction", "q": "During puberty, the level of ______ in the body increases.", "zh": "青春期", "o": ["sex hormones", "oxygen", "iodine", "chlorophyll"], "a": 0, "e": "Sex hormones cause secondary sexual characteristics."}, {"u": 3, "t": "4.3 Reproduction", "q": "Which is NOT a secondary sexual characteristic in males?", "zh": "哪項不是男性第二性徵？", "o": ["Production of semen", "Growth of beard", "Widening of shoulders", "Larynx becoming larger"], "a": 0, "e": "Semen production is a reproductive function, not a secondary sexual characteristic."}, {"u": 3, "t": "4.6 Heredity", "q": "Passing on traits from one generation to the next is…", "zh": "遺傳", "o": ["heredity", "puberty", "excretion", "photosynthesis"], "a": 0, "e": "Heredity happens because genetic information in DNA is passed on."}, {"u": 3, "t": "4.6 Heredity", "q": "How many chromosomes are in a human body cell?", "zh": "體細胞染色體數目", "o": ["46", "23", "12", "92"], "a": 0, "e": "46 in a body cell. 23 in a sex cell."}, {"u": 3, "t": "4.6 Heredity", "q": "How many chromosomes are in a human sex cell?", "zh": "性細胞染色體數目", "o": ["23", "46", "2", "100"], "a": 0, "e": "Sex cells have half: 23."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

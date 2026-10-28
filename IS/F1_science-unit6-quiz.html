@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Science Unit 6 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← IS</a> · <a href="F1_science-unit6-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Science Unit 6 Quiz 🧪</h1>
+  <p class="sub">Matter as Particles. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">6.1 Particle theory<small>Matter, particles, atoms, molecules</small></button><button class="big u2" data-set="2">6.2–6.3 Particle model and dissolving<small>Solids, liquids, gases, dissolving</small></button><button class="big u3" data-set="3">6.4 Expansion and contraction<small>Heating, cooling, ball and ring</small></button><button class="big" data-set="all">Everything<small>All 29 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "6.1 Particles", "q": "Matter is anything which has ______ and takes up ______.", "zh": "物質", "o": ["mass, space", "colour, light", "energy, time", "water, air"], "a": 0, "e": "Matter has mass and occupies space."}, {"u": 1, "t": "6.1 Particles", "q": "According to the particle theory, particles are…", "zh": "粒子理論", "o": ["tiny and moving randomly all the time", "large and not moving", "only found in solids", "all the same for every substance"], "a": 0, "e": "Particles are tiny, always moving, with spaces between them."}, {"u": 1, "t": "6.1 Particles", "q": "Different substances are made up of ______ particles.", "zh": "不同物質", "o": ["different", "the same", "no", "invisible water"], "a": 0, "e": "Each substance has its own kind of particle."}, {"u": 1, "t": "6.1 Particles", "q": "Silver is made up of silver…", "zh": "銀", "o": ["atoms", "molecules of oxygen", "cells", "ions only"], "a": 0, "e": "Metals like silver are made of atoms."}, {"u": 1, "t": "6.1 Particles", "q": "Oxygen is made up of oxygen…", "zh": "氧", "o": ["molecules (two oxygen atoms each)", "cells", "single big particle", "crystals"], "a": 0, "e": "An oxygen molecule has two oxygen atoms."}, {"u": 1, "t": "6.1 Particles", "q": "We can smell bread outside a bakery because…", "zh": "聞到麵包香", "o": ["bread particles move randomly through the air to our nose", "air is made of bread", "sound carries the smell", "light carries the smell"], "a": 0, "e": "Particles escape from the bread and spread through the air."}, {"u": 1, "t": "6.1 Particles", "q": "300 cm³ of alcohol is mixed with 100 cm³ of water (total 400 cm³). The percentage of alcohol is…", "zh": "酒精百分比", "o": ["75%", "25%", "30%", "300%"], "a": 0, "e": "300 ÷ 400 × 100% = 75%."}, {"u": 1, "t": "6.1 Particles", "q": "Why is the mixed volume of alcohol and water LESS than 400 cm³?", "zh": "體積減少", "o": ["Smaller particles fit into spaces between larger ones", "Some water disappears", "Particles get smaller", "Alcohol evaporates instantly"], "a": 0, "e": "Water and alcohol particles are different sizes."}, {"u": 2, "t": "6.2 Particle model", "q": "Particles in a solid…", "zh": "固體粒子", "o": ["vibrate about fixed positions", "move freely far apart", "move around each other", "do not exist"], "a": 0, "e": "Solid particles are closely packed in a regular pattern and vibrate."}, {"u": 2, "t": "6.2 Particle model", "q": "Particles in a gas are…", "zh": "氣體粒子", "o": ["far apart and move freely", "closely packed in a pattern", "fixed in position", "not moving"], "a": 0, "e": "Gas particles move fast in all directions."}, {"u": 2, "t": "6.2 Particle model", "q": "Which has a fixed volume but NO fixed shape?", "zh": "有固定體積但沒有固定形狀", "o": ["Liquid", "Solid", "Gas", "None"], "a": 0, "e": "Liquids take the shape of the container."}, {"u": 2, "t": "6.2 Particle model", "q": "Which comparison of liquid and gas alcohol is correct?", "zh": "液體與氣體", "o": ["Both have no fixed shape, and particles in both can move around", "Both have no fixed volume", "Both have fixed shapes", "Particles in both vibrate about fixed positions"], "a": 0, "e": "Answer C: (1) and (3) only. Liquids DO have a fixed volume."}, {"u": 2, "t": "6.2 Particle model", "q": "Ice vs water: which is correct?", "zh": "冰與水", "o": ["Particles in ice are in a regular pattern but particles in water are not", "Both have no fixed volume", "Particles in water vibrate about fixed positions", "Ice has no fixed shape"], "a": 0, "e": "Ice is solid (regular pattern); water is liquid."}, {"u": 2, "t": "6.2 Particle model", "q": "Brown gas spreads from a jar into an empty flask. This shows that gases…", "zh": "氣體擴散", "o": ["do not have a fixed volume", "have a fixed shape", "cannot move", "have a fixed volume"], "a": 0, "e": "Gas particles move in all directions to fill any container."}, {"u": 2, "t": "6.3 Dissolving", "q": "5 g of salt dissolves in 50 g of water. Total mass?", "zh": "總質量", "o": ["55 g", "50 g", "53 g", "57 g"], "a": 0, "e": "Mass is conserved in dissolving."}, {"u": 2, "t": "6.3 Dissolving", "q": "When a solute dissolves, its particles…", "zh": "溶解", "o": ["move apart and become evenly distributed", "disappear", "get bigger", "sink to the bottom"], "a": 0, "e": "Solute particles spread evenly among solvent particles."}, {"u": 2, "t": "6.3 Dissolving", "q": "In dissolving, total volume may…", "zh": "體積", "o": ["decrease", "always double", "become zero", "always stay the same"], "a": 0, "e": "Mass is conserved, but volume may decrease."}, {"u": 3, "t": "6.4 Expansion", "q": "The Eiffel Tower is 15 cm taller in summer because…", "zh": "艾菲爾鐵塔", "o": ["the spaces between iron particles increase", "the number of particles increases", "the particles get bigger", "the volume of each particle increases"], "a": 0, "e": "Particles stay the same size; the spaces grow."}, {"u": 3, "t": "6.4 Expansion", "q": "When gas is heated, its particles gain ______ energy.", "zh": "氣體受熱", "o": ["kinetic", "electrical", "light", "sound"], "a": 0, "e": "Heated particles move faster."}, {"u": 3, "t": "6.4 Expansion", "q": "A jar lid is too tight. What helps?", "zh": "打開瓶蓋", "o": ["Pour hot water on the lid so the lid expands", "Pour iced water so the lid contracts", "Pour iced water so the jar mouth contracts", "Pour hot water so the jar mouth expands"], "a": 0, "e": "Answer C. The metal lid expands and loosens."}, {"u": 3, "t": "6.4 Expansion", "q": "Gases expand to a ______ extent than solids and liquids.", "zh": "氣體膨脹程度", "o": ["greater", "smaller", "same"], "a": 0, "e": "Gas particles can move much farther apart."}, {"u": 3, "t": "6.4 Expansion", "q": "Coloured water in a tube is placed in 80 °C water. The level rises because…", "zh": "水位上升", "o": ["the water expands when heated", "the water contracts", "more water is added", "the tube shrinks"], "a": 0, "e": "Heating makes the water expand."}, {"u": 3, "t": "6.4 Expansion", "q": "Coloured water in a tube is placed in ice water. The level…", "zh": "冰水", "o": ["drops because the water contracts", "rises", "stays the same", "boils"], "a": 0, "e": "When cooled, the water contracts so the level drops."}, {"u": 3, "t": "6.4 Expansion", "q": "In the boiling tube experiment, what is the independent variable?", "zh": "自變量", "o": ["Temperature of water in the beaker", "Length of glass tube", "Volume of coloured water", "Initial water level"], "a": 0, "e": "The other variables are controlled."}, {"u": 3, "t": "6.4 Expansion", "q": "Only the ball is heated. Can it pass through the ring?", "zh": "只加熱金屬球", "o": ["No, the ball expands but the ring does not", "Yes, the ball contracts", "Yes, nothing changes", "No, the ring expands"], "a": 0, "e": "The ball becomes bigger than the hole."}, {"u": 3, "t": "6.4 Expansion", "q": "Only the ring is heated. Can the ball pass through?", "zh": "只加熱金屬環", "o": ["Yes, the ring expands so the hole gets bigger", "No, the ring contracts", "No, the ball expands", "Yes, the ball melts"], "a": 0, "e": "The ball is now smaller than the hole."}, {"u": 3, "t": "6.4 Expansion", "q": "Both ball and ring (same metal) are heated to the same temperature. Can the ball pass?", "zh": "兩者都加熱", "o": ["Yes, both expand by the same extent", "No, the ball expands more", "No, the ring contracts", "Only if cooled"], "a": 0, "e": "Same metal, same temperature, same expansion."}, {"u": 3, "t": "6.4 Expansion", "q": "How do engineers stop railways bending in summer?", "zh": "路軌", "o": ["Leave gaps between parts of the railway", "Paint the rails black", "Use shorter trains", "Make rails tighter"], "a": 0, "e": "Gaps give the rails space to expand."}, {"u": 3, "t": "6.4 Expansion", "q": "How can overhead power cables be kept from breaking in winter?", "zh": "電纜", "o": ["Use longer, loose cables", "Use shorter, tight cables", "Heat the cables", "Paint them shiny"], "a": 0, "e": "Cables contract in the cold. Extra length stops them snapping."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

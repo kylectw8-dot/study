@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Science Unit 5 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← IS</a> · <a href="F1_science-unit5-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Science Unit 5 Quiz 🧪</h1>
+  <p class="sub">Energy. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">5.1 Energy changes<small>Forms of energy, conversions, efficiency</small></button><button class="big u2" data-set="2">5.2 Heat transfer<small>Conduction, convection, radiation</small></button><button class="big" data-set="all">Everything<small>All 25 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "5.1 Energy", "q": "The Sun gives out…", "zh": "太陽發出", "o": ["light and thermal energy", "sound and kinetic energy", "only electrical energy", "chemical energy only"], "a": 0, "e": "Sunlight carries light and heat."}, {"u": 1, "t": "5.1 Energy", "q": "Speaking and singing give out ______ energy.", "zh": "說話和唱歌", "o": ["sound", "light", "chemical", "potential"], "a": 0, "e": "Sound energy."}, {"u": 1, "t": "5.1 Energy", "q": "Fuel and food store ______ energy.", "zh": "燃料和食物", "o": ["chemical", "kinetic", "sound", "light"], "a": 0, "e": "Chemical energy is stored in fuel and food."}, {"u": 1, "t": "5.1 Energy", "q": "A stretched rubber band stores ______ energy.", "zh": "拉長的橡筋", "o": ["potential (elastic)", "kinetic", "sound", "light"], "a": 0, "e": "Stretching stores elastic potential energy."}, {"u": 1, "t": "5.1 Energy", "q": "A moving car has ______ energy.", "zh": "行駛中的汽車", "o": ["kinetic", "potential", "chemical only", "sound only"], "a": 0, "e": "Kinetic energy = energy of movement."}, {"u": 1, "t": "5.1 Energy", "q": "Which is a unit of energy?", "zh": "能量單位", "o": ["joule (J)", "metre (m)", "gram (g)", "second (s)"], "a": 0, "e": "Joules and kilocalories measure energy."}, {"u": 1, "t": "5.1 Energy", "q": "For any energy change, the total energy before and after…", "zh": "能量守恆", "o": ["is the same", "increases", "decreases", "becomes zero"], "a": 0, "e": "Energy is never lost; it only changes form."}, {"u": 1, "t": "5.1 Energy", "q": "A man jumps upwards. What is the energy change?", "zh": "跳起", "o": ["Kinetic energy of the man → potential energy of the man", "Potential energy → sound energy", "Chemical energy → light energy", "Light energy → kinetic energy"], "a": 0, "e": "Moving up turns kinetic energy into potential energy."}, {"u": 1, "t": "5.1 Energy", "q": "Wood burning: what is the energy change?", "zh": "燃燒木材", "o": ["Chemical energy in the wood → thermal and light energy", "Light energy → chemical energy", "Kinetic energy → sound energy", "Electrical energy → chemical energy"], "a": 0, "e": "Chemical energy stored in the wood is converted to thermal and light energy."}, {"u": 1, "t": "5.1 Energy", "q": "A solar cell changes…", "zh": "太陽能電池", "o": ["light energy into electrical energy", "electrical energy into light energy", "sound into light", "heat into sound"], "a": 0, "e": "Light energy from the Sun is converted to electrical energy."}, {"u": 1, "t": "5.1 Energy", "q": "The rubber band model plane is released. What is the energy change?", "zh": "放開橡筋飛機", "o": ["Potential energy of the rubber band → kinetic energy of the plane", "Kinetic → potential", "Chemical → sound", "Light → kinetic"], "a": 0, "e": "Stored elastic energy makes the plane move."}, {"u": 1, "t": "5.1 Energy", "q": "How can the girl make the plane fly further (same height and angle)?", "zh": "飛得更遠", "o": ["Stretch the rubber band more", "Stretch it less", "Paint the plane black", "Use a shorter rubber band without stretching"], "a": 0, "e": "More stretching stores more potential energy, giving more kinetic energy."}, {"u": 1, "t": "5.1 Energy", "q": "A bulb gives 120 J of light from 600 J of electrical energy. Its efficiency is…", "zh": "效率", "o": ["20%", "50%", "80%", "500%"], "a": 0, "e": "120 ÷ 600 × 100% = 20%."}, {"u": 2, "t": "5.2 Heat", "q": "Conduction transfers heat from the ______ part to the ______ part.", "zh": "傳導", "o": ["hotter, colder", "colder, hotter", "top, bottom", "dark, shiny"], "a": 0, "e": "Heat always flows from hot to cold."}, {"u": 2, "t": "5.2 Heat", "q": "Conduction happens when two objects with different temperatures are…", "zh": "傳導發生", "o": ["in contact", "far apart", "in a vacuum", "both black"], "a": 0, "e": "Conduction needs touching (contact)."}, {"u": 2, "t": "5.2 Heat", "q": "In convection, a hot gas moves…", "zh": "對流", "o": ["upwards", "downwards", "sideways only", "it does not move"], "a": 0, "e": "Hot fluids rise; colder fluids sink to fill the space."}, {"u": 2, "t": "5.2 Heat", "q": "Which heat transfer can pass through a vacuum?", "zh": "真空", "o": ["Radiation", "Conduction", "Convection", "None"], "a": 0, "e": "Heat from the Sun reaches Earth through space by radiation."}, {"u": 2, "t": "5.2 Heat", "q": "Dull black objects are…", "zh": "暗黑色物體", "o": ["good absorbers of radiation", "poor absorbers of radiation", "good insulators of sound", "shiny"], "a": 0, "e": "Dull and dark = good absorbers. Shiny and light = poor absorbers."}, {"u": 2, "t": "5.2 Heat", "q": "A purple crystal is heated at one side of a beaker of water. The coloured water moves by…", "zh": "紫色晶體", "o": ["convection", "conduction", "radiation", "evaporation"], "a": 0, "e": "Hot water rises and cold water sinks, making a convection current."}, {"u": 2, "t": "5.2 Heat", "q": "Why is a kettle handle made of plastic?", "zh": "膠手柄", "o": ["Plastic is a good insulator", "Plastic is a good conductor", "Plastic is shiny", "Plastic is heavy"], "a": 0, "e": "Insulators conduct heat slowly, so the handle stays cool."}, {"u": 2, "t": "5.2 Heat", "q": "Why is the heating element at the BOTTOM of a kettle?", "zh": "發熱線圈", "o": ["Hot water rises and cold water sinks, so all water is heated by convection", "Heat only moves downwards", "To make the kettle heavier", "So it can be seen"], "a": 0, "e": "Convection heats the whole kettle."}, {"u": 2, "t": "5.2 Heat", "q": "A good conductor conducts thermal energy…", "zh": "良導體", "o": ["quickly", "slowly", "not at all"], "a": 0, "e": "Metals are good conductors."}, {"u": 2, "t": "5.2 Heat", "q": "Cindy compares black and silver cans by a bulb. What is the independent variable?", "zh": "自變量", "o": ["Type of surface of the can", "Rise in water temperature", "Amount of water", "Distance from the bulb"], "a": 0, "e": "She changes the surface. Water amount and distance are controlled."}, {"u": 2, "t": "5.2 Heat", "q": "The black can went from 26 °C to 30 °C. The rise is…", "zh": "溫度上升", "o": ["4 °C", "30 °C", "56 °C", "2 °C"], "a": 0, "e": "30 − 26 = 4 °C. The silver can rose only 2 °C."}, {"u": 2, "t": "5.2 Heat", "q": "What can Cindy conclude?", "zh": "結論", "o": ["Dull black surfaces are better absorbers of radiation", "Shiny surfaces absorb more radiation", "Colour makes no difference", "Bulbs make water cold"], "a": 0, "e": "The black can heated up more."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

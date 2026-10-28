@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Science Unit 3 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← IS</a> · <a href="F1_science-unit3-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Science Unit 3 Quiz 🧪</h1>
+  <p class="sub">Living Things. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">3.1 Living things<small>Seven vital functions</small></button><button class="big u2" data-set="2">3.2 Grouping<small>Vertebrates, invertebrates, plants</small></button><button class="big u3" data-set="3">3.3–3.4 Keys and biodiversity<small>Keys, threats, conservation</small></button><button class="big" data-set="all">Everything<small>All 30 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "3.1 Living things", "q": "Living things need ______ to break down food for energy.", "zh": "分解食物產生能量需要…", "o": ["oxygen", "water only", "sunlight", "sand"], "a": 0, "e": "This is respiration. Living things use oxygen to release energy from food."}, {"u": 1, "t": "3.1 Living things", "q": "Living things increase in body size and complexity. This is…", "zh": "身體變大", "o": ["growth", "excretion", "movement", "reproduction"], "a": 0, "e": "Growth means getting bigger and more complex."}, {"u": 1, "t": "3.1 Living things", "q": "Removing waste such as urine from the body is…", "zh": "排出尿液", "o": ["excretion", "respiration", "reproduction", "nutrition"], "a": 0, "e": "Excretion removes waste substances."}, {"u": 1, "t": "3.1 Living things", "q": "Plants producing seeds that grow into new plants is…", "zh": "種子長成新植物", "o": ["reproduction", "growth", "excretion", "movement"], "a": 0, "e": "Reproduction produces offspring."}, {"u": 1, "t": "3.1 Living things", "q": "The wide variety of living things is called…", "zh": "生物種類繁多", "o": ["biodiversity", "classification", "habitat", "reproduction"], "a": 0, "e": "Biodiversity (生物多樣性) means many different kinds of living things."}, {"u": 1, "t": "3.1 Living things", "q": "True or false: Falling of leaves from a tree is an example of excretion.", "zh": "落葉是排泄嗎？", "o": ["True", "False"], "a": 0, "e": "True. Plants remove waste substances by shedding leaves."}, {"u": 1, "t": "3.1 Living things", "q": "True or false: Plants cannot move.", "zh": "植物不能動？", "o": ["False", "True"], "a": 0, "e": "False. Parts of plants move, e.g. leaves turn towards light."}, {"u": 1, "t": "3.1 Living things", "q": "True or false: Amoeba can be seen with the naked eye.", "zh": "肉眼看到變形蟲？", "o": ["False", "True"], "a": 0, "e": "False. Amoeba is a micro-organism. You need a microscope."}, {"u": 1, "t": "3.1 Living things", "q": "Mr Kwan sweats when he is hot. Which vital functions does this show?", "zh": "流汗", "o": ["Excretion and reacting to stimuli", "Growth only", "Excretion only", "Growth and reacting to stimuli"], "a": 0, "e": "Sweat removes waste (excretion), and sweating is a reaction to heat (a stimulus)."}, {"u": 1, "t": "3.1 Living things", "q": "The number of bread moulds increases over time. Which vital function?", "zh": "霉菌數量增加", "o": ["Reproduction", "Excretion", "Respiration", "Movement"], "a": 0, "e": "More moulds means they are reproducing."}, {"u": 2, "t": "3.2 Grouping", "q": "Scientists classify living things according to their…", "zh": "根據甚麼分類？", "o": ["key features", "colours only", "size only", "price"], "a": 0, "e": "Classification uses key features."}, {"u": 2, "t": "3.2 Grouping", "q": "Which is correct?", "zh": "哪項正確？", "o": ["Only birds have feathers", "Only fish breathe with gills", "Only mammals breathe with lungs", "Only reptiles have scales"], "a": 0, "e": "Feathers are found only in birds. Young amphibians also use gills; birds and reptiles also use lungs; fish also have scales."}, {"u": 2, "t": "3.2 Grouping", "q": "All mammals have…", "zh": "所有哺乳類都有…", "o": ["mammary glands", "four limbs", "scales", "gills"], "a": 0, "e": "Mammary glands produce milk to feed the young."}, {"u": 2, "t": "3.2 Grouping", "q": "Which features are found in birds but NOT in bats?", "zh": "鳥有而蝙蝠沒有", "o": ["Feathers and beak", "Wings and beak", "Feathers and wings", "Wings only"], "a": 0, "e": "Both have wings. Only birds have feathers and a beak."}, {"u": 2, "t": "3.2 Grouping", "q": "Animal X breathes with lungs, has a backbone and scales, and can swim. X is a…", "zh": "X是甚麼？", "o": ["sea turtle", "goldfish", "toad", "human"], "a": 0, "e": "A sea turtle is a reptile: lungs, backbone, scales."}, {"u": 2, "t": "3.2 Grouping", "q": "Which zoo animal is an invertebrate?", "zh": "無脊椎動物", "o": ["Octopus", "Shark", "Whale", "Penguin"], "a": 0, "e": "The octopus has no backbone."}, {"u": 2, "t": "3.2 Grouping", "q": "Penguins are classified as…", "zh": "企鵝屬於", "o": ["birds", "mammals", "fish", "reptiles"], "a": 0, "e": "Penguins have feathers and a beak, so they are birds."}, {"u": 2, "t": "3.2 Grouping", "q": "Sharks and whales look alike. What is a key difference?", "zh": "鯊魚和鯨的分別", "o": ["Sharks have gills; whales have lungs", "Sharks have lungs; whales have gills", "Both have gills", "Both have hair"], "a": 0, "e": "Sharks are fish (gills). Whales are mammals (lungs, mammary glands)."}, {"u": 2, "t": "3.2 Grouping", "q": "Which statement about plants is correct?", "zh": "植物", "o": ["All vascular plants have roots, stems and leaves", "All seed plants have flowers", "All vascular plants have flowers", "All parts of plants are green"], "a": 0, "e": "Pine trees have seeds but no flowers, and ferns are vascular but have no flowers."}, {"u": 2, "t": "3.2 Grouping", "q": "A plant has vascular tissue but no seeds. It is a…", "zh": "有維管組織但沒有種子", "o": ["seedless vascular plant (like a fern)", "flowering plant", "non-vascular plant", "seed plant"], "a": 0, "e": "It does not produce seeds, so it is seedless."}, {"u": 2, "t": "3.2 Grouping", "q": "A plant with no vascular tissue (like moss) has…", "zh": "苔蘚", "o": ["no seeds and no flowers", "seeds and flowers", "seeds only", "flowers only"], "a": 0, "e": "Non-vascular plants have no seeds and no flowers."}, {"u": 3, "t": "3.3 Keys", "q": "A key separates a dolphin from a goldfish. Which pair of features works?", "zh": "分辨海豚和金魚", "o": ["with lungs / without lungs", "with backbone / without backbone", "with scales / without scales (dolphin first)", "with fins / without fins"], "a": 0, "e": "Dolphins have lungs; goldfish breathe with gills. Both have backbones."}, {"u": 3, "t": "3.3 Keys", "q": "A crab with two claws of DIFFERENT sizes in the mangrove key is the…", "zh": "兩隻鉗大小不同", "o": ["fiddler crab", "soldier crab", "grapsid crab", "hermit crab"], "a": 0, "e": "The fiddler crab has one big claw and one small claw."}, {"u": 3, "t": "3.4 Biodiversity", "q": "Crabs in a mangrove decrease a lot. What happens to seabirds that eat them?", "zh": "海鳥數量", "o": ["They decrease because they have less food", "They increase", "They do not change", "They turn into crabs"], "a": 0, "e": "The number of seabirds will decrease because they have less food."}, {"u": 3, "t": "3.4 Biodiversity", "q": "Living things in danger of extinction are called…", "zh": "面臨絕種", "o": ["endangered species", "foreign species", "native species", "invertebrates"], "a": 0, "e": "Examples: black rhino, eastern gorilla."}, {"u": 3, "t": "3.4 Biodiversity", "q": "Apple snails were brought to Hong Kong from South America. They are…", "zh": "福壽螺", "o": ["a foreign species", "a native species", "an endangered species", "a mammal"], "a": 0, "e": "Foreign species compete with native species for food."}, {"u": 3, "t": "3.4 Biodiversity", "q": "Which will NOT reduce biodiversity?", "zh": "哪項不會減少生物多樣性？", "o": ["Afforestation (planting trees)", "Destruction of habitats", "Introducing foreign species", "Pollution"], "a": 0, "e": "Planting trees helps living things."}, {"u": 3, "t": "3.4 Biodiversity", "q": "How does habitat destruction affect koalas?", "zh": "棲息地被破壞", "o": ["Less food and harder to find mates", "More oxygen", "More food", "Nothing changes"], "a": 0, "e": "Answer B: (1) and (2) only. Oxygen is not the problem."}, {"u": 3, "t": "3.4 Biodiversity", "q": "Killing sharks for their fins to make soup is an example of…", "zh": "魚翅", "o": ["overhunting / overexploitation", "afforestation", "conservation", "recycling"], "a": 0, "e": "Humans hunt too many animals for products."}, {"u": 3, "t": "3.4 Biodiversity", "q": "Which is a way to save sea turtles using the 4 Rs?", "zh": "4R", "o": ["Bring your own bag to reduce plastic bags", "Use more plastic bags", "Throw bags into the sea", "Buy more bottled water"], "a": 0, "e": "Reduce, reuse, recycle, replace plastics."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

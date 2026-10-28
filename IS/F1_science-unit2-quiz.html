@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Science Unit 2 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← IS</a> · <a href="F1_science-unit2-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Science Unit 2 Quiz 🧪</h1>
+  <p class="sub">Water. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">2.1–2.2 States and water cycle<small>Melting, freezing, evaporation, the water cycle</small></button><button class="big u2" data-set="2">2.3 Dissolving<small>Solute, solvent, solution, faster dissolving</small></button><button class="big u3" data-set="3">2.4 Water purification<small>Impurities, filtration, distillation</small></button><button class="big" data-set="all">Everything<small>All 28 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "2.1 States", "q": "Ice is the ______ state of water.", "zh": "冰是水的哪個狀態？", "o": ["solid", "liquid", "gas"], "a": 0, "e": "Ice is solid, water is liquid, water vapour is gas."}, {"u": 1, "t": "2.1 States", "q": "Water vapour is the ______ state of water.", "zh": "水蒸氣", "o": ["gas", "solid", "liquid"], "a": 0, "e": "Water vapour is the gas state of water."}, {"u": 1, "t": "2.1 States", "q": "Evaporation is the change from…", "zh": "蒸發", "o": ["liquid to gas", "gas to liquid", "solid to liquid", "liquid to solid"], "a": 0, "e": "Evaporation: liquid → gas."}, {"u": 1, "t": "2.1 States", "q": "Condensation is the change from…", "zh": "凝結", "o": ["gas to liquid", "liquid to gas", "solid to gas", "liquid to solid"], "a": 0, "e": "Condensation: gas → liquid, e.g. droplets on a cold window."}, {"u": 1, "t": "2.1 States", "q": "Water freezes at…", "zh": "水在幾度凝固？", "o": ["0 °C", "100 °C", "50 °C", "−100 °C"], "a": 0, "e": "Water freezes at 0 °C. It changes state from liquid to solid."}, {"u": 1, "t": "2.1 States", "q": "Ice melts at 0 °C. It changes state from…", "zh": "冰熔化", "o": ["solid to liquid", "liquid to solid", "liquid to gas", "gas to liquid"], "a": 0, "e": "Melting: solid → liquid."}, {"u": 1, "t": "2.1 States", "q": "Water boils at…", "zh": "水的沸點", "o": ["100 °C", "0 °C", "37 °C", "212 °C"], "a": 0, "e": "Water boils at 100 °C. It changes from liquid to gas."}, {"u": 1, "t": "2.2 Water cycle", "q": "In the water cycle, the Sun heats sea water and it turns into water vapour. This step is…", "zh": "水循環", "o": ["evaporation", "condensation", "raining", "transportation"], "a": 0, "e": "Evaporation is the first step."}, {"u": 1, "t": "2.2 Water cycle", "q": "Water vapour cools high in the sky and forms clouds. This step is…", "zh": "雲的形成", "o": ["condensation", "evaporation", "transportation", "freezing"], "a": 0, "e": "Condensation: water vapour becomes tiny water droplets (clouds)."}, {"u": 1, "t": "2.2 Water cycle", "q": "Rainwater flows in rivers back to the sea. This step is…", "zh": "河水流回大海", "o": ["transportation", "evaporation", "condensation", "melting"], "a": 0, "e": "Transportation brings water back to the sea."}, {"u": 1, "t": "2.2 Water cycle", "q": "To make \"rain\" in the lab with a lamp, where should the ice-cold metal dish go?", "zh": "冷的金屬碟應放在哪裏？", "o": ["On top, above the water", "At the bottom, under the water", "Next to the lamp", "Inside the lamp"], "a": 0, "e": "Water at the bottom evaporates. The cold dish on top makes the vapour condense and drip like rain."}, {"u": 2, "t": "2.3 Dissolving", "q": "In salt water, salt is the…", "zh": "鹽水中的鹽", "o": ["solute", "solvent", "solution", "residue"], "a": 0, "e": "The solute is the substance that dissolves."}, {"u": 2, "t": "2.3 Dissolving", "q": "In salt water, water is the…", "zh": "鹽水中的水", "o": ["solvent", "solute", "filtrate", "impurity"], "a": 0, "e": "The solvent is the liquid that does the dissolving."}, {"u": 2, "t": "2.3 Dissolving", "q": "In fruit punch (water, juice powder, sugar, fruit pieces), which is insoluble?", "zh": "不可溶的", "o": ["Fruit pieces", "Sugar", "Orange juice powder", "Water"], "a": 0, "e": "Fruit pieces do not dissolve in water."}, {"u": 2, "t": "2.3 Dissolving", "q": "Which of these will NOT make sugar dissolve faster?", "zh": "哪項不能加快溶解？", "o": ["Using ice-cold water", "Stirring", "Crushing the sugar", "Using hot water"], "a": 0, "e": "Cold water slows dissolving. Hot water, stirring and crushing speed it up."}, {"u": 2, "t": "2.3 Dissolving", "q": "Salt and sand are put in water. Which is insoluble?", "zh": "哪一種不可溶？", "o": ["Sand", "Salt", "Both", "Neither"], "a": 0, "e": "Sand does not dissolve. Salt does."}, {"u": 2, "t": "2.3 Dissolving", "q": "Salt water is left in a dish for a few days. White solids appear. What are they?", "zh": "白色固體是甚麼？", "o": ["Salt", "Sand", "Ice", "Sugar"], "a": 0, "e": "The water evaporated and left the salt behind."}, {"u": 2, "t": "2.3 Dissolving", "q": "1 g of salt dissolves in 9 g of water in a 50 g beaker. What is the total mass?", "zh": "總質量", "o": ["60 g", "59 g", "10 g", "50 g"], "a": 0, "e": "50 + 1 + 9 = 60 g. Mass is not lost when dissolving."}, {"u": 2, "t": "2.3 Dissolving", "q": "The beaker later weighs 55 g. What has escaped?", "zh": "少了甚麼？", "o": ["5 g of water (it evaporated)", "5 g of salt", "The beaker", "Nothing"], "a": 0, "e": "Water evaporates but salt does not. So 1 g salt and 4 g water remain."}, {"u": 3, "t": "2.4 Purification", "q": "Sand in river water is a…", "zh": "河水中的沙", "o": ["insoluble impurity", "soluble impurity", "micro-organism", "solvent"], "a": 0, "e": "Sand does not dissolve, so it is an insoluble impurity."}, {"u": 3, "t": "2.4 Purification", "q": "E. coli and Amoeba in water are…", "zh": "大腸桿菌和變形蟲", "o": ["micro-organisms", "insoluble impurities", "soluble impurities", "solutes"], "a": 0, "e": "They are tiny living things called micro-organisms."}, {"u": 3, "t": "2.4 Purification", "q": "In filtration, the clear liquid that passes through the filter paper is the…", "zh": "過濾後流下的液體", "o": ["filtrate", "residue", "solute", "condenser"], "a": 0, "e": "Filtrate passes through. Residue stays on the paper."}, {"u": 3, "t": "2.4 Purification", "q": "In filtration, the solid left on the filter paper is the…", "zh": "留在濾紙上的固體", "o": ["residue", "filtrate", "solution", "vapour"], "a": 0, "e": "The residue is the insoluble solid left behind."}, {"u": 3, "t": "2.4 Purification", "q": "In distillation, what is the use of the condenser?", "zh": "冷凝器的用途", "o": ["To cool steam so it condenses into water", "To heat the water", "To filter out sand", "To add salt"], "a": 0, "e": "The condenser cools the steam into liquid water."}, {"u": 3, "t": "2.4 Purification", "q": "Cold water flows into the condenser…", "zh": "冷水從哪裏流入冷凝器？", "o": ["in at the bottom, out at the top", "in at the top, out at the bottom", "in and out at the top", "it does not need water"], "a": 0, "e": "Bottom in, top out keeps the condenser full of cold water."}, {"u": 3, "t": "2.4 Purification", "q": "The liquid collected from distilling sea water is…", "zh": "收集到的液體", "o": ["distilled water", "sea water", "salt solution", "filtrate"], "a": 0, "e": "Distillation gives pure distilled water."}, {"u": 3, "t": "2.4 Purification", "q": "What can distillation remove that filtration cannot?", "zh": "蒸餾可除去而過濾不能的", "o": ["Soluble impurities like salt", "Sand", "Mud", "Stones"], "a": 0, "e": "Distillation can remove soluble impurities but filtration cannot. Both remove insoluble impurities."}, {"u": 3, "t": "2.4 Purification", "q": "To separate salt and sand, what is the correct order?", "zh": "分離鹽和沙的步驟", "o": ["Add water and stir → filter → evaporate the filtrate", "Filter → add water → evaporate", "Evaporate → filter → add water", "Heat the mixture → stir → filter"], "a": 0, "e": "Dissolve the salt, filter out the sand, then evaporate to get the salt."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>
