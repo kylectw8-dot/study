@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元8小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1B-unit8-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元8小測 📝</h1>
+  <p class="sub">綠色消費與可持續發展。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">綠色消費<small>可持續發展、5R</small></button><button class="big" data-set="all">全部題目<small>共 12 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "生產", "q": "生產商品可能造成哪些影響？", "zh": "impacts", "o": ["污染環境、消耗天然資源、消耗能源（以上皆是）", "只有污染", "只有消耗能源", "沒有影響"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "生產", "q": "以下哪項不是負責任生產商應採用的模式？", "zh": "responsible producer", "o": ["採用更多塑膠包裝", "考慮產品耐用程度", "使用天然或再生物料", "減少浪費"], "a": 0, "e": "答案 A：(i)(ii)。"}, {"u": 1, "t": "可持續發展", "q": "可持續發展包含哪些範疇？", "zh": "three pillars", "o": ["社會、經濟、環境", "社會、文化、環境", "經濟、文化", "只有環境"], "a": 0, "e": "答案 B：(i)(ii)(iv)。"}, {"u": 1, "t": "可持續發展", "q": "綠色消費和可持續發展有甚麼關係？", "zh": "relationship", "o": ["綠色消費是達成可持續發展的手段之一", "綠色消費忽略經濟和社會", "綠色消費令資源需求增加", "綠色消費影響經濟發展"], "a": 0, "e": "答案 A。"}, {"u": 1, "t": "可持續發展", "q": "可持續發展要顧全誰的需要？", "zh": "future generations", "o": ["下一代", "只有當代人", "只有富人", "只有政府"], "a": 0, "e": "滿足當代人，也不損害下一代。"}, {"u": 1, "t": "5R", "q": "購買二手電器屬於 5R 原則中的哪一項？", "zh": "5R", "o": ["重用 Reuse", "循環再造 Recycle", "環保選購 Re-evaluate", "保護自然 Rescue"], "a": 0, "e": "答案 C。"}, {"u": 1, "t": "5R", "q": "拒絕食用魚翅屬於哪一項？", "zh": "5R", "o": ["保護自然 Rescue", "節約 Reduce", "重用 Reuse", "循環再造 Recycle"], "a": 0, "e": "保護鯊魚等物種。"}, {"u": 1, "t": "5R", "q": "利用廢棄食用油自製肥皂屬於哪一項？", "zh": "5R", "o": ["循環再造 Recycle", "保護自然 Rescue", "節約 Reduce", "環保選購 Re-evaluate"], "a": 0, "e": "把廢物變成新產品。"}, {"u": 1, "t": "5R", "q": "自備環保袋到街市買食物屬於哪一項？", "zh": "5R", "o": ["節約 Reduce", "重用 Reuse", "循環再造 Recycle", "保護自然 Rescue"], "a": 0, "e": "減少使用膠袋。"}, {"u": 1, "t": "5R", "q": "「綠在區區」回收環保站支援減廢回收，符合哪一項？", "zh": "GREEN@COMMUNITY", "o": ["循環再造 Recycle", "環保選購 Re-evaluate", "保護自然 Rescue", "節約 Reduce"], "a": 0, "e": "題目說「環保選購」是錯的。"}, {"u": 1, "t": "5R", "q": "為減少運輸排放，消費者應考慮選購…", "zh": "local food", "o": ["本地生產的食物", "外國生產的食物", "最貴的食物", "過度包裝的食物"], "a": 0, "e": "題目說「外國生產」是錯的。"}, {"u": 1, "t": "綠色消費", "q": "因全球環境問題嚴重，社會提倡…", "zh": "consumption", "o": ["適度消費", "任意消費", "過度消費", "衝動消費"], "a": 0, "e": "題目說「任意消費」是錯的。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

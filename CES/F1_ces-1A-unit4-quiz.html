@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元4小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1A-unit4-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元4小測 📝</h1>
+  <p class="sub">友誼與朋輩。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">友誼與朋輩<small>友誼發展、朋輩壓力</small></button><button class="big" data-set="all">全部題目<small>共 11 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "友誼", "q": "以下哪項是展開友誼的方法？", "zh": "start a friendship", "o": ["主動介紹自己", "拿別人開玩笑", "不理睬新同學", "只跟舊朋友玩"], "a": 0, "e": "答案 B：參加社交活動、主動介紹自己、展現友善。"}, {"u": 1, "t": "友誼", "q": "以下哪項不是維繫友誼的元素？", "zh": "maintain friendship", "o": ["批評", "欣賞", "陪伴", "尊重"], "a": 0, "e": "答案 A：欣賞、陪伴、尊重。"}, {"u": 1, "t": "友誼", "q": "以下哪項不是友誼衰退的原因？", "zh": "decline", "o": ["真誠交流", "疏於聯絡", "自我中心", "價值觀分歧"], "a": 0, "e": "真誠交流會令友誼更好。"}, {"u": 1, "t": "友誼", "q": "友誼發展的第一個階段是？", "zh": "stages", "o": ["相識", "建立", "延續", "衰退"], "a": 0, "e": "相識 → 建立 → 延續 → 衰退 → 結束。"}, {"u": 1, "t": "友誼", "q": "友誼發展的最後一個階段是？", "zh": "stages", "o": ["結束", "延續", "建立", "相識"], "a": 0, "e": "不一定每段友誼都會走到這階段。"}, {"u": 1, "t": "友誼", "q": "友誼的發展是一個怎樣的過程？", "zh": "process", "o": ["漸進而互動的過程", "突變的過程", "永遠不變的過程", "單方面的過程"], "a": 0, "e": "題目中「突變」是錯誤的。"}, {"u": 1, "t": "友誼", "q": "從朋友間的相處可培養哪些社交技巧？", "zh": "social skills", "o": ["表達情緒、同理心、和平解決衝突、聆聽（以上皆是）", "只有表達情緒", "只有聆聽", "只有同理心"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "朋輩壓力", "q": "以下哪項描述了朋輩壓力？", "zh": "peer pressure", "o": ["為了避免被朋友排擠，而順從朋友的決定", "將心比心，讓朋友了解自己", "留意和稱讚朋友的良好行為", "先入為主，誤解朋友"], "a": 0, "e": "答案 C。"}, {"u": 1, "t": "朋輩壓力", "q": "以下哪項不是應對朋輩壓力的原則？", "zh": "principles", "o": ["共同進退", "自我肯定", "慎思明辨", "遵守法律"], "a": 0, "e": "「共同進退」可能令人盲目從眾。答案 A。"}, {"u": 1, "t": "朋輩壓力", "q": "朋友要求你做不當行為時，以下哪個做法較恰當？", "zh": "refuse", "o": ["藉故離開，再冷靜思考", "立即答應", "不敢拒絕", "跟大家一起做"], "a": 0, "e": "也可堅定拒絕或向信任的人傾訴。"}, {"u": 1, "t": "朋輩壓力", "q": "根據香港法例，刑事責任的最低年齡是？", "zh": "criminal responsibility", "o": ["十歲", "十五歲", "十八歲", "二十一歲"], "a": 0, "e": "題目中「十五歲」是錯的。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

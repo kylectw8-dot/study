@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元5小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1A-unit5-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元5小測 📝</h1>
+  <p class="sub">社會共融。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">社會共融<small>多元文化、族裔、傷健共融</small></button><button class="big" data-set="all">全部題目<small>共 12 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "共融", "q": "以下哪項不是社會多元共融的正面效益？", "zh": "benefits", "o": ["規限不同群體的發展", "發展多元文化", "吸引各地人才", "推動創新設計"], "a": 0, "e": "答案 C：(i)(ii)(iv)。"}, {"u": 1, "t": "共融", "q": "在多元共融的社會，不同背景的人能獲得…", "zh": "equal rights", "o": ["相同的權利和機會", "相異的權利", "較少的機會", "不同的法律"], "a": 0, "e": "題目「相異的權利」是錯的。"}, {"u": 1, "t": "傷健", "q": "以下哪項不是無障礙設施？", "zh": "barrier-free", "o": ["樓梯", "輪椅斜道", "凹凸紋引導徑", "升降機"], "a": 0, "e": "樓梯對輪椅使用者不方便。"}, {"u": 1, "t": "族裔", "q": "不同族裔有哪些各自的文化特徵？", "zh": "culture", "o": ["語言、飲食、宗教", "只有職業", "只有身高", "只有衣服顏色"], "a": 0, "e": "答案 A：(i)(ii)(iii)。"}, {"u": 1, "t": "族裔", "q": "哪個種族佔香港少數族裔人口比例最大？", "zh": "largest minority", "o": ["菲律賓人", "韓國人", "尼泊爾人", "日本人"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "族裔", "q": "香港約有多少人口是華人？", "zh": "population", "o": ["約九成", "約七成", "約五成", "約三成"], "a": 0, "e": "題目「約七成」是錯的。"}, {"u": 1, "t": "弱勢", "q": "以下哪個不屬於社區的弱勢群體？", "zh": "disadvantaged", "o": ["專業人士", "基層勞工", "低收入家庭", "獨居長者"], "a": 0, "e": "答案 C。"}, {"u": 1, "t": "傷健", "q": "傷健共融中，着重硬件設備和環境配合的層次是？", "zh": "attendance", "o": ["出席", "參與", "交流", "協作"], "a": 0, "e": "出席 → 參與 → 交流 → 協作。"}, {"u": 1, "t": "傷健", "q": "着重接觸和產生感情連繫的層次是？", "zh": "interaction", "o": ["交流", "出席", "參與", "協作"], "a": 0, "e": "第三層：交流。"}, {"u": 1, "t": "傷健", "q": "「傷健」是指傷殘人士與…", "zh": "able-bodied", "o": ["健全人士", "長者", "兒童", "少數族裔"], "a": 0, "e": "傷健共融 = 傷殘與健全人士共融。"}, {"u": 1, "t": "義工", "q": "義務工作者不期求甚麼回報？", "zh": "volunteer", "o": ["物質回報", "精神回報", "任何感受", "朋友"], "a": 0, "e": "義工會得到精神上的滿足，題目「精神回報」是錯的。"}, {"u": 1, "t": "共融", "q": "與不同背景的人相處時，應該…", "zh": "attitude", "o": ["尊重、包容和欣賞彼此不同之處", "只跟相同背景的人玩", "取笑別人的信仰", "要求別人改變習慣"], "a": 0, "e": "這是正確的態度。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

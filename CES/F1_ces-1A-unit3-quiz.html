@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元3小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1A-unit3-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元3小測 📝</h1>
+  <p class="sub">家庭。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">家庭<small>功能、溝通、衝突</small></button><button class="big" data-set="all">全部題目<small>共 11 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "家庭功能", "q": "以下哪些是家庭的功能？", "zh": "family functions", "o": ["保護照顧、情感支援、經濟支持、道德培養（以上皆是）", "只有經濟支持", "只有保護照顧", "只有道德培養"], "a": 0, "e": "答案 D：以上皆是。"}, {"u": 1, "t": "衝突", "q": "達成共識的正確步驟是？", "zh": "consensus steps", "o": ["描述衝突過程 → 表達想法和感受 → 說出解決方法 → 提出改變和行動", "提出行動 → 描述衝突 → 表達感受 → 說出方法", "表達感受 → 提出行動 → 描述衝突 → 說出方法", "說出方法 → 描述衝突 → 表達感受 → 提出行動"], "a": 0, "e": "答案 B。"}, {"u": 1, "t": "衝突", "q": "以下哪個不是協助解決家庭衝突的合適人選？", "zh": "third party", "o": ["網民", "社工", "朋友", "家中其他成員"], "a": 0, "e": "網民不了解情況，不適合。答案 C。"}, {"u": 1, "t": "溝通", "q": "以下哪項有關有效溝通的描述是錯誤的？", "zh": "communication", "o": ["有效溝通是讓對方順從自己的想法", "包括表達與聆聽", "有助了解彼此感受", "可解決問題和衝突"], "a": 0, "e": "溝通是互相了解，不是要人順從。"}, {"u": 1, "t": "溝通", "q": "以下哪項是理想的溝通形態？", "zh": "communication style", "o": ["一致型", "討好型", "理智型", "打岔型"], "a": 0, "e": "一致型顧及自己、他人和情境。"}, {"u": 1, "t": "責任", "q": "以下哪項不是青少年應承擔的家庭責任？", "zh": "responsibility", "o": ["成為家庭的經濟支柱", "自我照顧", "分擔家務", "關心和陪伴家人"], "a": 0, "e": "答案 A。"}, {"u": 1, "t": "非暴力溝通", "q": "非暴力溝通四要素的正確次序是？", "zh": "NVC", "o": ["觀察 → 感受 → 需要 → 請求", "感受 → 觀察 → 請求 → 需要", "請求 → 需要 → 感受 → 觀察", "需要 → 請求 → 觀察 → 感受"], "a": 0, "e": "先說事實，再說感受、需要，最後提出請求。"}, {"u": 1, "t": "非暴力溝通", "q": "「可以請你教我嗎？」屬於非暴力溝通的哪個要素？", "zh": "NVC", "o": ["請求", "觀察", "感受", "需要"], "a": 0, "e": "這是向別人提出請求。"}, {"u": 1, "t": "非暴力溝通", "q": "「我感到煩躁，也擔心測驗不及格」屬於哪個要素？", "zh": "NVC", "o": ["感受", "觀察", "需要", "請求"], "a": 0, "e": "表達自己的情緒。"}, {"u": 1, "t": "家庭功能", "q": "家庭提供生活所需及安全穩定環境，滿足了馬斯洛理論的…", "zh": "Maslow", "o": ["生理和安全需求", "自我實現需求", "尊重需求", "社交需求"], "a": 0, "e": "最基本的兩層需求。"}, {"u": 1, "t": "溝通", "q": "溝通是單向還是雙向的？", "zh": "two-way", "o": ["雙向的，包含表達與聆聽", "單向的，只要表達", "單向的，只要聆聽", "不需要表達"], "a": 0, "e": "題目「溝通是單向的」是錯的。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

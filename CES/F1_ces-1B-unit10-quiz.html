@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元10小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1B-unit10-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元10小測 📝</h1>
+  <p class="sub">香港居民的權利與義務、法治。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">香港居民<small>權利與義務</small></button><button class="big u2" data-set="2">法治<small>原則與重要性</small></button><button class="big" data-set="all">全部題目<small>共 13 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "居民", "q": "以下哪項有關香港永久性居民的描述是正確的？", "zh": "permanent resident", "o": ["可取得身份證、享有居留權，中國或非中國公民都可成為（以上皆是）", "只有中國公民可以成為", "不可取得身份證", "沒有居留權"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "居民", "q": "非中國公民通常在港居住連續多少年以上，可申請成為永久性居民？", "zh": "seven years", "o": ["七年", "三年", "五年", "十年"], "a": 0, "e": "還要以香港為永久居住地。"}, {"u": 1, "t": "居民", "q": "香港非永久性居民可享有選舉和被選舉權嗎？", "zh": "voting", "o": ["不可以，只有永久性居民可以", "可以", "只可以被選舉", "只可以選舉"], "a": 0, "e": "題目說非永久性居民可享有，是錯的。"}, {"u": 1, "t": "公約", "q": "《基本法》規定哪些國際公約繼續適用於香港？", "zh": "covenants", "o": ["《公民權利和政治權利國際公約》和《經濟、社會與文化權利的國際公約》", "《巴黎協定》", "只有《巴黎協定》", "沒有公約"], "a": 0, "e": "答案 B：(i)(iii)。"}, {"u": 1, "t": "權利", "q": "以下哪些屬於香港居民的基本權利？", "zh": "rights", "o": ["發表意見、住宅不受非法搜查、婚姻和生育自由（以上皆是）", "只有發表意見", "只有婚姻自由", "沒有權利"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "義務", "q": "以下哪項不是香港居民應履行的義務？", "zh": "duties", "o": ["生育下一代", "遵守《憲法》", "尊重他人的權利和自由", "參與社區建設"], "a": 0, "e": "生育是自由，不是義務。"}, {"u": 1, "t": "權利", "q": "大衞把獲派的公屋單位出租賺錢，這是…", "zh": "abuse", "o": ["濫用權利，屬違法", "恰當行使權利", "法律允許的", "沒有影響"], "a": 0, "e": "令真正有需要的人得不到公屋。"}, {"u": 2, "t": "法治", "q": "以下哪項不是香港的法治原則？", "zh": "rule of law", "o": ["政府權力來自行政長官", "法律面前，人人平等", "獨立的司法權", "政府權力來自法律"], "a": 0, "e": "政府權力來自法律。答案 B：(i)(iii)。"}, {"u": 2, "t": "法治", "q": "以下哪項有關法治重要性的描述是錯誤的？", "zh": "importance", "o": ["法律只適用於香港居民", "法治使商業糾紛得到公正裁決", "有助形成有序的社會風氣", "公平地保障個人權利和自由"], "a": 0, "e": "所有在港的人都要守法。答案 C。"}, {"u": 2, "t": "法治", "q": "根據法治，甚麼是社會最高的規則？", "zh": "supremacy", "o": ["法律", "金錢", "傳統", "網民意見"], "a": 0, "e": "沒有人能凌駕法律之上。"}, {"u": 2, "t": "法治", "q": "泰美斯女神蒙上雙眼代表甚麼？", "zh": "Themis", "o": ["一視同仁", "伸張公義", "裁決公平", "力量"], "a": 0, "e": "天秤代表公平，劍代表公義。"}, {"u": 2, "t": "法治", "q": "政府和公務人員的「權力」源自…", "zh": "power", "o": ["法律", "行政長官", "傳媒", "個人意願"], "a": 0, "e": "題目把「權力」寫成「權利」，是錯處。"}, {"u": 2, "t": "法治", "q": "獨立的司法權有甚麼好處？", "zh": "judicial independence", "o": ["法院可公正審判，不受干預", "法官可隨意判決", "政府可控制法院", "可以不守法"], "a": 0, "e": "保障市民得到公平審訊。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元1小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1A-unit1-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元1小測 📝</h1>
+  <p class="sub">自我概念、自尊與自信。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">自我概念、自尊與自信<small>定義、影響因素、馬斯洛</small></button><button class="big" data-set="all">全部題目<small>共 12 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "自我概念", "q": "以下哪項有關自我概念的描述是錯誤的？", "zh": "self-concept", "o": ["自我概念是別人對自己的看法", "自我概念可以是多元的", "自我概念可以是單一的", "自我概念會隨時間和經驗轉變"], "a": 0, "e": "自我概念是自己對自己的看法。"}, {"u": 1, "t": "自信", "q": "以下哪項不是充滿自信的人的特徵？", "zh": "self-confidence", "o": ["容易懷疑自己的能力", "相信自己能達成目標", "願意嘗試新挑戰", "能為自己作決定"], "a": 0, "e": "容易懷疑自己是缺乏自信。答案 C：(i)(iii)(iv)。"}, {"u": 1, "t": "影響因素", "q": "哪種家庭管教模式令子女有較高的自尊和自信？", "zh": "parenting", "o": ["父母顧及子女的感受", "父母嚴格要求子女服從", "父母不理子女的感受", "父母對子女的期望不高"], "a": 0, "e": "被尊重和關心，子女較有自信。"}, {"u": 1, "t": "影響因素", "q": "以下哪些屬於影響自我概念、自尊和自信的因素？", "zh": "factors", "o": ["對自己的評價、朋友的想法、學業成績、社會風氣（以上皆是）", "只有學業成績", "只有朋友的想法", "只有社會風氣"], "a": 0, "e": "答案 D：以上皆是。"}, {"u": 1, "t": "馬斯洛", "q": "根據「需求層次理論」，安全需求包括甚麼？", "zh": "safety needs", "o": ["生活在安全和穩定的環境", "在社交中獲得關懷", "他人的尊重和認同", "發揮潛能"], "a": 0, "e": "安全需求 = 安全穩定的環境。"}, {"u": 1, "t": "馬斯洛", "q": "需求的最高層次是甚麼？", "zh": "highest need", "o": ["自我實現需求", "生理需求", "尊重需求", "安全需求"], "a": 0, "e": "自我實現在金字塔頂。"}, {"u": 1, "t": "馬斯洛", "q": "人若要追求更高層次的需求，必須先…", "zh": "Maslow", "o": ["滿足較低層次的需求", "滿足最高層次的需求", "放棄所有需求", "只滿足尊重需求"], "a": 0, "e": "由下而上，一層一層滿足。"}, {"u": 1, "t": "馬斯洛", "q": "「在人際關係中得到關懷和歸屬感」屬於哪一種需求？", "zh": "love and belonging", "o": ["社交需求", "尊重需求", "安全需求", "生理需求"], "a": 0, "e": "尊重需求是自尊、別人的尊重和認同。"}, {"u": 1, "t": "提升方法", "q": "以下哪項不是正確提升自尊和自信的方法？", "zh": "boost self-esteem", "o": ["與他人比較個人成就", "把過失化為進步的動力", "樂觀面對問題", "與身邊的人維繫良好關係"], "a": 0, "e": "與人比較容易令人自卑。"}, {"u": 1, "t": "自尊", "q": "自尊是基於甚麼的自我價值判斷？", "zh": "self-esteem", "o": ["主觀", "客觀", "別人", "金錢"], "a": 0, "e": "即使客觀條件相同，價值觀不同也會影響自尊。"}, {"u": 1, "t": "自我概念", "q": "人從甚麼時候開始建構自我概念？", "zh": "self-concept", "o": ["童年", "成年", "老年", "退休後"], "a": 0, "e": "題目說「從成年開始」是錯的。"}, {"u": 1, "t": "自尊", "q": "自尊較低的人可能會…", "zh": "low self-esteem", "o": ["逃避挑戰，錯失良機", "勇於嘗試", "樂觀面對困難", "主動結交朋友"], "a": 0, "e": "自尊「較高」的人較敢面對挑戰。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

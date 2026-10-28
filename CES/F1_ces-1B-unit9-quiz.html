@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元9小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1B-unit9-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元9小測 📝</h1>
+  <p class="sub">中國公民的權利與義務。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">中國公民<small>憲法、權利、義務、基本法</small></button><button class="big" data-set="all">全部題目<small>共 13 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "公民", "q": "以下哪項有關公民的描述是錯誤的？", "zh": "citizen", "o": ["公民享有權利，但無需承擔義務", "公民具有屬於該國的法律身份", "公民受憲法和法律保護", "公民在法律面前平等"], "a": 0, "e": "權利和義務並存。答案 A。"}, {"u": 1, "t": "憲法", "q": "以下哪項不屬於《憲法》包含的內容？", "zh": "Constitution", "o": ["《刑法》法律條文", "公民的基本權利和義務", "國旗、國歌、國徽、首都", "國家機構"], "a": 0, "e": "答案 C。"}, {"u": 1, "t": "憲法", "q": "《憲法》共分為多少章？", "zh": "chapters", "o": ["四章", "五章", "三章", "十章"], "a": 0, "e": "題目說「五章」是錯的。"}, {"u": 1, "t": "權利", "q": "以下哪些是中國公民的基本權利？", "zh": "basic rights", "o": ["選舉權、受教育權、通信秘密（以上皆是）", "只有選舉權", "只有受教育", "只有通信秘密"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "權利", "q": "「婦女在各方面享有與男子相同的權利」屬於哪類權利？", "zh": "equality", "o": ["平等權利", "人身權利", "政治權利", "社會經濟權利"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "權利", "q": "「參與示威遊行」屬於哪類權利？", "zh": "political", "o": ["政治權利", "人身權利", "宗教信仰權利", "文化教育權利"], "a": 0, "e": "集會、遊行、示威的自由是政治權利。"}, {"u": 1, "t": "權利", "q": "「拜祖先」屬於哪類權利？", "zh": "religion", "o": ["宗教信仰權利", "政治權利", "平等權利", "社會經濟權利"], "a": 0, "e": "信仰和祭祀活動。"}, {"u": 1, "t": "權利", "q": "「從事不同的行業」屬於哪類權利？", "zh": "socio-economic", "o": ["社會經濟權利", "政治權利", "宗教信仰權利", "平等權利"], "a": 0, "e": "勞動和工作的權利。"}, {"u": 1, "t": "權利", "q": "「和朋友進行視像通話」屬於哪類權利？", "zh": "communication", "o": ["人身權利（通信自由）", "政治權利", "平等權利", "宗教信仰權利"], "a": 0, "e": "通信自由和通信秘密受保護。"}, {"u": 1, "t": "義務", "q": "以下哪項不是中國公民的義務？", "zh": "duties", "o": ["報考公務員", "參加民兵組織", "保守國家秘密", "維護國家安全"], "a": 0, "e": "答案 B：(i)(iii)。"}, {"u": 1, "t": "基本法", "q": "以下哪項有關《基本法》的描述是錯誤的？", "zh": "Basic Law", "o": ["《基本法》在香港擁有最高的法律地位", "《基本法》規定特區實行有別於內地的制度", "《基本法》確保「一國兩制」的實踐", "《基本法》根據《憲法》第三十一條制定"], "a": 0, "e": "《憲法》和《基本法》共同構成香港的憲制基礎。"}, {"u": 1, "t": "基本法", "q": "特別行政區內實行的制度由誰以法律規定？", "zh": "NPC", "o": ["全國人民代表大會", "國務院", "香港市民", "聯合國"], "a": 0, "e": "題目說「國務院」是錯的。"}, {"u": 1, "t": "基本法", "q": "哪份文件以法律形式訂明香港實行「一國兩制」？", "zh": "One Country Two Systems", "o": ["《基本法》", "《刑法》", "《版權條例》", "《兒童權利公約》"], "a": 0, "e": "題目說《憲法》是錯的。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

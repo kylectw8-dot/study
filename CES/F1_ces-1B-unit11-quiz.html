@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元11小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1B-unit11-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元11小測 📝</h1>
+  <p class="sub">國際協議與人權。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">國際協議與人權<small>兒童權利、反歧視公約</small></button><button class="big" data-set="all">全部題目<small>共 14 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "國際協議", "q": "以下哪項有關香港落實國際協議的描述是錯誤的？", "zh": "implementation", "o": ["國際協議可直接適用於香港，不需國家確認", "規定載於《基本法》第一百五十三條", "國家徵詢特區政府意見後決定", "《兒童權利公約》在港落實"], "a": 0, "e": "答案 B。"}, {"u": 1, "t": "兒童權利", "q": "以下哪項不是《兒童權利公約》列明兒童應享有的權利？", "zh": "CRC", "o": ["勞動權", "發展權", "受保護權", "生存權"], "a": 0, "e": "答案 B：(i)(iii)(iv)。"}, {"u": 1, "t": "兒童權利", "q": "《兒童權利公約》界定幾歲以下屬於兒童？", "zh": "age", "o": ["18 歲", "15 歲", "12 歲", "21 歲"], "a": 0, "e": "題目說「15 歲」是錯的。"}, {"u": 1, "t": "兒童權利", "q": "「有充足食物、基本醫療服務」屬於哪項權利？", "zh": "survival", "o": ["生存權", "發展權", "參與權", "受保護權"], "a": 0, "e": "維持生命的基本需要。"}, {"u": 1, "t": "兒童權利", "q": "「免受忽視或虐待，不被迫從事危險工作」屬於哪項權利？", "zh": "protection", "o": ["受保護權", "生存權", "發展權", "參與權"], "a": 0, "e": "題目說「生存權」是錯的。"}, {"u": 1, "t": "兒童權利", "q": "黃婆婆 13 歲被父母安排退學工作，被剝奪了哪項權利？", "zh": "development", "o": ["發展權", "參與權", "生存權", "宗教權"], "a": 0, "e": "受教育屬於發展權。"}, {"u": 1, "t": "兒童權利", "q": "香港如何推動兒童權利工作？", "zh": "HK measures", "o": ["資助社福機構、制定保護兒童法例、兒童事務委員會（以上皆是）", "只資助機構", "只立法", "沒有措施"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "反歧視", "q": "《殘疾人權利公約》主要提倡哪些價值觀？", "zh": "CRPD", "o": ["傷健共融和消除歧視", "尊重文化差異", "只有男女平等", "只有種族和諧"], "a": 0, "e": "答案 A：(i)(ii)。"}, {"u": 1, "t": "反歧視", "q": "哪個機構負責執行四條反歧視條例？", "zh": "EOC", "o": ["平等機會委員會", "社會福利署", "康復諮詢委員會", "少數族裔事務督導委員會"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "反歧視", "q": "「法庭傳譯服務」主要照顧哪個群體？", "zh": "interpretation", "o": ["少數族裔", "婦女", "殘疾人士", "長者"], "a": 0, "e": "幫助不懂中英文的人。"}, {"u": 1, "t": "反歧視", "q": "「育嬰室」和「哺乳間」主要照顧哪個群體？", "zh": "women", "o": ["婦女", "少數族裔", "殘疾人士", "兒童"], "a": 0, "e": "符合《消除對婦女一切形式歧視公約》。"}, {"u": 1, "t": "反歧視", "q": "「復康巴士」主要照顧哪個群體？", "zh": "disability", "o": ["殘疾人士", "婦女", "少數族裔", "學生"], "a": 0, "e": "方便行動不便人士出行。"}, {"u": 1, "t": "反歧視", "q": "《消除對婦女一切形式歧視公約》致力推動…", "zh": "gender", "o": ["男女平等", "男女公義", "只照顧男性", "種族和諧"], "a": 0, "e": "題目說「男女公義」是錯處。"}, {"u": 1, "t": "國際協議", "q": "香港作為締約方，須定期向誰提交報告？", "zh": "report", "o": ["聯合國相關委員會", "國際法院", "世界銀行", "奧委會"], "a": 0, "e": "題目說「國際法院」是錯的。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

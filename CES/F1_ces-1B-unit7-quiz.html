@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元7小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1B-unit7-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元7小測 📝</h1>
+  <p class="sub">網上消費。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">網上消費<small>網購與實體、陷阱、安全</small></button><button class="big" data-set="all">全部題目<small>共 10 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "網購", "q": "網購收到貨品後，我們應該怎樣做？", "zh": "after delivery", "o": ["檢查商品", "輸入送貨地址", "以信用卡結帳", "把商品加到購物車"], "a": 0, "e": "其他步驟在收貨前做。"}, {"u": 1, "t": "網購", "q": "以下哪項是實體購物的特點？", "zh": "in-store", "o": ["有營業時間限制", "可隨時隨地購物", "可輕易了解其他顧客評價", "付款後等待送貨"], "a": 0, "e": "其他是網購的特點。"}, {"u": 1, "t": "網購", "q": "以下哪項是網購潛在的陷阱？", "zh": "pitfalls", "o": ["貨不對辦、資料外洩、盜版商品（以上皆是）", "只有貨不對辦", "只有盜版商品", "沒有陷阱"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "安全", "q": "以下哪項不是安全的網上消費方式？", "zh": "safe shopping", "o": ["使用公共電腦網購", "光顧「https」開頭的網頁", "購物後登出", "衡量財力選購"], "a": 0, "e": "公共電腦可能被盜取資料。"}, {"u": 1, "t": "安全", "q": "忽略網絡安全可能帶來甚麼後果？", "zh": "cybersecurity", "o": ["危害社會運作、騙案增加、不當資訊傳播、市民損失（以上皆是）", "只有騙案增加", "沒有後果", "網速變快"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "安全", "q": "為免個人資料外洩，應加強電腦的甚麼功能？", "zh": "security", "o": ["保安", "遊戲", "相機", "音效"], "a": 0, "e": "例如安裝防毒軟件、使用強密碼。"}, {"u": 1, "t": "安全", "q": "提交個人資料前，應先查閱網店的甚麼？", "zh": "privacy policy", "o": ["私隱政策", "開店時間", "老闆相片", "顏色"], "a": 0, "e": "了解資料的收集用途。"}, {"u": 1, "t": "網購", "q": "網購前應先審視商品是…", "zh": "needs", "o": ["「需要」而非「想要」", "最貴的", "最新款", "朋友也有"], "a": 0, "e": "避免過度消費。"}, {"u": 1, "t": "騙案", "q": "網上騙徒常假扮甚麼身份，以優惠價吸引消費者？", "zh": "scammer", "o": ["賣家", "買家", "警察", "郵差"], "a": 0, "e": "題目說「假扮買家」是錯的。"}, {"u": 1, "t": "網購", "q": "希望容易比較價格和顧客評價，應選擇…", "zh": "compare", "o": ["網上購物", "實體購物", "郵購", "不買"], "a": 0, "e": "題目說「實體購物」是錯的。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

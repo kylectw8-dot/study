@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元2小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1A-unit2-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元2小測 📝</h1>
+  <p class="sub">生活技能。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">情緒與壓力<small>ABC 理論、壓力、時間管理</small></button><button class="big u2" data-set="2">媒體與生涯<small>資訊素養、法例、生涯規劃</small></button><button class="big" data-set="all">全部題目<small>共 16 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "生活技能", "q": "以下哪項有關生活技能的描述是錯誤的？", "zh": "life skills", "o": ["人只需在發展階段初期學習生活技能", "生活技能有助應對生活各範疇", "有助建立健康生活方式", "可提升抗逆力"], "a": 0, "e": "生活技能要不斷學習。答案 C。"}, {"u": 1, "t": "ABC理論", "q": "在艾里斯「ABC 理論」中，C 代表甚麼？", "zh": "consequence", "o": ["想法引起的情緒及行為的結果", "誘發情緒的事件", "遇到事件後產生的想法", "他人對自己情緒的評價"], "a": 0, "e": "A 事件、B 想法、C 結果。"}, {"u": 1, "t": "ABC理論", "q": "在「ABC 理論」中，A 是指…", "zh": "activating event", "o": ["誘發事件", "誘發的想法", "情緒結果", "行為"], "a": 0, "e": "B 才是想法。"}, {"u": 1, "t": "ABC理論", "q": "為甚麼人遇到相同事件，會有不同情緒反應？", "zh": "belief", "o": ["因為對事件的想法不同", "因為事件不同", "因為天氣不同", "因為年齡相同"], "a": 0, "e": "想法（B）決定情緒（C）。"}, {"u": 1, "t": "情緒", "q": "以下哪項有關情緒的描述是正確的？", "zh": "emotion", "o": ["每種情緒都有提醒當下狀況和需要的功能", "情緒只有喜怒哀樂四種", "負面情緒是不好的", "情緒不會波動"], "a": 0, "e": "答案 A：(i)(ii) 是錯誤的。"}, {"u": 1, "t": "情緒", "q": "青少年踏入青春期，受甚麼分泌影響，情緒較易波動？", "zh": "hormones", "o": ["荷爾蒙", "唾液", "汗水", "胃酸"], "a": 0, "e": "荷爾蒙變化令情緒起伏。"}, {"u": 1, "t": "壓力", "q": "哪種健康習慣能刺激大腦釋放令人快樂的荷爾蒙？", "zh": "exercise", "o": ["運動", "熬夜", "暴飲暴食", "長時間打機"], "a": 0, "e": "運動有助放鬆心情、紓緩壓力。"}, {"u": 1, "t": "時間管理", "q": "「為一星期後的測驗温習」屬於哪一類？", "zh": "priority", "o": ["重要又緊急", "重要但不緊急", "不重要但緊急", "不重要不緊急"], "a": 0, "e": "測驗重要，而且快到了。"}, {"u": 1, "t": "時間管理", "q": "「約朋友到主題樂園遊玩」屬於哪一類？", "zh": "priority", "o": ["不重要不緊急", "重要又緊急", "重要但不緊急", "不重要但緊急"], "a": 0, "e": "可以之後再安排。"}, {"u": 2, "t": "媒體", "q": "以下哪項是雙向傳播媒體的特徵？", "zh": "two-way media", "o": ["受眾同時是資訊接收者和發布者", "人們被動接收報章資訊", "只有政府可發布資訊", "不能留言"], "a": 0, "e": "答案 B：(i) 和 (iii)。"}, {"u": 2, "t": "媒體", "q": "以下哪項不是內容農場散播虛假資訊的方式？", "zh": "content farm", "o": ["採訪名人後撰寫人物專訪", "編寫誇大的標題", "抄襲社交媒體帖文", "改寫新聞報道"], "a": 0, "e": "正式採訪不是內容農場的做法。"}, {"u": 2, "t": "法例", "q": "未經版權持有人同意，在網上分享其作品，可能觸犯…", "zh": "copyright", "o": ["《版權條例》", "《刑事罪行條例》", "《網絡安全法》", "《私隱條例》"], "a": 0, "e": "版權作品受《版權條例》保護。"}, {"u": 2, "t": "法例", "q": "未經同意披露他人個人資料（「起底」），可能觸犯…", "zh": "doxxing", "o": ["《個人資料（私隱）條例》", "《版權條例》", "《基本法》", "《教育條例》"], "a": 0, "e": "2021 年修訂後，「起底」屬刑事罪行。"}, {"u": 2, "t": "媒體", "q": "在網上對他人作出冒犯或騷擾行為稱為…", "zh": "cyberbullying", "o": ["網絡欺凌", "網絡公審", "內容農場", "雙向傳播"], "a": 0, "e": "網絡公審是把事件放上網讓網民評論。"}, {"u": 2, "t": "生涯規劃", "q": "以下哪項是制定人生目標的正確方式？", "zh": "goal setting", "o": ["把目標分拆為短期、中期和長期，並定期檢視", "只訂一個長遠目標，不用檢視", "跟朋友訂一樣的目標", "不用列出行動"], "a": 0, "e": "答案 D：以上皆是。"}, {"u": 2, "t": "生涯規劃", "q": "霍爾蘭「職業選擇理論」指職業選擇與甚麼有密切關係？", "zh": "Holland", "o": ["性格", "身高", "星座", "家住哪區"], "a": 0, "e": "職業分六大類型，配合性格。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

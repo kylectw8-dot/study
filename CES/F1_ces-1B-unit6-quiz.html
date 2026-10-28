@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公民、經濟與社會 單元6小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1B-unit6-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元6小測 📝</h1>
+  <p class="sub">理財與精明消費。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">理財與精明消費<small>用途、儲蓄、借貸、投資</small></button><button class="big" data-set="all">全部題目<small>共 14 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "需要與想要", "q": "以下哪項屬於「想要」的消費項目？", "zh": "wants", "o": ["玩具", "醫療", "電力", "房屋"], "a": 0, "e": "其他三項是維持基本生活的「需要」。"}, {"u": 1, "t": "需要與想要", "q": "「需要」是指…", "zh": "needs", "o": ["維持基本生活的必需品", "可有可無的物品", "最新款的電子產品", "名牌衣服"], "a": 0, "e": "題目說「想要」是必需品，是錯的。"}, {"u": 1, "t": "預算", "q": "以下哪項不是制定收支預算應遵守的原則？", "zh": "budget", "o": ["支出大於收入時，設法增加收入以滿足消費", "列出「需要」和「想要」", "按重要性排列，必要時取捨", "量入為出"], "a": 0, "e": "應該減少開支，而不是增加收入去消費。答案 B。"}, {"u": 1, "t": "儲蓄", "q": "以下哪項對「儲蓄存款」的描述是正確的？", "zh": "savings deposit", "o": ["資金可隨時提取", "不可賺取利息", "利率較定期存款高", "只可在固定期限後提取"], "a": 0, "e": "答案 C。"}, {"u": 1, "t": "銀行", "q": "銀行提供哪些理財服務？", "zh": "bank services", "o": ["存款、保險、投資、貸款（以上皆是）", "只有存款", "只有貸款", "只有保險"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "利息", "q": "以下哪項有關借貸利息的描述是錯誤的？", "zh": "interest", "o": ["複利息只就本金收取利息", "單利息只就本金收取利息", "複利息同時向本金和利息收取利息", "複利息遠高於單利息"], "a": 0, "e": "複利息是「利疊利」。答案 B。"}, {"u": 1, "t": "破產", "q": "以下哪項不是破產的後果？", "zh": "bankruptcy", "o": ["不能乘搭計程車", "難以申請貸款", "不能海外旅遊", "財產被變賣"], "a": 0, "e": "答案 D。"}, {"u": 1, "t": "儲蓄", "q": "我們從小應養成甚麼習慣？", "zh": "habit", "o": ["儲蓄", "借貸", "過度消費", "用信用卡"], "a": 0, "e": "題目說「借貸」的習慣是錯的。"}, {"u": 1, "t": "借貸", "q": "信用卡未能還清款項，年利率一般比私人借貸…", "zh": "credit card", "o": ["較高", "較低", "相同", "是零"], "a": 0, "e": "信用卡利息很高，要準時還款。"}, {"u": 1, "t": "投資", "q": "購買公司的股票後，投資者成為公司的…", "zh": "shareholder", "o": ["股東", "老闆", "員工", "顧客"], "a": 0, "e": "題目說「老闆」是錯的。"}, {"u": 1, "t": "投資", "q": "以下哪項有關投資的描述正確？", "zh": "risk", "o": ["高回報通常伴隨高風險", "只有低風險高回報的投資", "投資一定賺錢", "投資沒有風險"], "a": 0, "e": "投資可能蒙受損失。"}, {"u": 1, "t": "金錢用途", "q": "「把利是錢存入銀行戶口」屬於金錢的哪個用途？", "zh": "use of money", "o": ["儲蓄", "消費", "投資", "捐贈"], "a": 0, "e": "存起來就是儲蓄。"}, {"u": 1, "t": "金錢用途", "q": "「購買政府綠色債券」屬於…", "zh": "use of money", "o": ["投資", "儲蓄", "捐贈", "消費"], "a": 0, "e": "債券是投資工具。"}, {"u": 1, "t": "預算", "q": "志文弟弟收入 $2,000，支出共 $4,620。三月結餘是多少？", "zh": "balance", "o": ["−$2,620", "$2,620", "$0", "$6,620"], "a": 0, "e": "支出大於收入，入不敷支。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>
