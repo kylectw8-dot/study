@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Geography 1A Unit 4 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Geography</a> · <a href="F1_geog-1A-unit4-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Geography 1A Unit 4 Quiz 🌏</h1>
+  <p class="sub">Urban Problems. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">4.1 Urban problems<small>Traffic, pollution, housing</small></button><button class="big u2" data-set="2">4.2 Urban decay<small>Old urban areas</small></button><button class="big" data-set="all">Everything<small>All 21 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "4.1 Traffic", "q": "Traffic congestion is serious at traffic ______ such as the Cross-Harbour Tunnel entrances.", "zh": "交通擠塞", "o": ["bottlenecks", "parks", "landfills", "villages"], "a": 0, "e": "A bottleneck is where many roads squeeze into a narrow space."}, {"u": 1, "t": "4.1 Traffic", "q": "Traffic congestion is most common during…", "zh": "擠塞時間", "o": ["peak hours of commuting", "midnight", "public holidays only", "typhoons only"], "a": 0, "e": "Peak hours = when people go to and from work and school."}, {"u": 1, "t": "4.1 Pollution", "q": "Billboards and neon signs mainly cause…", "zh": "廣告牌", "o": ["light pollution", "water pollution", "land pollution", "air pollution"], "a": 0, "e": "Bright lights at night are light pollution."}, {"u": 1, "t": "4.1 Pollution", "q": "Power plants mainly cause…", "zh": "發電廠", "o": ["air pollution", "light pollution", "noise only", "water only"], "a": 0, "e": "Burning fuel releases air pollutants."}, {"u": 1, "t": "4.1 Pollution", "q": "Domestic sewage mainly causes…", "zh": "生活污水", "o": ["water pollution", "light pollution", "air pollution", "land pollution"], "a": 0, "e": "Domestic sewage is the largest source of water pollution in HK."}, {"u": 1, "t": "4.1 Pollution", "q": "Road maintenance mainly causes…", "zh": "道路維修", "o": ["noise pollution", "water pollution", "light pollution", "land pollution"], "a": 0, "e": "Drilling and machines are noisy."}, {"u": 1, "t": "4.1 Pollution", "q": "Solid waste mainly causes…", "zh": "固體廢物", "o": ["land pollution", "light pollution", "noise pollution", "air only"], "a": 0, "e": "Rubbish pollutes the land."}, {"u": 1, "t": "4.1 Pollution", "q": "True or false: Industrial and commercial activities are the largest source of water pollution in HK.", "zh": "對或錯", "o": ["False", "True"], "a": 0, "e": "False. Domestic sewage is the largest source."}, {"u": 1, "t": "4.1 Pollution", "q": "True or false: Light pollution does not affect human health.", "zh": "對或錯", "o": ["False", "True"], "a": 0, "e": "False. Bright lights at night can disturb sleep."}, {"u": 1, "t": "4.1 Pollution", "q": "True or false: Noise pollution is serious in central business districts.", "zh": "對或錯", "o": ["True", "False"], "a": 0, "e": "True. Heavy traffic and crowds are noisy."}, {"u": 1, "t": "4.1 Pollution", "q": "Solid waste in Hong Kong is mainly disposed of at…", "zh": "固體廢物處理", "o": ["landfills", "the CBD", "parks", "reservoirs"], "a": 0, "e": "Hong Kong has three landfills in the New Territories."}, {"u": 1, "t": "4.1 Pollution", "q": "Which is NOT a characteristic of Hong Kong’s landfills?", "zh": "堆填區", "o": ["Located at urban centres", "Soon to be full", "Space-consuming"], "a": 0, "e": "Landfills are in the New Territories, away from urban centres."}, {"u": 1, "t": "4.1 Housing", "q": "A long waiting time for public housing shows…", "zh": "輪候公屋時間長", "o": ["housing shortage", "too many empty flats", "low rents", "urban decay only"], "a": 0, "e": "There are not enough flats for people who need them."}, {"u": 1, "t": "4.1 Housing", "q": "Which are characteristics of subdivided flats?", "zh": "劏房的特徵", "o": ["Small living space and lack of maintenance", "Large living space", "Highest rents and large space", "Brand new buildings"], "a": 0, "e": "Answer C: (2) and (3) only."}, {"u": 2, "t": "4.2 Urban decay", "q": "Old urban areas are areas of a city that were developed…", "zh": "舊市區", "o": ["the earliest", "most recently", "never", "only for factories"], "a": 0, "e": "They are the oldest built-up areas."}, {"u": 2, "t": "4.2 Urban decay", "q": "In Hong Kong, old urban areas are mainly on both sides of…", "zh": "兩岸", "o": ["Victoria Harbour", "Tolo Harbour", "Shing Mun River", "Deep Bay"], "a": 0, "e": "E.g. Sheung Wan, Sai Ying Pun, Mong Kok, Sham Shui Po."}, {"u": 2, "t": "4.2 Urban decay", "q": "Which is NOT an old urban area?", "zh": "哪個不是舊市區？", "o": ["Ma On Shan", "Sai Ying Pun", "Tai Kok Tsui", "To Kwa Wan"], "a": 0, "e": "Ma On Shan is a new town."}, {"u": 2, "t": "4.2 Urban decay", "q": "The worsening of urban environments is called…", "zh": "市區環境變差", "o": ["urban decay", "urban renewal", "afforestation", "sedimentation"], "a": 0, "e": "Urban decay is common in old urban areas."}, {"u": 2, "t": "4.2 Urban decay", "q": "Two incompatible land uses too close to each other cause…", "zh": "兩種不協調的土地用途", "o": ["land use conflict", "light pollution only", "housing shortage", "sedimentation"], "a": 0, "e": "E.g. a noisy workshop under homes."}, {"u": 2, "t": "4.2 Urban decay", "q": "Which is NOT a characteristic of urban decay?", "zh": "哪項不是市區老化的特徵？", "o": ["Low building density", "Old and worn-out buildings", "Facilities in poor condition", "Serious land use conflicts"], "a": 0, "e": "Old urban areas have HIGH building density."}, {"u": 2, "t": "4.2 Urban decay", "q": "An old tenement building in an old urban area is…", "zh": "舊唐樓", "o": ["common there and often lacks maintenance", "a pleasant place to live", "brand new", "in a country park"], "a": 0, "e": "Answer A: (1) and (2) only."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Land Use Quiz (Units 1 & 2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EEF3F6; --paper:#FFFFFF; --ink:#1E2A38; --soft:#4F5D6C; --line:#C9D5DE;
+  --good:#E3F4E7; --goodline:#3F9A55; --bad:#FDE8E4; --badline:#D0533C; --pick:#2F80ED;
+  --tip:#FFF6CC; --tipline:#E3C84A;
+  --u1:#2F80ED; --u2:#F2994A;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#141B22; --paper:#1D2630; --ink:#E8EEF3; --soft:#A9B6C2; --line:#33414F;
+    --good:#1C3324; --goodline:#4FB067; --bad:#3A1F1A; --badline:#E0705A; --pick:#5C9DF2;
+    --tip:#3A3418; --tipline:#B89B2A;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#141B22; --paper:#1D2630; --ink:#E8EEF3; --soft:#A9B6C2; --line:#33414F;
+  --good:#1C3324; --goodline:#4FB067; --bad:#3A1F1A; --badline:#E0705A; --pick:#5C9DF2;
+  --tip:#3A3418; --tipline:#B89B2A;
+}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Lexend","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:19px;line-height:1.6}
+.wrap{max-width:720px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.8rem;line-height:1.2;margin:10px 0 6px}
+.sub{color:var(--soft);margin:0 0 20px}
+.card{background:var(--paper);border:2px solid var(--line);border-radius:14px;padding:22px}
+.hidden{display:none !important}
+.choose{display:grid;gap:12px;margin:16px 0}
+.big{font:inherit;font-weight:700;font-size:1.05rem;text-align:left;width:100%;
+  padding:16px 18px;border-radius:12px;border:3px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.big:hover{border-color:var(--ink)}
+.big:focus-visible,.btn:focus-visible{outline:3px solid var(--pick);outline-offset:3px}
+.big small{display:block;font-weight:400;color:var(--soft);font-size:.9rem}
+.u1{border-left:12px solid var(--u1)}.u2{border-left:12px solid var(--u2)}
+.toggle{display:flex;align-items:center;gap:10px;margin:8px 0;font-size:.95rem}
+.toggle input{width:22px;height:22px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;font-weight:600;font-size:.95rem}
+.bar{height:14px;background:var(--line);border-radius:999px;overflow:hidden;margin-bottom:18px}
+.bar span{display:block;height:100%;background:var(--goodline);width:0;transition:width .3s}
+.tag{display:inline-block;font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:6px;background:var(--bg);border:2px solid var(--line)}
+.qtext{font-size:1.3rem;font-weight:700;line-height:1.4;margin:12px 0 4px}
+.zh{font-family:"Noto Sans TC",sans-serif;color:var(--soft);font-size:.95rem;margin:0 0 14px}
+.opts{display:grid;gap:12px;margin-top:16px}
+.opt{font:inherit;font-size:1.05rem;text-align:left;padding:14px 16px;border-radius:12px;
+  border:3px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;display:flex;gap:12px;align-items:center}
+.opt .l{flex:none;width:34px;height:34px;border-radius:8px;background:var(--bg);display:grid;place-items:center;font-weight:700}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt:focus-visible{outline:3px solid var(--pick);outline-offset:3px}
+.opt:disabled{cursor:default}
+.opt.right{background:var(--good);border-color:var(--goodline)}
+.opt.wrong{background:var(--bad);border-color:var(--badline)}
+.opt.dim{opacity:.55}
+.fb{margin-top:16px;padding:14px 16px;border-radius:12px;font-size:1rem}
+.fb.ok{background:var(--good);border:2px solid var(--goodline)}
+.fb.no{background:var(--bad);border:2px solid var(--badline)}
+.fb b{display:block;font-size:1.1rem;margin-bottom:4px}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{font:inherit;font-weight:700;font-size:1rem;padding:12px 20px;border-radius:10px;border:3px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer}
+.btn.alt{background:var(--paper);color:var(--ink)}
+.btn.speak{padding:8px 14px;font-size:.9rem}
+.score{font-size:3rem;font-weight:700;margin:6px 0}
+.stars{font-size:2.2rem;letter-spacing:6px}
+.tip{background:var(--tip);border:2px dashed var(--tipline);border-radius:10px;padding:10px 14px;margin:14px 0}
+.result-list{margin:14px 0 0;padding-left:22px}
+.result-list li{margin:8px 0}
+@media (max-width:520px){body{font-size:18px}.qtext{font-size:1.15rem}.card{padding:18px 14px}}
+@media (prefers-reduced-motion:reduce){.bar span{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- START -->
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Geography</a> · <a href="F1_geog-1A-unit1-2-study-guide.html" style="color:inherit">📘 Study notes</a></p>
+  <h1>Land Use Quiz 🗺️</h1>
+  <p class="sub">Units 1 and 2. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose">
+      <button class="big u1" data-set="1">Unit 1: Urban land uses<small>Urban areas, 7 land uses, where they are</small></button>
+      <button class="big u2" data-set="2">Unit 2: Residential and industrial<small>Homes, factories, near or far</small></button>
+      <button class="big" data-set="all">Everything (Units 1 + 2)<small>All questions</small></button>
+    </div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic">1.1 Urban areas</span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+
+<!-- END -->
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+
+</div>
+<script>
+const Q = [
+ // ---------- UNIT 1 ----------
+ {u:1,t:"1.1 Urban areas",q:"Urban areas are also called ______ areas.",zh:"市區又稱為 ______ 地區。",o:["built-up","rural","green","empty"],a:0,e:"Urban areas are places that have been developed. They are also called built-up areas (已建設地區)."},
+ {u:1,t:"1.1 Urban areas",q:"Urban areas on Hong Kong Island are mainly in the ______ part.",zh:"香港島的市區主要在哪一部分？",o:["northern","southern","eastern","western"],a:0,e:"The northern part of Hong Kong Island, Kowloon and the new towns are urban."},
+ {u:1,t:"1.1 Urban areas",q:"Rural areas are found all over the New Territories and the ______.",zh:"郊區 (rural areas)",o:["outlying islands","city centre","Kowloon","new towns"],a:0,e:"Rural areas are in the New Territories and the outlying islands (離島)."},
+ {u:1,t:"1.1 Urban areas",q:"Which one IS a feature of urban areas?",zh:"市區的特徵",o:["Tall and dense buildings","Low population density","Lack of road networks","Very few shops"],a:0,e:"Urban areas have tall, dense buildings, high population density, busy business and good roads."},
+ {u:1,t:"1.1 Urban areas",q:"Which one is NOT a feature of urban areas?",zh:"哪一項「不是」市區的特徵？",o:["Low population density","Intense business activities","Enough community facilities","Tall and dense buildings"],a:0,e:"Urban areas have HIGH population density, not low."},
+ {u:1,t:"1.2 Land use",q:"Land use is…",zh:"土地用途是…",o:["the way we use a piece of land","the size of a piece of land","the price of land","the height of buildings"],a:0,e:"Land use (土地用途) = the way we use a piece of land."},
+ {u:1,t:"1.2 Land use",q:"A hospital is an example of ______ land use.",zh:"醫院",o:["institutional","commercial","recreational","industrial"],a:0,e:"Hospitals, schools and government offices are institutional land use."},
+ {u:1,t:"1.2 Land use",q:"An airport is an example of ______ land use.",zh:"機場",o:["transport","institutional","commercial","recreational"],a:0,e:"Airports, roads, railways and ports are transport land use."},
+ {u:1,t:"1.2 Land use",q:"A park is an example of ______ land use.",zh:"公園",o:["recreational","residential","transport","institutional"],a:0,e:"Places to relax and play are recreational land use."},
+ {u:1,t:"1.2 Land use",q:"A factory is an example of ______ land use.",zh:"工廠",o:["industrial","commercial","institutional","residential"],a:0,e:"Places where things are made are industrial land use."},
+ {u:1,t:"1.2 Land use",q:"A shopping centre is an example of ______ land use.",zh:"商場",o:["commercial","industrial","recreational","transport"],a:0,e:"Buying, selling and business = commercial land use."},
+ {u:1,t:"1.2 Land use",q:"A building has shops on the lower floors and flats on the upper floors. What land use is this?",zh:"樓下是商店，樓上是住宅",o:["Mixed land use","Industrial land use","Transport land use","Recreational land use"],a:0,e:"One building with more than one use = mixed (commercial–residential) land use."},
+ {u:1,t:"1.2 Land use",q:"Mixed land use is common in…",zh:"商住混合用途常見於…",o:["old urban areas","new towns","country parks","outlying islands"],a:0,e:"Mixed land use is common in old urban areas like Mong Kok and Sham Shui Po."},
+ {u:1,t:"1.3 Where are they?",q:"Which is the LARGEST type of urban land use in Hong Kong?",zh:"最大的市區土地用途",o:["Residential","Commercial","Industrial","Institutional"],a:0,e:"Residential land use is the largest. It is widely distributed (found all over Hong Kong)."},
+ {u:1,t:"1.3 Where are they?",q:"Commercial land use is mainly found in…",zh:"商業用地主要位於…",o:["the city centre","the outlying islands","country parks","the urban fringe"],a:0,e:"Commercial land is packed into the city centre: Central, Admiralty, Wan Chai, Tsim Sha Tsui."},
+ {u:1,t:"1.3 Where are they?",q:"Industrial land use is mainly found in old urban areas and…",zh:"工業用地主要在舊市區和…",o:["new towns","the city centre","country parks","Central"],a:0,e:"Industrial areas are in old urban areas (e.g. Kwun Tong) and new towns (e.g. Tai Po). Not the city centre."},
+ {u:1,t:"1.3 Where are they?",q:"Chek Lap Kok (the airport) is an example of ______ land use.",zh:"赤鱲角",o:["transport","institutional","commercial","residential"],a:0,e:"Chek Lap Kok is the airport, so it is transport land use."},
+ {u:1,t:"1.3 Where are they?",q:"The Government Headquarters is in ______.",zh:"政府總部",o:["Admiralty","Central","Wan Chai","Mong Kok"],a:0,e:"It is in Admiralty (Tamar). It is institutional land use."},
+ {u:1,t:"1.3 Map",q:"Is Tai O an urban area?",zh:"大澳是市區嗎？",o:["No, it is rural","Yes, it is urban"],a:0,e:"Tai O is a fishing village on the far west of Lantau. It is rural."},
+ {u:1,t:"1.3 Map",q:"Is Kwun Tong an urban area?",zh:"觀塘是市區嗎？",o:["Yes, it is urban","No, it is rural"],a:0,e:"Kwun Tong is in east Kowloon. It is urban."},
+ {u:1,t:"1.3 Map",q:"Which place is NOT an urban area?",zh:"哪個地方「不是」市區？",o:["Mai Po","Tsuen Wan","Chai Wan","Kwun Tong"],a:0,e:"Mai Po (wetlands in the north-west) is rural. Lamma Island and Tai O are also rural."},
+ // ---------- UNIT 2 ----------
+ {u:2,t:"2.1 Homes",q:"How many types of residential area are there in Hong Kong?",zh:"住宅區有多少種？",o:["3","2","5","7"],a:0,e:"3 types: high-income, middle-income and low-income."},
+ {u:2,t:"2.1 Homes",q:"Sham Shui Po is a ______ residential area.",zh:"深水埗",o:["low-income","middle-income","high-income","rural"],a:0,e:"Sham Shui Po is an old urban area. It is low-income."},
+ {u:2,t:"2.1 Homes",q:"True or false: Flats in low-income areas are smaller than flats in high-income areas.",zh:"對或錯",o:["True","False"],a:0,e:"True. Low-income flats are small. High-income flats are large."},
+ {u:2,t:"2.1 Homes",q:"True or false: Middle-income areas have a LOWER population density than high-income areas.",zh:"對或錯",o:["False","True"],a:0,e:"False. Middle-income areas are MORE crowded than high-income areas."},
+ {u:2,t:"2.1 Homes",q:"True or false: Squatter areas are low-income areas found on the urban fringe.",zh:"寮屋區 (squatter areas)",o:["True","False"],a:0,e:"True. Squatter areas are small huts on the urban fringe (市區邊緣)."},
+ {u:2,t:"2.1 Homes",q:"High-income residential areas are usually…",zh:"高收入住宅區通常…",o:["on high ground and very expensive","in the city centre and cheap","next to factories","very crowded"],a:0,e:"High-income = high ground, high price, low density."},
+ {u:2,t:"2.1 Homes",q:"Which place is a HIGH-income residential area?",zh:"高收入住宅區",o:["The Peak","Sham Shui Po","Kwun Tong","Tai O"],a:0,e:"The Peak, Repulse Bay and Kowloon Tong are high-income areas."},
+ {u:2,t:"2.2 Industry",q:"Before the mid-1970s, factories were mainly in…",zh:"1970年代中期以前",o:["multi-storey factory buildings","high-tech parks","country parks","shopping centres"],a:0,e:"Stage 1: multi-storey factory buildings (多層工廠大廈) in old urban areas, e.g. Kwun Tong."},
+ {u:2,t:"2.2 Industry",q:"Between the mid-1970s and the 1990s, larger factory space came from new towns and…",zh:"1970年代中期至1990年代",o:["industrial estates","squatter areas","the city centre","high-income areas"],a:0,e:"Stage 2: new towns and industrial estates (工業邨), e.g. Tai Po Industrial Estate."},
+ {u:2,t:"2.2 Industry",q:"Since the late 1990s, industry has focused on ______ industries.",zh:"1990年代後期以後",o:["high-tech","fishing","farming","toy-making"],a:0,e:"Stage 3: high-tech industries (高科技工業), e.g. Hong Kong Science Park."},
+ {u:2,t:"2.2 Industry",q:"Hong Kong Science Park belongs to which stage?",zh:"香港科學園",o:["Since the late 1990s","Before the mid-1970s","Mid-1970s to 1990s","Before 1950"],a:0,e:"Science Park and Cyberport are high-tech areas from the late 1990s onwards."},
+ {u:2,t:"2.3 Near or far?",q:"Old industrial areas are ______ residential areas.",zh:"舊工業區與住宅區的距離",o:["close to","far away from"],a:0,e:"Old factory buildings are close to (mixed with) low-income homes."},
+ {u:2,t:"2.3 Near or far?",q:"Industrial areas in new towns are ______ residential areas.",zh:"新市鎮工業區與住宅區的距離",o:["far away from","close to"],a:0,e:"They are planned. A buffer like a park or main road separates them."},
+ {u:2,t:"2.3 Near or far?",q:"High-tech industrial areas are ______ high-income residential areas.",zh:"高科技工業區與高收入住宅區",o:["close to","far away from"],a:0,e:"High-tech workers are skilled and well paid, so they live nearby."},
+ {u:2,t:"2.3 Near or far?",q:"Old factories are near homes. How does this help LOCAL RESIDENTS?",zh:"對居民有甚麼好處？",o:["They can find jobs near home","They get cleaner air","Their flats become bigger","They get more parks"],a:0,e:"Residents can work near home and save travel time and money."},
+ {u:2,t:"2.3 Near or far?",q:"Old factories are near homes. How does this help FACTORY OWNERS?",zh:"對廠家有甚麼好處？",o:["They can find workers easily","They get free land","They can pollute more","They pay no tax"],a:0,e:"Workers live nearby, so factory owners can hire them easily."},
+ {u:2,t:"2.3 Near or far?",q:"What problems may residents near old factories face?",zh:"居民可能面對甚麼問題？",o:["Air pollution, noise pollution and threat to safety","Only noise pollution","Only air pollution","No problems"],a:0,e:"All three: air pollution, noise pollution and safety threats such as fire."},
+ {u:2,t:"2.3 Near or far?",q:"Why did industrial areas move from Victoria Harbour to new towns?",zh:"為甚麼工業區遷往新市鎮？",o:["Land in the urban centre was limited and expensive","New towns had no people","The sea was too dirty","Factories wanted to be near the airport"],a:0,e:"Urban land was limited and expensive. New towns had more, cheaper land."},
+ {u:2,t:"2.3 Near or far?",q:"Which is NOT a feature of Science Park and Cyberport?",zh:"哪一項「不是」科學園和數碼港的特徵？",o:["Developed since the early 1990s","Large demand for talent","Pleasant environment","Focused on high-tech products"],a:0,e:"They were developed since the LATE 1990s, not the early 1990s."},
+ {u:2,t:"2.3 Map",q:"Kwong Fuk Estate is a public housing estate. What type of residential area is it?",zh:"廣福邨",o:["Low-income","High-income","Middle-income","Squatter area"],a:0,e:"Public housing estates are low-income residential areas."},
+ {u:2,t:"2.3 Map",q:"Why is Kwong Fuk Estate NOT easily affected by pollution from Tai Po Industrial Estate?",zh:"為甚麼廣福邨不易受工業污染影響？",o:["The Waterfront Park separates them","They are in the same building","The factories are inside the estate","There is no wind in Tai Po"],a:0,e:"They are far apart, and the Waterfront Park is a buffer between them."},
+ {u:2,t:"2.3 Map",q:"Reduced bearings always start from…",zh:"簡化方位角從哪裏開始量？",o:["North or South","East or West","the centre","the scale bar"],a:0,e:"Start from N or S, then turn towards E or W. Example: S 25° W."}
+];
+
+const $ = id => document.getElementById(id);
+let list=[], idx=0, score=0, wrong=[], lastSet="all", answered=false;
+
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function speak(text){
+  try{ if(!('speechSynthesis' in window)) return; speechSynthesis.cancel();
+    const u=new SpeechSynthesisUtterance(text.replace(/_+/g,"blank")); u.lang="en-GB"; u.rate=.85; speechSynthesis.speak(u);}catch(e){}
+}
+function show(id){["start","quiz","end"].forEach(s=>$(s).classList.toggle("hidden",s!==id));window.scrollTo(0,0);}
+
+function begin(qs){
+  list=shuffle(qs).map(q=>{const order=shuffle(q.o.map((_,i)=>i));return {...q,order};});
+  idx=0;score=0;wrong=[];show("quiz");render();
+}
+function render(){
+  answered=false;
+  const q=list[idx];
+  $("count").textContent=`Question ${idx+1} of ${list.length}`;
+  $("pts").textContent=`⭐ ${score}`;
+  $("barFill").style.width=(idx/list.length*100)+"%";
+  $("topic").textContent=q.t;
+  $("qtext").textContent=q.q;
+  $("qzh").textContent=q.zh||"";
+  $("qzh").classList.toggle("hidden",!$("zhToggle").checked);
+  $("fb").className="fb hidden";
+  $("nextBtn").classList.add("hidden");
+  const box=$("opts"); box.innerHTML="";
+  const letters="ABCD";
+  q.order.forEach((oi,k)=>{
+    const b=document.createElement("button");
+    b.type="button";b.className="opt";b.dataset.oi=oi;
+    b.innerHTML=`<span class="l">${letters[k]}</span><span></span>`;
+    b.lastChild.textContent=q.o[oi];
+    b.addEventListener("click",()=>choose(b,oi));
+    box.appendChild(b);
+  });
+  if($("autoRead").checked) speak(q.q+". "+q.order.map((oi,k)=>letters[k]+", "+q.o[oi]).join(". "));
+  box.firstChild.focus({preventScroll:true});
+}
+function choose(btn,oi){
+  if(answered) return; answered=true;
+  const q=list[idx], ok=oi===q.a;
+  document.querySelectorAll(".opt").forEach(b=>{
+    b.disabled=true; const v=+b.dataset.oi;
+    if(v===q.a) b.classList.add("right"); else if(b===btn) b.classList.add("wrong"); else b.classList.add("dim");
+  });
+  const fb=$("fb");
+  if(ok){score++; fb.className="fb ok"; fb.innerHTML="<b>✅ Correct! Great job.</b>";}
+  else{wrong.push(q); fb.className="fb no"; fb.innerHTML="<b>Not quite. That's OK!</b>The answer is: <strong></strong>";
+    fb.querySelector("strong").textContent=q.o[q.a]+".";}
+  const e=document.createElement("div"); e.textContent="💡 "+q.e; e.style.marginTop="6px"; fb.appendChild(e);
+  $("pts").textContent=`⭐ ${score}`;
+  const n=$("nextBtn"); n.textContent= idx===list.length-1?"See my score":"Next question"; n.classList.remove("hidden"); n.focus({preventScroll:true});
+}
+function next(){ if(idx<list.length-1){idx++;render();} else finish(); }
+function finish(){
+  $("barFill").style.width="100%";
+  const pct=score/list.length;
+  $("final").textContent=`${score} / ${list.length}`;
+  $("stars").textContent= pct>=.9?"⭐⭐⭐":pct>=.6?"⭐⭐":"⭐";
+  $("msg").textContent= pct>=.9?"Excellent! You are ready for the quiz.":pct>=.6?"Good work! Practise the ones below once more.":"Good try! Read the notes again, then try your wrong ones.";
+  const rb=$("reviewBox"); rb.innerHTML="";
+  if(wrong.length){
+    const t=document.createElement("div"); t.className="tip"; t.innerHTML="<b>Things to remember:</b>";
+    const ul=document.createElement("ul"); ul.className="result-list";
+    wrong.forEach(q=>{const li=document.createElement("li"); li.textContent=`${q.t}: ${q.o[q.a]} — ${q.e}`; ul.appendChild(li);});
+    t.appendChild(ul); rb.appendChild(t);
+  }
+  $("retryWrong").classList.toggle("hidden",!wrong.length);
+  show("end");
+}
+document.querySelectorAll("[data-set]").forEach(b=>b.addEventListener("click",()=>{
+  lastSet=b.dataset.set; begin(lastSet==="all"?Q:Q.filter(q=>q.u==+lastSet));
+}));
+$("nextBtn").addEventListener("click",next);
+$("speakBtn").addEventListener("click",()=>{const q=list[idx];speak(q.q+". "+q.order.map((oi,k)=>"ABCD"[k]+", "+q.o[oi]).join(". "));});
+$("zhToggle").addEventListener("change",()=>$("qzh").classList.toggle("hidden",!$("zhToggle").checked));
+$("retryWrong").addEventListener("click",()=>begin(wrong.map(({order,...q})=>q)));
+$("again").addEventListener("click",()=>begin(lastSet==="all"?Q:Q.filter(q=>q.u==+lastSet)));
+$("home").addEventListener("click",()=>show("start"));
+document.addEventListener("keydown",e=>{
+  if($("quiz").classList.contains("hidden")) return;
+  const k=e.key.toUpperCase(), opts=[...document.querySelectorAll(".opt")];
+  if("ABCD".includes(k)&&k.length===1&&!answered){const b=opts["ABCD".indexOf(k)]; if(b) b.click();}
+});
+</script>
+</body>
+</html>

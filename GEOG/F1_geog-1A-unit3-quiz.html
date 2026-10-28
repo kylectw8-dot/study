@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Geography 1A Unit 3 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Geography</a> · <a href="F1_geog-1A-unit3-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Geography 1A Unit 3 Quiz 🌏</h1>
+  <p class="sub">Central Business District. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">3.1 The CBD<small>Location and characteristics</small></button><button class="big" data-set="all">Everything<small>All 10 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "3.1 CBD", "q": "A CBD is the major ______ area of a city.", "zh": "中心商業區", "o": ["commercial", "residential", "industrial", "rural"], "a": 0, "e": "CBD = Central Business District, the main commercial area."}, {"u": 1, "t": "3.1 CBD", "q": "What is the CBD of Hong Kong?", "zh": "香港的中心商業區", "o": ["Central", "Sha Tin", "Tuen Mun", "Sai Kung"], "a": 0, "e": "Central is Hong Kong’s CBD."}, {"u": 1, "t": "3.1 CBD", "q": "The CBD has expanded to ______ in the west.", "zh": "向西擴展", "o": ["Sheung Wan", "Admiralty", "Mong Kok", "Kwun Tong"], "a": 0, "e": "Sheung Wan in the west, Admiralty in the east."}, {"u": 1, "t": "3.1 CBD", "q": "The CBD has expanded to ______ in the east.", "zh": "向東擴展", "o": ["Admiralty", "Sheung Wan", "Tai Po", "Yuen Long"], "a": 0, "e": "Admiralty in the east."}, {"u": 1, "t": "3.1 CBD", "q": "Rents in the CBD are…", "zh": "租金", "o": ["very high", "very low", "free", "the same as rural areas"], "a": 0, "e": "Land is limited and in high demand, so rents are high."}, {"u": 1, "t": "3.1 CBD", "q": "Buildings in the CBD are…", "zh": "建築物", "o": ["tall and dense", "low and sparse", "mainly village houses", "mainly factories"], "a": 0, "e": "Skyscrapers are packed closely together."}, {"u": 1, "t": "3.1 CBD", "q": "Which is NOT a characteristic of the CBD?", "zh": "哪項不是特徵？", "o": ["Low rents", "Heavy traffic", "Mainly commercial land use", "Cultural venues"], "a": 0, "e": "CBD rents are high."}, {"u": 1, "t": "3.1 CBD", "q": "The Government Headquarters is in…", "zh": "政府總部", "o": ["Admiralty", "Central", "Wan Chai", "Sheung Wan"], "a": 0, "e": "It is at Tamar, Admiralty."}, {"u": 1, "t": "3.1 CBD", "q": "Because the Government Headquarters is there, the CBD is also an ______ centre.", "zh": "中心", "o": ["administrative", "industrial", "agricultural", "residential"], "a": 0, "e": "Government offices make it an administrative centre."}, {"u": 1, "t": "3.1 CBD", "q": "The CBD is mainly made up of which land use?", "zh": "土地用途", "o": ["Commercial", "Industrial", "Residential", "Recreational"], "a": 0, "e": "Offices, banks and shops = commercial."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

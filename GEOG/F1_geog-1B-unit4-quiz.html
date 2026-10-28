@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Geography 1B Unit 4 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Geography</a> · <a href="F1_geog-1B-unit4-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Geography 1B Unit 4 Quiz 🌏</h1>
+  <p class="sub">Earthquakes. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">4.1 Earth’s structure<small>Layers and plates</small></button><button class="big u2" data-set="2">4.2 Plate movement<small>Types and how earthquakes form</small></button><button class="big u3" data-set="3">4.3 Impacts<small>Earthquake zones and effects</small></button><button class="big" data-set="all">Everything<small>All 22 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "4.1 Structure", "q": "Earth is made up of three layers. They are the…", "zh": "地球的三層", "o": ["crust, mantle and core", "crust, ocean and sky", "soil, rock and water", "plate, fault and focus"], "a": 0, "e": "Crust (outside), mantle (middle), core (centre)."}, {"u": 1, "t": "4.1 Structure", "q": "Which is the thinnest layer of Earth?", "zh": "最薄的一層", "o": ["Crust", "Mantle", "Core"], "a": 0, "e": "The crust is like the skin of an apple."}, {"u": 1, "t": "4.1 Structure", "q": "Which statement is NOT correct?", "zh": "哪項不正確？", "o": ["Oceanic crust is thicker than continental crust", "The crust is the thinnest layer", "The mantle is cooler than the core", "The inner core is solid"], "a": 0, "e": "Oceanic crust is thinner."}, {"u": 1, "t": "4.1 Structure", "q": "Hong Kong is located on the…", "zh": "香港位於", "o": ["Eurasian Plate", "Pacific Plate", "African Plate", "Antarctic Plate"], "a": 0, "e": "Hong Kong is on the Eurasian Plate."}, {"u": 1, "t": "4.1 Structure", "q": "The Eurasian Plate is mainly ______, while the Pacific Plate is mainly ______.", "zh": "板塊分別", "o": ["continental, oceanic", "oceanic, continental", "liquid, solid", "hot, cold"], "a": 0, "e": "Most of the Pacific Plate is under the ocean."}, {"u": 1, "t": "4.1 Structure", "q": "Which is one of the seven major plates?", "zh": "七大板塊", "o": ["Indo-Australian Plate", "Hong Kong Plate", "Arctic Plate", "Atlantic Plate"], "a": 0, "e": "Seven: Eurasian, Indo-Australian, Pacific, North American, South American, African, Antarctic."}, {"u": 2, "t": "4.2 Movement", "q": "Plate movement is driven by ______ currents in the mantle.", "zh": "板塊移動的動力", "o": ["convection", "ocean", "wind", "electric"], "a": 0, "e": "Hot mantle material rises and cooler material sinks."}, {"u": 2, "t": "4.2 Movement", "q": "Plates moving APART is called…", "zh": "板塊分離", "o": ["divergent", "convergent", "transform"], "a": 0, "e": "Divergent = diverge = go apart."}, {"u": 2, "t": "4.2 Movement", "q": "Plates moving TOWARDS each other is called…", "zh": "板塊聚合", "o": ["convergent", "divergent", "transform"], "a": 0, "e": "Convergent = come together."}, {"u": 2, "t": "4.2 Movement", "q": "Plates SLIDING PAST each other is called…", "zh": "板塊錯動", "o": ["transform", "divergent", "convergent"], "a": 0, "e": "They move side by side in opposite directions."}, {"u": 2, "t": "4.2 Movement", "q": "The point underground where rocks break is the…", "zh": "震源", "o": ["focus", "epicentre", "fault line on the map", "crust"], "a": 0, "e": "The focus is underground."}, {"u": 2, "t": "4.2 Movement", "q": "The point on the surface directly above the focus is the…", "zh": "震央", "o": ["epicentre", "focus", "core", "mantle"], "a": 0, "e": "Shaking is usually strongest at the epicentre."}, {"u": 2, "t": "4.2 Movement", "q": "What happens FIRST in the formation of an earthquake?", "zh": "地震形成第一步", "o": ["Pressure builds up along the plate boundary as plates move", "The earth shakes", "Rocks break and move", "Seismic waves are released"], "a": 0, "e": "Pressure builds, exceeds limits, rocks break, energy is released, the earth shakes."}, {"u": 2, "t": "4.2 Movement", "q": "After rocks break and move, the stored energy is released as…", "zh": "能量釋放", "o": ["seismic waves", "light", "rain", "convection currents"], "a": 0, "e": "Seismic waves make the ground shake."}, {"u": 3, "t": "4.3 Impacts", "q": "Most earthquakes occur along…", "zh": "大部分地震發生在", "o": ["plate boundaries", "the middle of plates", "the North Pole", "river banks"], "a": 0, "e": "Plates meet at boundaries, where pressure builds."}, {"u": 3, "t": "4.3 Impacts", "q": "The Pacific Ring of Fire is also called the…", "zh": "太平洋火環", "o": ["Circum-Pacific Belt", "Alpine-Himalayan Belt", "Tropic of Cancer", "Equator"], "a": 0, "e": "Most of the world’s earthquakes happen there."}, {"u": 3, "t": "4.3 Impacts", "q": "Which earthquake zone stretches across Europe and Asia?", "zh": "跨越歐亞", "o": ["Alpine-Himalayan Belt", "Circum-Pacific Belt", "Mid-Atlantic Ridge only", "Arctic Circle"], "a": 0, "e": "It runs from the Alps to the Himalayas."}, {"u": 3, "t": "4.3 Impacts", "q": "Earthquake magnitude is measured by the…", "zh": "地震強度", "o": ["Richter scale", "Celsius scale", "Beaufort scale", "metre rule"], "a": 0, "e": "The Richter scale measures energy released."}, {"u": 3, "t": "4.3 Impacts", "q": "Buildings collapsing during ground shaking is a ______ effect.", "zh": "建築物倒塌", "o": ["primary", "secondary"], "a": 0, "e": "Primary = immediate, direct damage from shaking."}, {"u": 3, "t": "4.3 Impacts", "q": "An earthquake under the sea triggers a tsunami. This is a ______ effect.", "zh": "海嘯", "o": ["secondary", "primary"], "a": 0, "e": "Secondary effects are caused by the primary effects."}, {"u": 3, "t": "4.3 Impacts", "q": "Which is correct about tsunamis?", "zh": "海嘯", "o": ["They destroy coastal facilities and cause loss of lives", "They cause more earthquakes", "They only affect deserts", "They are harmless"], "a": 0, "e": "Answer C: (2) and (3) only."}, {"u": 3, "t": "4.3 Impacts", "q": "Which is a SECONDARY effect of earthquakes?", "zh": "間接影響", "o": ["Fires from broken gas pipes", "Roads cracking", "Buildings shaking", "Bridges breaking"], "a": 0, "e": "Fires, landslides, tsunamis and disease are secondary effects."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

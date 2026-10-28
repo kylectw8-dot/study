@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Geography 1B Unit 3 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Geography</a> · <a href="F1_geog-1B-unit3-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Geography 1B Unit 3 Quiz 🌏</h1>
+  <p class="sub">Landslides. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">3.2 Causes<small>Natural and human factors</small></button><button class="big u2" data-set="2">3.3 Impacts<small>Damage and Po Shan Road</small></button><button class="big u3" data-set="3">3.4 Measures<small>Engineering, planning, warnings</small></button><button class="big" data-set="all">Everything<small>All 20 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "3.2 Causes", "q": "A landslide is the rapid movement of soil or rocks down a slope due to…", "zh": "山泥傾瀉", "o": ["gravity", "wind", "tides", "sunlight"], "a": 0, "e": "Gravity pulls the loose materials downhill."}, {"u": 1, "t": "3.2 Causes", "q": "When soil pores fill with water, the slope becomes…", "zh": "土壤孔隙充滿水", "o": ["unstable", "stronger", "drier", "flatter"], "a": 0, "e": "Water reduces the strength of slope materials."}, {"u": 1, "t": "3.2 Causes", "q": "Waterlogged soil is most common in…", "zh": "哪個季節", "o": ["summer", "winter"], "a": 0, "e": "Hong Kong’s summer is the rainy season."}, {"u": 1, "t": "3.2 Causes", "q": "What is the FIRST step of weathering?", "zh": "風化第一步", "o": ["Rainwater seeps into the rocks", "Thick layers of loose materials form", "Rocks break into small pieces", "Joints widen"], "a": 0, "e": "Order: seep in → joints widen → rocks break → loose layers form."}, {"u": 1, "t": "3.2 Causes", "q": "What is the LAST step of weathering?", "zh": "風化最後一步", "o": ["Thick layers of loose materials are formed", "Rainwater seeps into rocks", "Joints are widened", "Rocks break down"], "a": 0, "e": "Weathering ends with thick loose layers on slopes."}, {"u": 1, "t": "3.2 Causes", "q": "About what percentage of HK’s natural slopes are steeper than 20°?", "zh": "斜坡角度", "o": ["60%", "20%", "5%", "100%"], "a": 0, "e": "40% (21–30°) + 20% (31–45°) = 60%."}, {"u": 1, "t": "3.2 Causes", "q": "Slopes with larger slope angles have a ______ risk of landslides.", "zh": "斜坡越陡", "o": ["higher", "lower", "zero"], "a": 0, "e": "Steeper slopes slide more easily."}, {"u": 1, "t": "3.2 Causes", "q": "Cut-and-fill slopes were made to provide land for…", "zh": "削土填土", "o": ["buildings and roads", "farming only", "reservoirs only", "beaches"], "a": 0, "e": "Hong Kong has little flat land."}, {"u": 1, "t": "3.2 Causes", "q": "Why did early man-made slopes cause many landslides?", "zh": "早期人造斜坡", "o": ["They were steep and some were poorly constructed", "They were flat", "They had too many trees", "They were made of steel"], "a": 0, "e": "Steep angles plus poor construction or maintenance."}, {"u": 2, "t": "3.3 Impacts", "q": "Which is an impact of landslides?", "zh": "影響", "o": ["Disruption of road transport", "Triggering earthquakes", "Causing drought", "Making slopes gentler"], "a": 0, "e": "Debris blocks roads."}, {"u": 2, "t": "3.3 Impacts", "q": "Which is NOT an impact of landslides?", "zh": "哪項不是影響？", "o": ["Triggering of earthquakes", "Loss of lives", "Damage of electricity poles", "Disruption of road transport"], "a": 0, "e": "Landslides do not cause earthquakes."}, {"u": 2, "t": "3.3 Impacts", "q": "The 1972 Po Shan Road landslide…", "zh": "寶珊道", "o": ["was one of the most fatal and caused buildings to collapse", "happened in Kowloon", "caused no damage", "happened in winter drought"], "a": 0, "e": "Answer D: (2) and (3) only. It was on Hong Kong Island."}, {"u": 3, "t": "3.4 Measures", "q": "Soil nails and retaining walls help slopes by…", "zh": "泥釘和護土牆", "o": ["providing physical support", "trapping fallen materials", "issuing warnings", "clearing squatters"], "a": 0, "e": "They hold the slope in place."}, {"u": 3, "t": "3.4 Measures", "q": "Rigid and flexible barriers help by…", "zh": "屏障", "o": ["trapping fallen slope materials", "providing drainage", "adding soil", "warning people"], "a": 0, "e": "They catch rocks and mud before they reach roads."}, {"u": 3, "t": "3.4 Measures", "q": "Which engineering work improves slope drainage?", "zh": "改善排水", "o": ["Horizontal drains", "Flexible barriers", "Soil nails", "Billboards"], "a": 0, "e": "Surface drainage channels and horizontal drains remove water."}, {"u": 3, "t": "3.4 Measures", "q": "Which are land use planning measures?", "zh": "土地規劃", "o": ["Clear squatter areas and conduct risk assessments", "Regular slope maintenance only", "Send rescue teams", "Open shelters"], "a": 0, "e": "Answer C: (1) and (3) only."}, {"u": 3, "t": "3.4 Measures", "q": "Which is a PREVENTIVE measure?", "zh": "預防措施", "o": ["Issue a Landslip Warning", "Send rescue teams to the site", "Open temporary shelters", "Clear debris after the landslide"], "a": 0, "e": "Prevention happens before a landslide."}, {"u": 3, "t": "3.4 Measures", "q": "Holding exhibitions about slope safety is a…", "zh": "斜坡安全展覽", "o": ["preventive measure (public education)", "rescue measure", "engineering work", "land use conflict"], "a": 0, "e": "It teaches people what to do."}, {"u": 3, "t": "3.4 Measures", "q": "Planting on slopes is called…", "zh": "種植", "o": ["greening of slopes", "shotcreting", "soil nailing", "sedimentation"], "a": 0, "e": "Green slopes look natural and roots hold soil."}, {"u": 3, "t": "3.4 Measures", "q": "One advantage of greening slopes is…", "zh": "斜坡綠化的好處", "o": ["it looks more natural and beautiful", "it makes slopes steeper", "it causes more landslides", "it costs nothing to maintain"], "a": 0, "e": "It improves the scenery and plant roots help hold the soil."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

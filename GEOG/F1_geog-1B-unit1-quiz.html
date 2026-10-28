@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Geography 1B Unit 1 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Geography</a> · <a href="F1_geog-1B-unit1-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Geography 1B Unit 1 Quiz 🌏</h1>
+  <p class="sub">Major Natural Hazards of the World. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">1.1 Natural hazards<small>Definition, types, tropical cyclones</small></button><button class="big" data-set="all">Everything<small>All 9 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "1.1 Hazards", "q": "Natural events that threaten human life and property are called…", "zh": "自然災害", "o": ["natural hazards", "urban problems", "land uses", "plate boundaries"], "a": 0, "e": "They are only hazards if they affect people or property."}, {"u": 1, "t": "1.1 Hazards", "q": "Which is NOT a natural hazard?", "zh": "哪項不是自然災害？", "o": ["An earthquake on a remote island with no people", "A flood that damaged village houses", "A volcanic eruption that killed 100 people", "A landslide that buried pavilions"], "a": 0, "e": "Nobody and nothing was affected, so it is not a hazard."}, {"u": 1, "t": "1.1 Hazards", "q": "Earthquakes and volcanic eruptions are related to…", "zh": "地震與火山", "o": ["the internal structure of Earth", "extreme weather", "pollution", "urban decay"], "a": 0, "e": "They are geological hazards."}, {"u": 1, "t": "1.1 Hazards", "q": "Droughts, floods and tropical cyclones are related to…", "zh": "旱災、水災、熱帶氣旋", "o": ["extreme weather conditions", "the Earth’s core", "plate movement", "city planning"], "a": 0, "e": "They are weather-related hazards."}, {"u": 1, "t": "1.1 Hazards", "q": "A photo shows dry, cracked ground. Which descriptions are correct?", "zh": "乾裂的土地", "o": ["Related to extreme weather and found all over the world", "Related to Earth’s internal structure only", "Only found in Hong Kong", "Caused by plate movement"], "a": 0, "e": "Drought: answer C, (2) and (3) only."}, {"u": 1, "t": "1.1 Cyclones", "q": "A huge spinning cloud near the Philippines on a satellite photo is a…", "zh": "衛星圖", "o": ["tropical cyclone", "earthquake", "volcano", "drought"], "a": 0, "e": "Tropical cyclones are called typhoons in East Asia."}, {"u": 1, "t": "1.1 Cyclones", "q": "Tropical cyclones mostly affect areas between about…", "zh": "緯度", "o": ["30°N and 30°S", "60°N and 90°N", "the North and South Poles", "0° and 5°N only"], "a": 0, "e": "They form over warm tropical oceans."}, {"u": 1, "t": "1.1 Cyclones", "q": "Which region is often affected by tropical cyclones?", "zh": "受影響地區", "o": ["Southeast Asia", "Northern Europe", "Antarctica", "Central Asian deserts"], "a": 0, "e": "Also Central America, northern Australia and southeastern Africa."}, {"u": 1, "t": "1.1 Cyclones", "q": "Which Southeast Asian country is often hit by tropical cyclones?", "zh": "東南亞國家", "o": ["The Philippines", "Mongolia", "Nepal", "Afghanistan"], "a": 0, "e": "The Philippines and Vietnam are often affected."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

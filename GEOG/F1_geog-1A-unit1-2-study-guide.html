@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Land Use Quiz – Study Notes (Units 1 & 2)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EEF3F6; --paper:#FFFFFF; --ink:#1E2A38; --soft:#4F5D6C; --line:#C9D5DE;
+  --tip:#FFF6CC; --tipline:#E3C84A; --ans:#E7F4EA; --ansline:#5FA36E;
+  --res:#F2994A; --com:#2F80ED; --ind:#8D6E63; --ins:#9B51E0; --rec:#27AE60; --tra:#E2B100; --mix:#EB5794;
+  --chiptext:#1E2A38;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#141B22; --paper:#1D2630; --ink:#E8EEF3; --soft:#A9B6C2; --line:#33414F;
+    --tip:#3A3418; --tipline:#B89B2A; --ans:#1C3324; --ansline:#4E9A60;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#141B22; --paper:#1D2630; --ink:#E8EEF3; --soft:#A9B6C2; --line:#33414F;
+  --tip:#3A3418; --tipline:#B89B2A; --ans:#1C3324; --ansline:#4E9A60;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Lexend","Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:19px;line-height:1.7;letter-spacing:.01em}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.zh{font-family:"Noto Sans TC","Lexend",sans-serif;color:var(--soft);font-size:.9em}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:2px solid var(--line)}
+nav .in{max-width:820px;margin:0 auto;padding:10px 16px;display:flex;gap:8px;overflow-x:auto}
+nav a{flex:none;text-decoration:none;color:var(--ink);font-weight:600;font-size:.85rem;
+  padding:6px 12px;border-radius:999px;border:2px solid var(--line)}
+nav a:hover,nav a:focus-visible{border-color:var(--ink)}
+main{max-width:820px;margin:0 auto;padding:24px 16px 80px}
+header.hero{padding:28px 0 8px}
+.hero h1{font-size:2.1rem;line-height:1.2;margin:0 0 10px}
+.hero p{margin:0 0 6px;color:var(--soft)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 4px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.88rem;
+  background:var(--paper);border:2px solid var(--line);border-radius:6px;padding:4px 10px 4px 6px}
+.chip i{width:20px;height:20px;border-radius:4px;display:inline-block;flex:none}
+.res i{background:var(--res)}.com i{background:var(--com)}.ind i{background:var(--ind)}
+.ins i{background:var(--ins)}.rec i{background:var(--rec)}.tra i{background:var(--tra)}.mix i{background:repeating-linear-gradient(135deg,var(--res) 0 5px,var(--com) 5px 10px)}
+.howto{background:var(--paper);border-radius:10px;padding:16px 20px;margin:20px 0;border:2px solid var(--line)}
+.howto ol{margin:6px 0 0;padding-left:24px}
+section.unit{margin-top:44px}
+.unit-tag{display:inline-block;background:var(--ink);color:var(--paper);font-weight:700;border-radius:6px;padding:2px 12px;font-size:.9rem}
+h2{font-size:1.6rem;line-height:1.25;margin:10px 0 4px}
+article{background:var(--paper);border-radius:12px;padding:22px 22px 18px;margin:22px 0;border:2px solid var(--line)}
+article h3{font-size:1.3rem;line-height:1.3;margin:0 0 4px}
+article .q{color:var(--soft);margin:0 0 14px;font-size:.95rem}
+.keys{border-left:6px solid var(--ink);padding:6px 14px;margin:14px 0;background:var(--bg);border-radius:0 8px 8px 0}
+.keys b{font-weight:700}
+.keys p{margin:4px 0}
+ul.facts{padding-left:22px;margin:10px 0}
+ul.facts li{margin:6px 0}
+mark{background:none;color:inherit;font-weight:700;border-bottom:3px solid var(--tipline)}
+.tip{background:var(--tip);border:2px dashed var(--tipline);border-radius:10px;padding:10px 14px;margin:14px 0}
+.tip::before{content:"💡 Remember: ";font-weight:700}
+.warn{background:var(--paper);border:2px solid var(--com);border-radius:10px;padding:10px 14px;margin:14px 0}
+.warn::before{content:"⚠️ Careful: ";font-weight:700}
+.tbl{overflow-x:auto;margin:12px 0}
+table{border-collapse:collapse;width:100%;min-width:460px;font-size:.95rem}
+th,td{border:2px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg)}
+td .chip{border:none;background:none;padding:0}
+.timeline{list-style:none;padding:0;margin:14px 0;position:relative}
+.timeline li{position:relative;padding:0 0 18px 34px;border-left:4px solid var(--ind);margin-left:10px}
+.timeline li:last-child{border-left-color:transparent}
+.timeline li::before{content:"";position:absolute;left:-12px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--paper);border:4px solid var(--ind)}
+.timeline .when{font-weight:700;display:block}
+.check{margin-top:18px}
+.check h4{margin:0 0 8px;font-size:1.05rem}
+details{border:2px solid var(--ansline);border-radius:10px;margin:8px 0;background:var(--paper)}
+summary{cursor:pointer;padding:10px 14px;font-weight:600;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"❓ ";}
+details[open] summary::before{content:"✅ ";}
+summary:focus-visible{outline:3px solid var(--com);outline-offset:2px;border-radius:8px}
+details .a{background:var(--ans);padding:10px 14px;border-radius:0 0 8px 8px}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 0}
+button{font:inherit;font-size:.9rem;font-weight:600;border:2px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:8px;padding:6px 14px;cursor:pointer}
+button:focus-visible{outline:3px solid var(--com);outline-offset:2px}
+footer{color:var(--soft);font-size:.9rem;margin-top:40px}
+@media (max-width:560px){body{font-size:18px}.hero h1{font-size:1.7rem}article{padding:18px 16px}}
+@media print{
+  nav,.tools{display:none}
+  body{background:#fff;color:#000;font-size:14pt}
+  article{break-inside:avoid;border-color:#999}
+  details{border-color:#999}
+  details .a{display:block}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav aria-label="Sections"><div class="in">
+  <a href="./">← Geography</a>
+  <a href="#u1-1">1.1 Urban areas</a>
+  <a href="#u1-2">1.2 7 land uses</a>
+  <a href="#u1-3">1.3 Where are they?</a>
+  <a href="#u2-1">2.1 Homes</a>
+  <a href="#u2-2">2.2 Industry</a>
+  <a href="#u2-3">2.3 Near or far?</a>
+  <a href="#places">Place list</a>
+</div></nav>
+
+<main>
+<header class="hero">
+  <h1>Land Use in Hong Kong<br>Quiz Study Notes</h1>
+  <p>Unit 1 Urban land uses · Unit 2 Residential and industrial land uses</p>
+  <div class="legend" aria-label="Colour key for land uses">
+    <span class="chip res"><i></i>Residential 住宅</span>
+    <span class="chip com"><i></i>Commercial 商業</span>
+    <span class="chip ind"><i></i>Industrial 工業</span>
+    <span class="chip ins"><i></i>Institutional 政府、機構及社區</span>
+    <span class="chip rec"><i></i>Recreational 康樂</span>
+    <span class="chip tra"><i></i>Transport 運輸</span>
+    <span class="chip mix"><i></i>Mixed 混合</span>
+  </div>
+</header>
+
+<div class="howto">
+  <b>How to use these notes</b>
+  <ol>
+    <li>Read one box at a time. Take a short break between boxes.</li>
+    <li>Say the <b>key words</b> out loud.</li>
+    <li>Try the ❓ questions first. Then tap to check your answer.</li>
+  </ol>
+  <div class="tools">
+    <button type="button" id="openAll">Show all answers</button>
+    <button type="button" id="closeAll">Hide all answers</button>
+  </div>
+</div>
+
+<!-- ================= UNIT 1 ================= -->
+<section class="unit" id="unit1">
+<span class="unit-tag">Unit 1</span>
+<h2>Urban land uses</h2>
+
+<article id="u1-1">
+  <h3>1.1 What are urban areas?</h3>
+  <p class="q">Where are they? What are they like?</p>
+  <div class="keys">
+    <p><b>Urban areas</b> <span class="zh">市區</span> = places that have been developed. Also called <b>built-up areas</b> <span class="zh">已建設地區</span>.</p>
+    <p><b>Rural areas</b> <span class="zh">郊區</span> = places that are not much developed.</p>
+  </div>
+  <p><b>Where are urban areas?</b></p>
+  <ul class="facts">
+    <li>The <mark>northern</mark> part of <b>Hong Kong Island</b></li>
+    <li><b>Kowloon</b></li>
+    <li><mark>New towns</mark> in the New Territories (e.g. Tsuen Wan, Sha Tin, Tuen Mun)</li>
+  </ul>
+  <p><b>Where are rural areas?</b> All over the <b>New Territories</b> and the <mark>outlying islands</mark> <span class="zh">離島</span>.</p>
+  <p><b>What are urban areas like?</b></p>
+  <ul class="facts">
+    <li>🏢 Tall and dense buildings</li>
+    <li>👥 <mark>High</mark> population density (many people)</li>
+    <li>💼 Intense business activities</li>
+    <li>🏥 Enough community facilities (schools, hospitals)</li>
+    <li>🚇 Good road and transport networks</li>
+  </ul>
+  <div class="tip">Urban = <b>busy</b>. Many buildings, many people, many shops, many roads.</div>
+  <div class="tip">On the map: Hong Kong Island is at the <b>bottom</b>, Kowloon is just <b>above</b> it, and the New Territories is the <b>big</b> part at the top.</div>
+  <div class="check">
+    <h4>Check yourself</h4>
+    <details><summary>Is "low population density" a feature of urban areas?</summary><div class="a">No ✗. Urban areas have <b>high</b> population density.</div></details>
+    <details><summary>Is "lack of road networks" a feature of urban areas?</summary><div class="a">No ✗. Urban areas have <b>good</b> road networks.</div></details>
+    <details><summary>Which 3 are features of urban areas? a. tall dense buildings, b. low population density, c. intense business, d. enough community facilities, e. lack of roads</summary><div class="a"><b>a, c and d</b> ✓</div></details>
+  </div>
+</article>
+
+<article id="u1-2">
+  <h3>1.2 The 7 major types of land use</h3>
+  <p class="q">What do we use the land for?</p>
+  <div class="keys"><p><b>Land use</b> <span class="zh">土地用途</span> = the way we use a piece of land.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Type</th><th>What it is for</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td><span class="chip res"><i></i>Residential</span></td><td>People <b>live</b> here</td><td>Housing estates, flats</td></tr>
+      <tr><td><span class="chip com"><i></i>Commercial</span></td><td>People <b>buy, sell, do business</b></td><td>Shopping centre, offices, banks</td></tr>
+      <tr><td><span class="chip ind"><i></i>Industrial</span></td><td>People <b>make things</b></td><td>Factory, industrial estate</td></tr>
+      <tr><td><span class="chip ins"><i></i>Institutional</span></td><td><b>Government and community</b> services</td><td>Hospital, school, government offices</td></tr>
+      <tr><td><span class="chip rec"><i></i>Recreational</span></td><td>People <b>relax and play</b></td><td>Park, sports ground, country park</td></tr>
+      <tr><td><span class="chip tra"><i></i>Transport</span></td><td>People and goods <b>move</b></td><td>Airport, roads, railway, port</td></tr>
+      <tr><td><span class="chip mix"><i></i>Mixed</span><br><span class="zh">商住混合</span></td><td>One building, <b>more than one use</b></td><td>Shops downstairs, flats upstairs</td></tr>
+    </tbody>
+  </table></div>
+  <div class="tip">Hospital = <b>Institutional</b> (not commercial). Airport = <b>Transport</b>.</div>
+  <p><b>Mixed land use (commercial–residential)</b></p>
+  <ul class="facts">
+    <li>⬆️ <b>Upper floors</b>: people live → <mark>residential</mark> use</li>
+    <li>⬇️ <b>Lower floors</b>: shops and business → <mark>commercial</mark> use</li>
+    <li>Buildings have <b>more than one use</b></li>
+    <li>Common in <mark>old urban areas</mark> (e.g. Mong Kok, Sham Shui Po). <b>Not</b> typical of new towns.</li>
+  </ul>
+  <div class="tip">7 types in order: <b>R C I I R T M</b> → "<b>R</b>eally <b>C</b>ool <b>I</b>guanas <b>I</b>nvestigate <b>R</b>ocky <b>T</b>rails <b>M</b>aybe"</div>
+  <div class="check">
+    <h4>Check yourself</h4>
+    <details><summary>Match: Factory, Shopping centre, Park, Hospital, Airport</summary><div class="a">Factory → Industrial · Shopping centre → Commercial · Park → Recreational · Hospital → Institutional · Airport → Transport</div></details>
+    <details><summary>A building with shops below and flats above is what type of land use?</summary><div class="a"><b>Mixed</b> (commercial–residential) land use</div></details>
+    <details><summary>Mixed land use: (1) more than one use, (2) common in new towns, (3) common in old urban areas. Which are correct?</summary><div class="a"><b>B. (1) and (3) only</b></div></details>
+  </div>
+</article>
+
+<article id="u1-3">
+  <h3>1.3 Where are the land uses found?</h3>
+  <p class="q">Which is biggest? Where is each one?</p>
+  <ul class="facts">
+    <li><span class="chip res"><i></i>Residential</span> is the <mark>largest</mark> type of urban land use. It is <mark>widely distributed</mark> (found all over Hong Kong).</li>
+    <li><span class="chip tra"><i></i>Transport</span> is the next largest. Transport land is found all over Hong Kong.</li>
+    <li><span class="chip com"><i></i>Commercial</span> is <b>small</b> in area. It is <mark>concentrated in the city centre</mark> (Central, Admiralty, Wan Chai, Tsim Sha Tsui, Mong Kok).</li>
+    <li><span class="chip ind"><i></i>Industrial</span> is found in <mark>old urban areas</mark> (e.g. Kwun Tong) and <mark>new towns</mark> (e.g. Tai Po). Not in the city centre.</li>
+    <li><span class="chip ins"><i></i>Institutional</span>: e.g. Government Headquarters in <mark>Admiralty</mark>.</li>
+    <li><span class="chip rec"><i></i>Recreational</span>: e.g. Sai Kung (country parks, beaches).</li>
+  </ul>
+  <div class="warn">Commercial land is <b>not</b> scattered all over. It is packed into the city centre. Residential and transport land are the ones spread all over.</div>
+  <div class="warn">Chek Lap Kok = the <b>airport</b> = <b>Transport</b>. It is NOT institutional.</div>
+  <div class="check">
+    <h4>Check yourself</h4>
+    <details><summary>In the pie chart, the biggest part (Y) is which land use?</summary><div class="a"><b>C. Residential</b>. It is <b>widely distributed</b> in Hong Kong.</div></details>
+    <details><summary>Spot the mistake: "Industrial land use is the second largest type."</summary><div class="a">Underline <b>Industrial</b>. Industrial is a small share. Transport is the second largest.</div></details>
+    <details><summary>Spot the mistake: "Industrial land use is mainly found in old urban areas and the city centre."</summary><div class="a">Underline <b>the city centre</b>. Correct: <b>new towns</b>.</div></details>
+    <details><summary>Spot the mistake: "Transport and commercial land uses are scattered all over the territory."</summary><div class="a">Underline <b>commercial</b>. Correct: <b>residential</b>. (Commercial is in the city centre.)</div></details>
+    <details><summary>Which pair is wrong? Commercial–Central, Recreational–Sai Kung, Residential–Ma On Shan, Institutional–Chek Lap Kok</summary><div class="a"><b>D</b>. Chek Lap Kok is the airport → Transport.</div></details>
+    <details><summary>Government Headquarters: where is it, and what land use?</summary><div class="a"><b>Admiralty</b>. <b>Institutional</b> land use.</div></details>
+  </div>
+</article>
+</section>
+
+<!-- ================= UNIT 2 ================= -->
+<section class="unit" id="unit2">
+<span class="unit-tag">Unit 2</span>
+<h2>Residential and industrial land uses</h2>
+
+<article id="u2-1">
+  <h3>2.1 Types of residential areas</h3>
+  <p class="q">Where do people live? Rich, middle and poor areas.</p>
+  <div class="keys"><p>There are <b>3 types</b> of residential area: <b>high-income</b> <span class="zh">高收入</span>, <b>middle-income</b> <span class="zh">中收入</span>, <b>low-income</b> <span class="zh">低收入</span>.</p></div>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>High-income 💰💰💰</th><th>Middle-income 💰💰</th><th>Low-income 💰</th></tr></thead>
+    <tbody>
+      <tr><th>Flats</th><td><b>Large</b>, very expensive</td><td>Medium</td><td><b>Small</b></td></tr>
+      <tr><th>How crowded?</th><td><b>Low</b> density</td><td>Higher than high-income</td><td><b>High</b> density</td></tr>
+      <tr><th>Location</th><td>On <b>high ground</b>, hillsides, by the sea, nice views</td><td>Private housing estates</td><td>Old urban areas, public housing estates, <b>squatter areas</b> on the urban fringe</td></tr>
+      <tr><th>Examples</th><td>The Peak, Repulse Bay, Kowloon Tong</td><td>Taikoo Shing, Mei Foo Sun Chuen</td><td><b>Sham Shui Po</b>, public housing estates (e.g. Kwong Fuk Estate)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="keys"><p><b>Squatter area</b> <span class="zh">寮屋區</span> = small, poor huts. A type of <b>low-income</b> area. Found on the <b>urban fringe</b> <span class="zh">市區邊緣</span>.</p></div>
+  <div class="tip">High-income = <b>high</b> ground, <b>high</b> price, but <b>low</b> density.</div>
+  <div class="check">
+    <h4>Check yourself</h4>
+    <details><summary>Sham Shui Po is what type of residential area?</summary><div class="a"><b>Low-income</b></div></details>
+    <details><summary>True or false: Flats in low-income areas are smaller than in high-income areas.</summary><div class="a"><b>T</b> (true)</div></details>
+    <details><summary>True or false: Middle-income areas have a lower population density than high-income areas.</summary><div class="a"><b>F</b> (false). Middle-income areas are <b>more</b> crowded.</div></details>
+    <details><summary>True or false: Squatter areas are low-income areas on the urban fringe.</summary><div class="a"><b>T</b> (true)</div></details>
+    <details><summary>Photo of big luxury flats on a green hillside: what type? Give 2 examples.</summary><div class="a"><b>High-income</b>. Examples: The Peak, Repulse Bay (or Kowloon Tong).</div></details>
+    <details><summary>High-income area: (1) at the city centre, (2) very expensive, (3) on high ground. Which are correct?</summary><div class="a"><b>C. (2) and (3) only</b></div></details>
+  </div>
+</article>
+
+<article id="u2-2">
+  <h3>2.2 How industry changed over time</h3>
+  <p class="q">Three stages. Learn them in order.</p>
+  <ol class="timeline">
+    <li><span class="when">① Before the mid-1970s</span>
+      Factories in <mark>multi-storey factory buildings</mark> <span class="zh">多層工廠大廈</span>, in old urban areas.<br>
+      Example: <b>Kwun Tong</b>, San Po Kong · Photo: <b>B</b> (old tall factory block)</li>
+    <li><span class="when">② Mid-1970s to the 1990s</span>
+      <mark>New towns</mark> and <mark>industrial estates</mark> <span class="zh">工業邨</span> gave <b>larger</b> factory space.<br>
+      Example: <b>Tai Po Industrial Estate</b>, Yuen Long Industrial Estate · Photo: <b>C</b> (low, wide factory)</li>
+    <li><span class="when">③ Since the late 1990s</span>
+      Focus on <mark>high-tech</mark> industries <span class="zh">高科技工業</span>.<br>
+      Example: <b>Hong Kong Science Park</b>, Cyberport · Photo: <b>A</b> (modern building with the round "egg")</li>
+  </ol>
+  <div class="tip">Old → <b>tall</b> factory blocks. Middle → <b>big</b> estates in new towns. Now → <b>high-tech</b> parks.</div>
+  <div class="check">
+    <h4>Check yourself</h4>
+    <details><summary>Which photo shows the Science Park?</summary><div class="a"><b>A</b> (the modern one with the round building)</div></details>
+    <details><summary>Which stage do industrial estates belong to?</summary><div class="a">② Between the <b>mid-1970s and the 1990s</b></div></details>
+  </div>
+</article>
+
+<article id="u2-3">
+  <h3>2.3 Are factories near homes?</h3>
+  <p class="q">The spatial relationship <span class="zh">空間關係</span> between industrial and residential areas.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Industrial area</th><th>Near homes?</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Old industrial areas (multi-storey factory buildings)</td><td>✅ <b>Close to</b> low-income residential areas</td><td>Built long ago, mixed together</td></tr>
+      <tr><td>Industrial areas in new towns (industrial estates)</td><td>↔️ <b>Far away from</b> residential areas</td><td>Planned. Separated by a <b>buffer</b> such as a park or main road</td></tr>
+      <tr><td>High-tech industrial areas</td><td>✅ <b>Close to</b> high-income residential areas</td><td>Workers are skilled and well paid</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Old factories near homes</b> – found in old urban areas, e.g. Kwun Tong, San Po Kong, Cheung Sha Wan, Tsuen Wan, Kwai Chung.</p>
+  <ul class="facts">
+    <li>👍 <b>Factory owners</b> can find workers easily nearby.</li>
+    <li>👍 <b>Local residents</b> can find jobs near home and save travel time and money.</li>
+    <li>👎 <b>Problems for residents</b>: air pollution, noise pollution, threat to safety (e.g. fire) → answer <b>D</b> (all three).</li>
+  </ul>
+  <p><b>Why did factories move out (mid-1970s to 1990s)?</b><br>
+  Industrial areas spread from both sides of <mark>Victoria Harbour</mark> to <mark>new towns</mark> outside the urban centre. This is because land in the urban centre was <b>limited and expensive</b>. New towns had <b>more and cheaper</b> land.</p>
+  <p><b>High-tech areas</b>: <b>Hong Kong Science Park</b> (Sha Tin / Tolo Harbour) and <b>Cyberport</b> (south-west Hong Kong Island).</p>
+  <ul class="facts">
+    <li>Need lots of talent <span class="zh">人才</span></li>
+    <li>Pleasant environment</li>
+    <li>Make high-tech products</li>
+    <li>Developed since the <b>late 1990s</b> (not the early 1990s)</li>
+  </ul>
+  <p><b>Squatter area example</b>: small huts on a <b>hillside / slope</b> near a <b>high-income area</b>. Small in scale, and the environment is <b>poor</b> (crowded and dirty).</p>
+  <p><b>Map skill: Kwong Fuk Estate and Tai Po Industrial Estate</b></p>
+  <ul class="facts">
+    <li>Kwong Fuk Estate = <b>public</b> housing estate = <b>low</b>-income area.</li>
+    <li>Industrial Estate X = <b>Tai Po</b> Industrial Estate.</li>
+    <li>Is Kwong Fuk Estate easily affected by pollution? <b>No</b> – it <b>is not</b>, because it is far away and the <b>Waterfront Park</b> separates them as a buffer.</li>
+  </ul>
+  <div class="tip"><b>Measuring distance</b>: put a paper strip between the two places, mark both ends, then lay it on the scale bar and read the metres.</div>
+  <div class="tip"><b>Reduced bearing</b> <span class="zh">簡化方位角</span>: start from <b>N or S</b>, then turn toward <b>E or W</b>. Science Park → Cyberport is about <b>S 25° W</b>. Always measure with your protractor on the quiz map.</div>
+  <div class="check">
+    <h4>Check yourself</h4>
+    <details><summary>Old industrial areas are (close to / far from) residential areas?</summary><div class="a"><b>Close to</b></div></details>
+    <details><summary>Industrial areas in new towns are (close to / far from) residential areas?</summary><div class="a"><b>Far away from</b> (separated by buffers)</div></details>
+    <details><summary>High-tech areas are (close to / far from) high-income areas?</summary><div class="a"><b>Close to</b></div></details>
+    <details><summary>Which is NOT a feature of the Science Park and Cyberport? A. need talent, B. pleasant, C. developed since early 1990s, D. high-tech</summary><div class="a"><b>C</b>. They started in the <b>late</b> 1990s.</div></details>
+  </div>
+</article>
+
+<article id="places">
+  <h3>Place list for the map questions</h3>
+  <p class="q">Know if each place is urban or rural.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Place</th><th>Where on the map</th><th>Urban?</th></tr></thead>
+    <tbody>
+      <tr><td>Tai O</td><td>Far west of Lantau Island (D)</td><td>✗ Rural</td></tr>
+      <tr><td>Mai Po</td><td>North-west New Territories, near Shenzhen (F)</td><td>✗ Rural</td></tr>
+      <tr><td>Lamma Island</td><td>Island south-west of Hong Kong Island (E)</td><td>✗ Rural</td></tr>
+      <tr><td>Kwun Tong</td><td>East Kowloon (B)</td><td>✓ Urban</td></tr>
+      <tr><td>Tsuen Wan</td><td>South-west New Territories, a new town (C)</td><td>✓ Urban</td></tr>
+      <tr><td>Chai Wan</td><td>East of Hong Kong Island (A)</td><td>✓ Urban</td></tr>
+    </tbody>
+  </table></div>
+  <p><b>Main industrial areas to know</b>: Tuen Mun, Yuen Long, Tai Po, Tsuen Wan / Kwai Chung, Kwun Tong, Chai Wan, plus high-tech: Science Park and Cyberport.</p>
+  <div class="tip">Islands and far-away villages = <b>rural</b>. Busy towns with MTR stations = <b>urban</b>.</div>
+</article>
+
+<footer>Made from the Unit 1–2 workbook exercises. Check anything unclear against textbook pages 4–17. · Try the <a href="F1_geog-1A-unit1-2-quiz.html">Units 1–2 quiz</a>.</footer>
+</main>
+
+<script>
+document.getElementById('openAll').addEventListener('click',()=>document.querySelectorAll('details').forEach(d=>d.open=true));
+document.getElementById('closeAll').addEventListener('click',()=>document.querySelectorAll('details').forEach(d=>d.open=false));
+</script>
+</body>
+</html>
