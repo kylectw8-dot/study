@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maths Chapter 11 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Maths</a> · <a href="F1_maths-unit11-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Maths Chapter 11 Quiz ➗</h1>
+  <p class="sub">Congruent Triangles. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Congruence<small>Matching parts</small></button><button class="big u2" data-set="2">Conditions<small>SSS, SAS, ASA, AAS, RHS</small></button><button class="big u3" data-set="3">Using congruence<small>Proofs</small></button><button class="big" data-set="all">Everything<small>All 18 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "Congruence", "q": "Congruent figures have…", "zh": "全等", "o": ["the same shape and size", "the same shape only", "the same size only", "the same colour"], "a": 0, "e": "Congruent = exactly equal."}, {"u": 1, "t": "Congruence", "q": "△ABC ≅ △PQR. Which side equals AB?", "zh": "對應邊", "o": ["PQ", "QR", "PR", "AC"], "a": 0, "e": "1st and 2nd letters: A↔P, B↔Q."}, {"u": 1, "t": "Congruence", "q": "△ABC ≅ △PQR. Which side equals BC?", "zh": "對應邊", "o": ["QR", "PQ", "PR", "AB"], "a": 0, "e": "B↔Q, C↔R."}, {"u": 1, "t": "Congruence", "q": "△ABC ≅ △PQR. Which angle equals ∠C?", "zh": "對應角", "o": ["∠R", "∠P", "∠Q", "∠B"], "a": 0, "e": "3rd letter ↔ 3rd letter."}, {"u": 1, "t": "Congruence", "q": "△LMN ≅ △PQR and ∠L = 65°. Then ∠P = ?", "zh": "對應角", "o": ["65°", "115°", "25°", "cannot tell"], "a": 0, "e": "L ↔ P."}, {"u": 1, "t": "Congruence", "q": "The reason for equal corresponding sides is…", "zh": "理由", "o": ["corr. sides, ≅△s", "alt. ∠s", "vert. opp. ∠s", "common side"], "a": 0, "e": "Corresponding sides of congruent triangles."}, {"u": 2, "t": "Conditions", "q": "Three pairs of equal sides means…", "zh": "條件", "o": ["SSS", "SAS", "ASA", "RHS"], "a": 0, "e": "Side-Side-Side."}, {"u": 2, "t": "Conditions", "q": "Two sides and the included angle equal means…", "zh": "條件", "o": ["SAS", "SSA", "AAS", "SSS"], "a": 0, "e": "The angle is between the sides."}, {"u": 2, "t": "Conditions", "q": "Two angles and the included side equal means…", "zh": "條件", "o": ["ASA", "AAS", "SAS", "RHS"], "a": 0, "e": "The side is between the angles."}, {"u": 2, "t": "Conditions", "q": "Right angle, hypotenuse and one side equal means…", "zh": "條件", "o": ["RHS", "SSS", "ASA", "AAA"], "a": 0, "e": "Right angle-Hypotenuse-Side."}, {"u": 2, "t": "Conditions", "q": "Which is NOT a condition for congruent triangles?", "zh": "條件", "o": ["AAA", "SSS", "ASA", "RHS"], "a": 0, "e": "AAA only gives the same shape."}, {"u": 2, "t": "Conditions", "q": "Which is NOT a condition for congruent triangles?", "zh": "條件", "o": ["SSA", "SAS", "AAS", "RHS"], "a": 0, "e": "The angle must be included (SAS)."}, {"u": 2, "t": "Conditions", "q": "AB = AD (given), ∠BAC = ∠DAC (given), AC = AC. Which condition?", "zh": "證明", "o": ["SAS", "SSS", "ASA", "RHS"], "a": 0, "e": "Two sides and the included angle."}, {"u": 2, "t": "Conditions", "q": "A side shared by both triangles is called a…", "zh": "公共邊", "o": ["common side", "hypotenuse", "included side", "mid-point"], "a": 0, "e": "e.g. AC = AC (common side)."}, {"u": 3, "t": "Using", "q": "C is the mid-point of BD. Then…", "zh": "中點", "o": ["BC = DC", "AB = ED", "AC = BD", "BD = 2AC"], "a": 0, "e": "A mid-point cuts a line in half."}, {"u": 3, "t": "Using", "q": "△ABC ≅ △ADC, C lies on BD, BD = 8 cm. BC = ?", "zh": "應用", "o": ["4 cm", "8 cm", "16 cm", "2 cm"], "a": 0, "e": "BC = DC."}, {"u": 3, "t": "Using", "q": "If ∠ACB = ∠ACD and C lies on BD, then each angle is…", "zh": "垂直", "o": ["90°", "45°", "180°", "60°"], "a": 0, "e": "They add up to 180° [adj. ∠s on st. line]."}, {"u": 3, "t": "Using", "q": "In a proof, \"Hence\" means…", "zh": "證明", "o": ["use the result just proved", "start again", "give up", "guess"], "a": 0, "e": "Use part (a)."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>
