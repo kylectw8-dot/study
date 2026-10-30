@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Files</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EEF2F5; --paper:#FFFFFF; --ink:#1F2B37; --soft:#52606E; --line:#C8D3DC;
+  --quiz:#7B61FF; --guide:#2F9E5B; --notes:#F2994A; --other:#2F80ED;
+}
+@media (prefers-color-scheme: dark){
+  :root{color-scheme:dark;--bg:#131A21;--paper:#1C252F;--ink:#E7EDF2;--soft:#A8B5C1;--line:#33414F}
+}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Lexend",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:19px;line-height:1.6}
+main{max-width:760px;margin:0 auto;padding:28px 16px 60px}
+h1{font-size:2rem;line-height:1.2;margin:8px 0 4px}
+.sub{color:var(--soft);margin:0 0 20px}
+.back{display:inline-block;color:var(--soft);text-decoration:none;font-size:.9rem;margin-bottom:6px}
+.back:hover{color:var(--ink)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.filters button{font:inherit;font-size:.9rem;font-weight:600;padding:6px 14px;border-radius:999px;border:2px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+.group{margin:22px 0 8px;font-size:1.05rem;color:var(--soft)}
+ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+a.card{display:flex;gap:14px;align-items:center;text-decoration:none;color:var(--ink);background:var(--paper);border:2px solid var(--line);border-left:10px solid var(--c);border-radius:12px;padding:14px 16px}
+a.card:hover,a.card:focus-visible{border-color:var(--ink);border-left-color:var(--c);outline:none}
+.icon{font-size:1.8rem;flex:none}
+.name{font-weight:700;display:block}
+.meta{color:var(--soft);font-size:.85rem}
+.msg{background:var(--paper);border:2px dashed var(--line);border-radius:12px;padding:16px;color:var(--soft)}
+footer{color:var(--soft);font-size:.85rem;margin-top:36px}
+</style>
+</head>
+<body>
+<main>
+  <a class="back" id="back" href="../" hidden>← All subjects</a>
+  <h1 id="title">Study files</h1>
+  <p class="sub" id="sub">Tap a file to open it.</p>
+  <div class="filters" id="filters" role="group" aria-label="Filter by type"></div>
+  <div id="list"><p class="msg">Loading files…</p></div>
+  <footer>This page updates by itself when new files are added to the folder.</footer>
+</main>
+<script>
+const OWNER="kylectw8-dot", REPO="study";
+// Folder = the part of the URL after /study/, e.g. "IS"
+const parts=location.pathname.split("/").filter(Boolean);
+const folder=decodeURIComponent(parts[parts.indexOf(REPO)+1]||"");
+const SUBJECTS={IS:"Integrated Science",GEOG:"Geography",GEO:"Geography",CL:"Computer Literacy",CES:"Citizenship, Economics and Society",CSD:"Citizenship and Social Development",PTH:"Putonghua",MATHS:"Mathematics",RSE:"Religious Studies & Ethics",ENG:"English",CHI:"Chinese",MATH:"Mathematics",HIST:"History",CHIST:"Chinese History"};
+const subjectName=SUBJECTS[folder.toUpperCase()]||folder||"Study files";
+document.title=subjectName+" – Study Files";
+document.getElementById("title").textContent=subjectName;
+
+const TYPES=[
+  {key:"quiz",match:/quiz/i,label:"Quizzes",one:"Quiz",icon:"🎯",color:"var(--quiz)"},
+  {key:"guide",match:/guide|revision/i,label:"Study guides",one:"Study guide",icon:"📘",color:"var(--guide)"},
+  {key:"notes",match:/note/i,label:"Notes",one:"Notes",icon:"📝",color:"var(--notes)"},
+  {key:"other",match:/./,label:"Other",one:"File",icon:"📄",color:"var(--other)"}
+];
+function typeOf(n){return TYPES.find(t=>t.match.test(n));}
+function nice(file){
+  let s=file.replace(/\.html?$/i,"");
+  const form=(s.match(/^(F\d)[_-]/i)||[])[1];
+  if(form) s=s.slice(form.length+1);
+  s=s.replace(/[_-](\d[AB])(?=[_-])/i,"");
+  s=s.replace(/unit\s?(\d+)-(\d+)/i,"Unit $1–$2").replace(/[_-]+/g," ").replace(/unit\s?(\d+)/i,"Unit $1").replace(/\b\w/g,c=>c.toUpperCase());
+  return {title:s, form:form?form.toUpperCase():""};
+}
+// Group key: optional book (1A/1B) + unit number
+function groupOf(n){
+  const book=((n.match(/[_-](\d[AB])[_-]/i)||[])[1]||"").toUpperCase();
+  const m=n.match(/unit\s?_?-?(\d+)(?:-(\d+))?/i);
+  const u=m?+m[1]:999, label=m?("Unit "+m[1]+(m[2]?"–"+m[2]:"")):"Other files";
+  return {key:(book||"0")+"-"+String(u).padStart(3,"0"), label:(book&&m?"Book "+book+" · ":"")+label};
+}
+let files=[], active="all";
+function render(){
+  const list=document.getElementById("list");
+  const shown=files.filter(f=>active==="all"||typeOf(f.name).key===active);
+  if(!shown.length){list.innerHTML='<p class="msg">No files here yet.</p>';return;}
+  list.innerHTML="";
+  const groups={}, labels={};
+  shown.forEach(f=>{const g=groupOf(f.name);(groups[g.key]=groups[g.key]||[]).push(f);labels[g.key]=g.label;});
+  Object.keys(groups).sort().forEach(k=>{
+    const h=document.createElement("h2");h.className="group";h.textContent=labels[k];list.appendChild(h);
+    const ul=document.createElement("ul");
+    groups[k].sort((a,b)=>TYPES.indexOf(typeOf(b.name))-TYPES.indexOf(typeOf(a.name))).forEach(f=>{
+      const t=typeOf(f.name), n=nice(f.name);
+      const li=document.createElement("li");
+      const a=document.createElement("a");a.className="card";a.href=encodeURIComponent(f.name);a.style.setProperty("--c",t.color);
+      a.innerHTML='<span class="icon" aria-hidden="true"></span><span><span class="name"></span><span class="meta"></span></span>';
+      a.querySelector(".icon").textContent=t.icon;
+      a.querySelector(".name").textContent=n.title;
+      a.querySelector(".meta").textContent=[n.form,t.one].filter(Boolean).join(" · ");
+      li.appendChild(a);ul.appendChild(li);
+    });
+    list.appendChild(ul);
+  });
+}
+function buildFilters(){
+  const present=new Set(files.map(f=>typeOf(f.name).key));
+  const opts=[{key:"all",label:"All"},...TYPES.filter(t=>present.has(t.key))];
+  if(opts.length<3){document.getElementById("filters").style.display="none";return;}
+  const box=document.getElementById("filters");box.innerHTML="";
+  opts.forEach(o=>{const b=document.createElement("button");b.type="button";b.textContent=o.label;b.setAttribute("aria-pressed",o.key===active);
+    b.onclick=()=>{active=o.key;[...box.children].forEach(c=>c.setAttribute("aria-pressed",c===b));render();};box.appendChild(b);});
+}
+async function load(){
+  try{
+    const r=await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(folder)}?ref=main`);
+    if(!r.ok) throw new Error(r.status);
+    const data=await r.json();
+    files=data.filter(f=>f.type==="file"&&/\.html?$/i.test(f.name)&&!/^index\.html?$/i.test(f.name));
+    try{localStorage.setItem("files:"+folder,JSON.stringify(files.map(f=>({name:f.name}))));}catch(e){}
+  }catch(e){
+    try{files=JSON.parse(localStorage.getItem("files:"+folder)||"[]");}catch(_){files=[];}
+    if(!files.length){document.getElementById("list").innerHTML='<p class="msg">Could not load the file list right now. Please try again in a minute.</p>';return;}
+  }
+  document.getElementById("sub").textContent=files.length+(files.length===1?" file":" files")+". Tap one to open it.";
+  buildFilters();render();
+}
+load();
+// Show the "All subjects" link only if a home page exists
+fetch("../",{method:"HEAD"}).then(r=>{if(r.ok)document.getElementById("back").hidden=false;}).catch(()=>{});
+</script>
+</body>
+</html>
