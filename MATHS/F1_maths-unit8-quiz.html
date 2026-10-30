@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maths Chapter 8 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Maths</a> · <a href="F1_maths-unit8-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Maths Chapter 8 Quiz ➗</h1>
+  <p class="sub">Angles Related to Lines and Triangles. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Angles &amp; triangles<small>Types, complement, triangle sum</small></button><button class="big u2" data-set="2">Lines &amp; points<small>Straight line, point, vertically opposite</small></button><button class="big u3" data-set="3">Parallel lines<small>Corresponding, alternate, interior</small></button><button class="big" data-set="all">Everything<small>All 22 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "Angles", "q": "An angle of 120° is…", "zh": "角的種類", "o": ["obtuse", "acute", "reflex", "right"], "a": 0, "e": "Between 90° and 180°."}, {"u": 1, "t": "Angles", "q": "An angle of 250° is…", "zh": "角的種類", "o": ["reflex", "obtuse", "straight", "acute"], "a": 0, "e": "Between 180° and 360°."}, {"u": 1, "t": "Angles", "q": "x and y are complementary. If x = 35°, y = ?", "zh": "互餘", "o": ["55°", "145°", "35°", "65°"], "a": 0, "e": "They add up to 90°."}, {"u": 1, "t": "Angles", "q": "a and b are supplementary. If a = 60°, b = ?", "zh": "互補", "o": ["120°", "30°", "300°", "60°"], "a": 0, "e": "They add up to 180°."}, {"u": 1, "t": "Angles", "q": "In ∠ABC, the vertex is…", "zh": "頂點", "o": ["B", "A", "C", "AC"], "a": 0, "e": "The middle letter."}, {"u": 1, "t": "Triangles", "q": "A triangle has angles 55° and 35°. The third angle is…", "zh": "三角形內角和", "o": ["90°", "100°", "80°", "270°"], "a": 0, "e": "180 − 55 − 35."}, {"u": 1, "t": "Triangles", "q": "A triangle has three equal angles 2x. x = ?", "zh": "三角形內角和", "o": ["30°", "60°", "90°", "20°"], "a": 0, "e": "6x = 180."}, {"u": 1, "t": "Triangles", "q": "The exterior angle of a triangle equals…", "zh": "外角", "o": ["the sum of the two interior opposite angles", "180°", "the adjacent interior angle", "90°"], "a": 0, "e": "[ext. ∠ of △]"}, {"u": 1, "t": "Triangles", "q": "Triangle angles 2x + 14, 3x + 9, 2x − 4. x = ?", "zh": "代數", "o": ["23", "25", "20", "27"], "a": 0, "e": "7x + 19 = 180."}, {"u": 2, "t": "Lines", "q": "Adjacent angles on a straight line add up to…", "zh": "直線上的鄰角", "o": ["180°", "90°", "360°", "270°"], "a": 0, "e": "[adj. ∠s on st. line]"}, {"u": 2, "t": "Lines", "q": "AOB is a straight line. One angle is 130°; the other is…", "zh": "直線", "o": ["50°", "230°", "130°", "40°"], "a": 0, "e": "180 − 130."}, {"u": 2, "t": "Lines", "q": "Angles at a point add up to…", "zh": "同頂角", "o": ["360°", "180°", "90°", "270°"], "a": 0, "e": "[∠s at a pt.]"}, {"u": 2, "t": "Lines", "q": "Angles at a point: x, 100°, 150°. x = ?", "zh": "同頂角", "o": ["110°", "70°", "90°", "250°"], "a": 0, "e": "360 − 250."}, {"u": 2, "t": "Lines", "q": "Vertically opposite angles are…", "zh": "對頂角", "o": ["equal", "supplementary", "complementary", "always 90°"], "a": 0, "e": "[vert. opp. ∠s]"}, {"u": 2, "t": "Lines", "q": "On a straight line: 2x, 3x + 5 and 5x − 15. x = ?", "zh": "代數", "o": ["19", "18", "20", "17"], "a": 0, "e": "10x − 10 = 180."}, {"u": 3, "t": "Parallel", "q": "If AB // CD, corresponding angles are…", "zh": "同位角", "o": ["equal", "supplementary", "90°", "unrelated"], "a": 0, "e": "F shape."}, {"u": 3, "t": "Parallel", "q": "If AB // CD, alternate angles are…", "zh": "內錯角", "o": ["equal", "supplementary", "complementary", "360°"], "a": 0, "e": "Z shape."}, {"u": 3, "t": "Parallel", "q": "If AB // CD, interior angles add up to…", "zh": "同旁內角", "o": ["180°", "90°", "360°", "equal"], "a": 0, "e": "C/U shape."}, {"u": 3, "t": "Parallel", "q": "AB // CD. An interior angle is 100°. The other interior angle x = ?", "zh": "同旁內角", "o": ["80°", "100°", "260°", "90°"], "a": 0, "e": "180 − 100."}, {"u": 3, "t": "Parallel", "q": "AB // CD. Alternate angle 65°. x = ?", "zh": "內錯角", "o": ["65°", "115°", "25°", "130°"], "a": 0, "e": "Alternate angles are equal."}, {"u": 3, "t": "Parallel", "q": "Interior angles 105° and 75°. The lines are…", "zh": "判斷平行", "o": ["parallel", "not parallel", "perpendicular", "cannot tell"], "a": 0, "e": "105 + 75 = 180 [int. ∠s supp.]."}, {"u": 3, "t": "Parallel", "q": "Corresponding angles are 98° and 98°. The lines are…", "zh": "判斷平行", "o": ["parallel", "not parallel", "perpendicular", "cannot tell"], "a": 0, "e": "[corr. ∠s equal]"}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

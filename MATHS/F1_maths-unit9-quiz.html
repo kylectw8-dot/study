@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maths Chapter 9 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Maths</a> · <a href="F1_maths-unit9-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Maths Chapter 9 Quiz ➗</h1>
+  <p class="sub">Area and Volume (I). Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Area<small>Plane figures</small></button><button class="big u2" data-set="2">Volume<small>Polyhedra and prisms</small></button><button class="big u3" data-set="3">Surface area<small>Total surface area</small></button><button class="big" data-set="all">Everything<small>All 16 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "Area", "q": "Area of a triangle with base 20 cm and height 7 cm?", "zh": "三角形", "o": ["70 cm²", "140 cm²", "27 cm²", "35 cm²"], "a": 0, "e": "½ × 20 × 7."}, {"u": 1, "t": "Area", "q": "Area of a parallelogram with base 8 cm and height 5 cm?", "zh": "平行四邊形", "o": ["40 cm²", "20 cm²", "13 cm²", "26 cm²"], "a": 0, "e": "base × height."}, {"u": 1, "t": "Area", "q": "Area of a trapezium with parallel sides 6 and 10 cm, height 4 cm?", "zh": "梯形", "o": ["32 cm²", "64 cm²", "40 cm²", "20 cm²"], "a": 0, "e": "½(16)(4)."}, {"u": 1, "t": "Area", "q": "A trapezium (bases 3 cm, 13 cm) has the same area as an 8 cm square. h = ?", "zh": "梯形", "o": ["8 cm", "4 cm", "16 cm", "6 cm"], "a": 0, "e": "8h = 64."}, {"u": 1, "t": "Area", "q": "The height used in an area formula must be…", "zh": "高", "o": ["perpendicular to the base", "any slanted side", "the longest side", "half the base"], "a": 0, "e": "Height is at 90° to the base."}, {"u": 2, "t": "Volume", "q": "Which is a polyhedron?", "zh": "多面體", "o": ["A cube", "A sphere", "A cylinder", "A cone"], "a": 0, "e": "Only flat faces."}, {"u": 2, "t": "Volume", "q": "Volume of a prism = ?", "zh": "柱體體積", "o": ["cross-section area × length", "perimeter × length", "base + height", "½ × base × height"], "a": 0, "e": "Same cross-section along the length."}, {"u": 2, "t": "Volume", "q": "Cross-section 36 cm², length 16 cm. Volume?", "zh": "體積", "o": ["576 cm³", "52 cm³", "288 cm³", "1152 cm³"], "a": 0, "e": "36 × 16."}, {"u": 2, "t": "Volume", "q": "Volume of a cube of side 7 cm?", "zh": "體積", "o": ["343 cm³", "49 cm³", "294 cm³", "21 cm³"], "a": 0, "e": "7 × 7 × 7."}, {"u": 2, "t": "Volume", "q": "Volume of a 28 × 17 × 12 cm cuboid?", "zh": "體積", "o": ["5712 cm³", "476 cm³", "57 cm³", "2856 cm³"], "a": 0, "e": "28 × 17 × 12."}, {"u": 2, "t": "Volume", "q": "Triangular prism: triangle base 4 cm, height 3 cm, length 8 cm. Volume?", "zh": "體積", "o": ["48 cm³", "96 cm³", "24 cm³", "15 cm³"], "a": 0, "e": "6 × 8."}, {"u": 2, "t": "Volume", "q": "A prism has volume 360 cm³ and length 10 cm. Cross-section area?", "zh": "反求", "o": ["36 cm²", "3600 cm²", "350 cm²", "3.6 cm²"], "a": 0, "e": "360 ÷ 10."}, {"u": 3, "t": "Surface", "q": "TSA of a 4 × 4 × 7 cm cuboid?", "zh": "總表面面積", "o": ["144 cm²", "112 cm²", "72 cm²", "128 cm²"], "a": 0, "e": "32 + 112."}, {"u": 3, "t": "Surface", "q": "TSA of a cube of side 9 cm?", "zh": "總表面面積", "o": ["486 cm²", "729 cm²", "81 cm²", "324 cm²"], "a": 0, "e": "6 × 81."}, {"u": 3, "t": "Surface", "q": "The unit of total surface area is…", "zh": "單位", "o": ["cm²", "cm³", "cm", "cm⁴"], "a": 0, "e": "It is an area."}, {"u": 3, "t": "Surface", "q": "TSA of a cuboid l × w × h is…", "zh": "長方體", "o": ["2(lw + lh + wh)", "lwh", "2(l + w + h)", "6l²"], "a": 0, "e": "Three pairs of faces."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>
