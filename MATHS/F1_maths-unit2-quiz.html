@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maths Chapter 2 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Maths</a> · <a href="F1_maths-unit2-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Maths Chapter 2 Quiz ➗</h1>
+  <p class="sub">Directed Numbers. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Meaning &amp; order<small>Number line, compare</small></button><button class="big u2" data-set="2">Add &amp; subtract<small>Sign rules</small></button><button class="big u3" data-set="3">Multiply &amp; divide<small>Sign rules</small></button><button class="big" data-set="all">Everything<small>All 19 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "Order", "q": "The opposite number of −12 is…", "zh": "相反數", "o": ["+12", "−12", "0", "1/12"], "a": 0, "e": "Same size, opposite sign."}, {"u": 1, "t": "Order", "q": "If +3 floors means up 3 floors, −4 floors means…", "zh": "意思", "o": ["down 4 floors", "up 4 floors", "down 3 floors", "stay"], "a": 0, "e": "Negative is the opposite direction."}, {"u": 1, "t": "Order", "q": "Which is correct?", "zh": "比較", "o": ["−17 < −13", "−17 > −13", "−17 = −13", "−13 < −17"], "a": 0, "e": "−17 is further left on the number line."}, {"u": 1, "t": "Order", "q": "Ascending order of +28, −30, −14, +17 is…", "zh": "由小至大", "o": ["−30, −14, +17, +28", "−14, −30, +17, +28", "+28, +17, −14, −30", "−30, +17, −14, +28"], "a": 0, "e": "Smallest to largest."}, {"u": 1, "t": "Order", "q": "The lift goes up 10 floors. This is…", "zh": "有向數", "o": ["+10", "−10", "10−", "0"], "a": 0, "e": "Up is positive."}, {"u": 2, "t": "Add/subtract", "q": "−12 + 8 = ?", "zh": "加法", "o": ["−4", "4", "−20", "20"], "a": 0, "e": "Start at −12, move 8 right."}, {"u": 2, "t": "Add/subtract", "q": "−7 − 10 = ?", "zh": "減法", "o": ["−17", "−3", "3", "17"], "a": 0, "e": "Move further left."}, {"u": 2, "t": "Add/subtract", "q": "(−17) + (−1) = ?", "zh": "加法", "o": ["−18", "−16", "18", "16"], "a": 0, "e": "+(−) → −."}, {"u": 2, "t": "Add/subtract", "q": "(+11) − (−5) = ?", "zh": "減負數", "o": ["16", "6", "−6", "−16"], "a": 0, "e": "Minus a negative = plus."}, {"u": 2, "t": "Add/subtract", "q": "(−13) − (−12) = ?", "zh": "減負數", "o": ["−1", "1", "−25", "25"], "a": 0, "e": "−13 + 12."}, {"u": 2, "t": "Add/subtract", "q": "(+7) + (−18) = ?", "zh": "加法", "o": ["−11", "11", "25", "−25"], "a": 0, "e": "7 − 18."}, {"u": 2, "t": "Add/subtract", "q": "(+16) − (+31) = ?", "zh": "減法", "o": ["−15", "15", "47", "−47"], "a": 0, "e": "16 − 31."}, {"u": 2, "t": "Add/subtract", "q": "(+2) + (−4) − (+8) = ?", "zh": "混合", "o": ["−10", "−6", "6", "14"], "a": 0, "e": "2 − 4 − 8."}, {"u": 3, "t": "Multiply/divide", "q": "(+9) × (−3) = ?", "zh": "乘法", "o": ["−27", "27", "−12", "6"], "a": 0, "e": "Different signs → negative."}, {"u": 3, "t": "Multiply/divide", "q": "(−3) × (−10) = ?", "zh": "乘法", "o": ["30", "−30", "−13", "13"], "a": 0, "e": "Same signs → positive."}, {"u": 3, "t": "Multiply/divide", "q": "(−144) ÷ (+9) = ?", "zh": "除法", "o": ["−16", "16", "−135", "153"], "a": 0, "e": "Different signs → negative."}, {"u": 3, "t": "Multiply/divide", "q": "(−6)(−3) − (+15) = ?", "zh": "混合", "o": ["3", "−33", "33", "−3"], "a": 0, "e": "18 − 15."}, {"u": 3, "t": "Multiply/divide", "q": "(+23) − (+8) × (−4) = ?", "zh": "運算次序", "o": ["55", "−60", "60", "−9"], "a": 0, "e": "8 × (−4) = −32; 23 + 32."}, {"u": 3, "t": "Multiply/divide", "q": "(+10) × (−5) × (+8) = ?", "zh": "乘法", "o": ["−400", "400", "−13", "80"], "a": 0, "e": "One negative sign → negative."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

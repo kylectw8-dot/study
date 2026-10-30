@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maths Chapter 3 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Maths</a> · <a href="F1_maths-unit3-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Maths Chapter 3 Quiz ➗</h1>
+  <p class="sub">Introduction to Algebra. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Expressions<small>Writing and simplifying</small></button><button class="big u2" data-set="2">Formulas<small>Substitution</small></button><button class="big u3" data-set="3">Sequences<small>Patterns and functions</small></button><button class="big" data-set="all">Everything<small>All 22 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "Expressions", "q": "\"Divide 4a by b\" is…", "zh": "代數式", "o": ["4a/b", "b/4a", "4ab", "4a − b"], "a": 0, "e": "4a is divided by b."}, {"u": 1, "t": "Expressions", "q": "\"Subtract the square of y from x\" is…", "zh": "代數式", "o": ["x − y²", "y² − x", "x² − y", "(x − y)²"], "a": 0, "e": "\"Subtract … from x\" means x − …."}, {"u": 1, "t": "Expressions", "q": "\"Multiply 7 by the sum of a and b\" is…", "zh": "代數式", "o": ["7(a + b)", "7a + b", "a + 7b", "7 + a + b"], "a": 0, "e": "The sum needs brackets."}, {"u": 1, "t": "Expressions", "q": "How many terms does x³ + xy + y² − 6y + 2 have?", "zh": "項數", "o": ["5", "4", "3", "6"], "a": 0, "e": "Count parts separated by + or −."}, {"u": 1, "t": "Expressions", "q": "Which pair are like terms?", "zh": "同類項", "o": ["2x and x", "x² and x", "xy and x", "x and y"], "a": 0, "e": "Same letters and same powers."}, {"u": 1, "t": "Expressions", "q": "Simplify 2a − 3b + a.", "zh": "化簡", "o": ["3a − 3b", "3a + 3b", "−a", "2a − 2b"], "a": 0, "e": "2a + a = 3a."}, {"u": 1, "t": "Expressions", "q": "Simplify −x − y + 3x − 4y.", "zh": "化簡", "o": ["2x − 5y", "4x − 5y", "2x − 3y", "−4x + 5y"], "a": 0, "e": "−x + 3x = 2x; −y − 4y = −5y."}, {"u": 1, "t": "Expressions", "q": "2p × 3p = ?", "zh": "化簡", "o": ["6p²", "6p", "5p", "5p²"], "a": 0, "e": "2 × 3 = 6; p × p = p²."}, {"u": 1, "t": "Expressions", "q": "Daisy buys 6 tarts at $m and 8 pancakes at $n. She pays…", "zh": "應用", "o": ["$(6m + 8n)", "$14mn", "$(m + n)", "$48mn"], "a": 0, "e": "6 × m + 8 × n."}, {"u": 2, "t": "Formulas", "q": "B = 6b + 3. If b = 4, B = ?", "zh": "代入", "o": ["27", "24", "30", "13"], "a": 0, "e": "6 × 4 + 3."}, {"u": 2, "t": "Formulas", "q": "E = 9 − e². If e = −2, E = ?", "zh": "代入", "o": ["5", "13", "−5", "1"], "a": 0, "e": "(−2)² = 4; 9 − 4."}, {"u": 2, "t": "Formulas", "q": "F = −f² + 4f − 6. If f = 5, F = ?", "zh": "代入", "o": ["−11", "39", "−1", "9"], "a": 0, "e": "−25 + 20 − 6."}, {"u": 2, "t": "Formulas", "q": "g = 6x − 5y. If x = 2 and y = −4, g = ?", "zh": "代入", "o": ["32", "−8", "8", "−32"], "a": 0, "e": "12 − 5(−4) = 12 + 20."}, {"u": 2, "t": "Formulas", "q": "h = 5 + 3n. The height of a 30-level building is…", "zh": "應用", "o": ["95 m", "90 m", "150 m", "35 m"], "a": 0, "e": "5 + 90."}, {"u": 2, "t": "Formulas", "q": "D = 2000x − 5000. Selling 8 phones gives…", "zh": "應用", "o": ["a profit of $11 000", "a loss of $11 000", "a profit of $16 000", "a loss of $5000"], "a": 0, "e": "16 000 − 5000 = 11 000 (positive → profit)."}, {"u": 3, "t": "Sequences", "q": "Next term of 3, 7, 11, 15, …?", "zh": "數列", "o": ["19", "18", "20", "23"], "a": 0, "e": "Add 4 each time."}, {"u": 3, "t": "Sequences", "q": "Next term of 19, 10, 1, −8, …?", "zh": "數列", "o": ["−17", "−16", "−9", "−18"], "a": 0, "e": "Subtract 9 each time."}, {"u": 3, "t": "Sequences", "q": "Next term of 1, −3, 9, −27, …?", "zh": "數列", "o": ["81", "−81", "54", "−54"], "a": 0, "e": "Multiply by −3."}, {"u": 3, "t": "Sequences", "q": "Next term of 64, 32, 16, 8, …?", "zh": "數列", "o": ["4", "0", "6", "2"], "a": 0, "e": "Divide by 2."}, {"u": 3, "t": "Sequences", "q": "First three terms of aₙ = 8(n − 2) are…", "zh": "通項", "o": ["−8, 0, 8", "8, 16, 24", "−16, −8, 0", "0, 8, 16"], "a": 0, "e": "n = 1, 2, 3."}, {"u": 3, "t": "Sequences", "q": "y = x² − 3x + 1. If x = −2, y = ?", "zh": "函數", "o": ["11", "−1", "3", "−9"], "a": 0, "e": "4 + 6 + 1."}, {"u": 3, "t": "Sequences", "q": "Dots: 5, 8, 11, … How many dots in the 8th figure?", "zh": "規律", "o": ["26", "29", "24", "40"], "a": 0, "e": "5 + 7 × 3."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

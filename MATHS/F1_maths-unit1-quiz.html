@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maths Chapter 1 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Maths</a> · <a href="F1_maths-unit1-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Maths Chapter 1 Quiz ➗</h1>
+  <p class="sub">Basic Computation. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Divisibility<small>Tests for 2–10, primes</small></button><button class="big u2" data-set="2">Powers &amp; H.C.F./L.C.M.<small>Prime factors</small></button><button class="big u3" data-set="3">Order of operations<small>Brackets, × ÷, + −</small></button><button class="big" data-set="all">Everything<small>All 21 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "Divisibility", "q": "Which number is divisible by 3?", "zh": "被3整除", "o": ["1728", "3895", "223", "4899"], "a": 0, "e": "1 + 7 + 2 + 8 = 18, a multiple of 3."}, {"u": 1, "t": "Divisibility", "q": "Which number is divisible by 4?", "zh": "被4整除", "o": ["6076", "5802", "223", "3895"], "a": 0, "e": "Last two digits 76 = 4 × 19."}, {"u": 1, "t": "Divisibility", "q": "Which number is divisible by 8?", "zh": "被8整除", "o": ["5200", "3356", "6076", "2085"], "a": 0, "e": "Last three digits 200 = 8 × 25."}, {"u": 1, "t": "Divisibility", "q": "A number is divisible by 5 if its unit digit is…", "zh": "個位", "o": ["0 or 5", "even", "3", "9"], "a": 0, "e": "2085 ends in 5, so it is divisible by 5."}, {"u": 1, "t": "Divisibility", "q": "A number is divisible by 6 if it is divisible by…", "zh": "被6整除", "o": ["both 2 and 3", "both 2 and 4", "only 3", "only 2"], "a": 0, "e": "6 = 2 × 3."}, {"u": 1, "t": "Divisibility", "q": "Which is a prime number?", "zh": "質數", "o": ["13", "1", "15", "21"], "a": 0, "e": "13 has exactly two factors: 1 and 13."}, {"u": 1, "t": "Divisibility", "q": "Is 6955 divisible by 10?", "zh": "被10整除", "o": ["No, its unit digit is not 0", "Yes", "Yes, it ends in 5", "Cannot tell"], "a": 0, "e": "Divisible by 10 only if it ends in 0."}, {"u": 2, "t": "Powers", "q": "5 × 5 × 5 × 3 written with powers is…", "zh": "冪", "o": ["3 × 5³", "15³", "5 × 3³", "3⁵"], "a": 0, "e": "Three 5s → 5³."}, {"u": 2, "t": "Powers", "q": "The prime factorization of 36 is…", "zh": "質因數分解", "o": ["2² × 3²", "4 × 9", "6²", "2 × 18"], "a": 0, "e": "36 = 2 × 2 × 3 × 3."}, {"u": 2, "t": "H.C.F.", "q": "H.C.F. of 24 and 80 is…", "zh": "最大公因數", "o": ["8", "4", "16", "240"], "a": 0, "e": "24 = 2³ × 3, 80 = 2⁴ × 5. Common: 2³ = 8."}, {"u": 2, "t": "L.C.M.", "q": "L.C.M. of 24 and 80 is…", "zh": "最小公倍數", "o": ["240", "1920", "80", "480"], "a": 0, "e": "2⁴ × 3 × 5 = 240."}, {"u": 2, "t": "H.C.F.", "q": "H.C.F. of 63 and 84 is…", "zh": "最大公因數", "o": ["21", "7", "3", "252"], "a": 0, "e": "63 = 3² × 7, 84 = 2² × 3 × 7 → 3 × 7."}, {"u": 2, "t": "L.C.M.", "q": "L.C.M. of 63 and 84 is…", "zh": "最小公倍數", "o": ["252", "21", "5292", "168"], "a": 0, "e": "2² × 3² × 7 = 252."}, {"u": 2, "t": "L.C.M.", "q": "L.C.M. of 12 and 20 is…", "zh": "最小公倍數", "o": ["60", "240", "4", "120"], "a": 0, "e": "2 × 2 × 3 × 5 = 60."}, {"u": 2, "t": "L.C.M.", "q": "L.C.M. of 8, 12 and 15 is…", "zh": "最小公倍數", "o": ["120", "60", "240", "1440"], "a": 0, "e": "2³ × 3 × 5 = 120."}, {"u": 3, "t": "Operations", "q": "4 × (9 + 1) − 8 = ?", "zh": "運算次序", "o": ["32", "37", "28", "40"], "a": 0, "e": "Brackets first: 4 × 10 − 8."}, {"u": 3, "t": "Operations", "q": "\"Subtract 5 from 16\" equals…", "zh": "文字題", "o": ["11", "−11", "21", "80"], "a": 0, "e": "16 − 5."}, {"u": 3, "t": "Operations", "q": "\"Add the product of 10 and 4 to 12\" equals…", "zh": "文字題", "o": ["52", "26", "88", "40"], "a": 0, "e": "12 + 40."}, {"u": 3, "t": "Operations", "q": "12 − 2 × 3 = ?", "zh": "運算次序", "o": ["6", "30", "18", "8"], "a": 0, "e": "Multiply first: 12 − 6."}, {"u": 3, "t": "Fractions", "q": "2/3 + 1/4 = ?", "zh": "分數", "o": ["11/12", "3/7", "3/12", "2/7"], "a": 0, "e": "8/12 + 3/12."}, {"u": 3, "t": "Fractions", "q": "To divide by a fraction, you…", "zh": "除分數", "o": ["multiply by its reciprocal", "add the denominators", "subtract the numerators", "do nothing"], "a": 0, "e": "Flip the second fraction and multiply."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

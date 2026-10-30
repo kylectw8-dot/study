@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maths Chapter 4 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Maths</a> · <a href="F1_maths-unit4-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Maths Chapter 4 Quiz ➗</h1>
+  <p class="sub">Linear Equations in One Unknown. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Solving<small>Simple and both-sides</small></button><button class="big u2" data-set="2">Brackets &amp; fractions<small>Expand, clear fractions</small></button><button class="big u3" data-set="3">Word problems<small>Set up equations</small></button><button class="big" data-set="all">Everything<small>All 27 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "Solving", "q": "Solve x + 2 = 5.", "zh": "解方程", "o": ["x = 3", "x = 7", "x = 10", "x = 2.5"], "a": 0, "e": "Subtract 2 from both sides."}, {"u": 1, "t": "Solving", "q": "Solve x − 4 = 8.", "zh": "解方程", "o": ["x = 12", "x = 4", "x = 2", "x = 32"], "a": 0, "e": "Add 4 to both sides."}, {"u": 1, "t": "Solving", "q": "Solve x/6 = 9.", "zh": "解方程", "o": ["x = 54", "x = 1.5", "x = 15", "x = 3"], "a": 0, "e": "Multiply both sides by 6."}, {"u": 1, "t": "Solving", "q": "Solve 3x − 7 = 11.", "zh": "解方程", "o": ["x = 6", "x = 4/3", "x = 18", "x = 3"], "a": 0, "e": "3x = 18."}, {"u": 1, "t": "Solving", "q": "Solve 4x + 5 = 13.", "zh": "解方程", "o": ["x = 2", "x = 4.5", "x = 8", "x = 3"], "a": 0, "e": "4x = 8."}, {"u": 1, "t": "Solving", "q": "Solve 5 − x = 8.", "zh": "解方程", "o": ["x = −3", "x = 3", "x = 13", "x = −13"], "a": 0, "e": "−x = 3."}, {"u": 1, "t": "Solving", "q": "Solve 3a + 6 = 6.", "zh": "解方程", "o": ["a = 0", "a = 4", "a = 2", "a = −4"], "a": 0, "e": "3a = 0."}, {"u": 1, "t": "Solving", "q": "Solve 4n + 5n = 72.", "zh": "解方程", "o": ["n = 8", "n = 9", "n = 18", "n = 4"], "a": 0, "e": "9n = 72."}, {"u": 1, "t": "Solving", "q": "Solve 8x + 6 = 5x.", "zh": "解方程", "o": ["x = −2", "x = 2", "x = 6/13", "x = −6"], "a": 0, "e": "3x = −6."}, {"u": 1, "t": "Solving", "q": "Solve 5a − 2 = 3a + 14.", "zh": "解方程", "o": ["a = 8", "a = 6", "a = 16", "a = 2"], "a": 0, "e": "2a = 16."}, {"u": 1, "t": "Solving", "q": "Solve 3m − 15 = 5m + 9.", "zh": "解方程", "o": ["m = −12", "m = 12", "m = −3", "m = 3"], "a": 0, "e": "−24 = 2m."}, {"u": 2, "t": "Brackets", "q": "Solve 3(x + 5) = 15.", "zh": "括號", "o": ["x = 0", "x = 5", "x = 10", "x = −5"], "a": 0, "e": "x + 5 = 5."}, {"u": 2, "t": "Brackets", "q": "Solve 8(x − 2) = −56.", "zh": "括號", "o": ["x = −5", "x = −9", "x = 5", "x = −7"], "a": 0, "e": "x − 2 = −7."}, {"u": 2, "t": "Brackets", "q": "Solve −4(x − 6) = 28.", "zh": "括號", "o": ["x = −1", "x = 13", "x = 1", "x = −13"], "a": 0, "e": "x − 6 = −7."}, {"u": 2, "t": "Brackets", "q": "Solve −3(5 − x) = 12.", "zh": "括號", "o": ["x = 9", "x = 1", "x = −9", "x = −1"], "a": 0, "e": "5 − x = −4."}, {"u": 2, "t": "Fractions", "q": "Solve (x − 9)/2 = 4.", "zh": "分數", "o": ["x = 17", "x = 1", "x = 11", "x = 8"], "a": 0, "e": "x − 9 = 8."}, {"u": 2, "t": "Brackets", "q": "Solve 2(3m − 2) − 5 = 9.", "zh": "括號", "o": ["m = 3", "m = 2", "m = 18", "m = 1"], "a": 0, "e": "6m − 9 = 9."}, {"u": 3, "t": "Problems", "q": "A pen costs $4 more than a pencil. 5 pens cost $80. A pencil costs…", "zh": "應用題", "o": ["$12", "$16", "$20", "$4"], "a": 0, "e": "5(x + 4) = 80."}, {"u": 3, "t": "Problems", "q": "Fiona spends $200, then shares the rest among 3 people. Each gets $160. She had…", "zh": "應用題", "o": ["$680", "$480", "$560", "$360"], "a": 0, "e": "(x − 200)/3 = 160."}, {"u": 3, "t": "Problems", "q": "A toy car costs $40; a ship costs $x more. 2 cars and 3 ships cost $245. x = ?", "zh": "應用題", "o": ["15", "25", "55", "5"], "a": 0, "e": "80 + 3(40 + x) = 245."}, {"u": 3, "t": "Problems", "q": "The sum of two consecutive numbers is 171. The smaller is…", "zh": "連續數", "o": ["85", "86", "84", "170"], "a": 0, "e": "2x + 1 = 171."}, {"u": 3, "t": "Problems", "q": "40 students. Students with glasses are 6 fewer than those without. Without glasses?", "zh": "應用題", "o": ["23", "17", "26", "20"], "a": 0, "e": "x + (x − 6) = 40."}, {"u": 3, "t": "Problems", "q": "Two consecutive odd numbers add to 52. They are…", "zh": "連續單數", "o": ["25 and 27", "26 and 26", "24 and 28", "23 and 29"], "a": 0, "e": "x + (x + 2) = 52."}, {"u": 3, "t": "Problems", "q": "Two numbers add to 116, and their difference is 18. The larger is…", "zh": "應用題", "o": ["67", "49", "58", "98"], "a": 0, "e": "x + (x − 18) = 116."}, {"u": 3, "t": "Problems", "q": "80 cm wire cut into two parts; the first is 8 cm shorter. The second part is…", "zh": "應用題", "o": ["44 cm", "36 cm", "40 cm", "48 cm"], "a": 0, "e": "x + (x − 8) = 80."}, {"u": 3, "t": "Problems", "q": "Girls are twice the boys; 57 students in total. How many boys?", "zh": "應用題", "o": ["19", "38", "28", "29"], "a": 0, "e": "x + 2x = 57."}, {"u": 3, "t": "Problems", "q": "80 marbles; red is 2/3 of blue. How many blue?", "zh": "應用題", "o": ["48", "32", "40", "53"], "a": 0, "e": "x + 2x/3 = 80 → 5x/3 = 80."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

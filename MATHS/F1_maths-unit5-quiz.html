@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maths Chapter 5 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← Maths</a> · <a href="F1_maths-unit5-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>Maths Chapter 5 Quiz ➗</h1>
+  <p class="sub">Approximation and Numerical Estimation. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Significant figures<small>Counting and rounding off</small></button><button class="big u2" data-set="2">Round up &amp; down<small>Rounding methods and estimation</small></button><button class="big" data-set="all">Everything<small>All 20 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "S.f.", "q": "How many significant figures are in 12.79?", "zh": "有效數字", "o": ["4", "2", "3", "5"], "a": 0, "e": "All digits are non-zero."}, {"u": 1, "t": "S.f.", "q": "How many significant figures are in 0.0642?", "zh": "有效數字", "o": ["3", "4", "5", "2"], "a": 0, "e": "Leading zeros do not count."}, {"u": 1, "t": "S.f.", "q": "How many significant figures are in 80102?", "zh": "有效數字", "o": ["5", "3", "4", "2"], "a": 0, "e": "Zeros between non-zero digits count."}, {"u": 1, "t": "S.f.", "q": "How many significant figures are in 0.03520?", "zh": "有效數字", "o": ["4", "3", "5", "6"], "a": 0, "e": "The final 0 after the decimal point counts."}, {"u": 1, "t": "S.f.", "q": "The 1st significant figure of 0.0642 is…", "zh": "第一位有效數字", "o": ["6", "0", "4", "2"], "a": 0, "e": "The first non-zero digit."}, {"u": 1, "t": "S.f.", "q": "3197 rounded to 1 s.f. is…", "zh": "四捨五入", "o": ["3000", "3200", "4000", "3"], "a": 0, "e": "The next digit 1 < 5."}, {"u": 1, "t": "S.f.", "q": "8995 rounded to 2 s.f. is…", "zh": "四捨五入", "o": ["9000", "8900", "9900", "90"], "a": 0, "e": "899… → 90 hundreds."}, {"u": 1, "t": "S.f.", "q": "105.48 rounded to 3 s.f. is…", "zh": "四捨五入", "o": ["105", "106", "105.5", "110"], "a": 0, "e": "Next digit 4 < 5."}, {"u": 1, "t": "S.f.", "q": "0.008 14 rounded to 2 s.f. is…", "zh": "四捨五入", "o": ["0.0081", "0.008", "0.0082", "0.01"], "a": 0, "e": "Keep 8 and 1."}, {"u": 1, "t": "S.f.", "q": "310 875 rounded to 3 s.f. is…", "zh": "四捨五入", "o": ["311 000", "310 000", "310 900", "300 000"], "a": 0, "e": "Next digit 8 ≥ 5."}, {"u": 1, "t": "S.f.", "q": "5 balls weigh 2.536 kg. One ball, to 2 d.p., is…", "zh": "應用", "o": ["0.51 kg", "0.50 kg", "0.5 kg", "12.68 kg"], "a": 0, "e": "2.536 ÷ 5 = 0.5072."}, {"u": 2, "t": "Rounding", "q": "Round up 2182 to the nearest ten.", "zh": "進位", "o": ["2190", "2180", "2200", "2100"], "a": 0, "e": "Anything left → go up."}, {"u": 2, "t": "Rounding", "q": "Round up 24.7093 to 1 decimal place.", "zh": "進位", "o": ["24.8", "24.7", "25", "24.71"], "a": 0, "e": "Always up."}, {"u": 2, "t": "Rounding", "q": "Round down 23.45 to the nearest integer.", "zh": "捨去", "o": ["23", "24", "23.5", "20"], "a": 0, "e": "Cut off the decimals."}, {"u": 2, "t": "Rounding", "q": "Round down 0.0345 to 2 s.f.", "zh": "捨去", "o": ["0.034", "0.035", "0.03", "0.0345"], "a": 0, "e": "Cut off after 2 s.f."}, {"u": 2, "t": "Rounding", "q": "Round down 230 051 to 4 s.f.", "zh": "捨去", "o": ["230 000", "230 100", "231 000", "230 050"], "a": 0, "e": "Keep 2300, cut the rest."}, {"u": 2, "t": "Estimate", "q": "Estimate 7.2 + 2.6 by rounding off each number to the nearest integer.", "zh": "估算", "o": ["10", "9", "11", "9.8"], "a": 0, "e": "7 + 3."}, {"u": 2, "t": "Estimate", "q": "Estimate 7.2 + 2.6 by rounding down each number to the nearest integer.", "zh": "估算", "o": ["9", "10", "11", "8"], "a": 0, "e": "7 + 2."}, {"u": 2, "t": "Estimate", "q": "Estimate 580 ÷ 120 by rounding up each number to the nearest hundred.", "zh": "估算", "o": ["3", "5", "6", "4.8"], "a": 0, "e": "600 ÷ 200."}, {"u": 2, "t": "Estimate", "q": "Estimate 580 ÷ 120 by rounding off each number to the nearest hundred.", "zh": "估算", "o": ["6", "5", "3", "4"], "a": 0, "e": "600 ÷ 100."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>
