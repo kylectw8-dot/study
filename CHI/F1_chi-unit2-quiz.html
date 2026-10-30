@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中國語文 單元二小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 中文</a> · <a href="F1_chi-unit2-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>中文 單元二小測 ✍️</h1>
+  <p class="sub">人物小傳（人物描寫）。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">描寫方法<small>四種人物描寫</small></button><button class="big u2" data-set="2">差不多先生傳<small>胡適</small></button><button class="big u3" data-set="3">岳飛之少年時代<small>《宋史》</small></button><button class="big" data-set="all">全部題目<small>共 17 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示提示 💡</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "描寫", "q": "描寫人物的外貌和衣着，屬於…", "zh": "描寫方法", "o": ["肖像描寫", "語言描寫", "行動描寫", "心理描寫"], "a": 0, "e": "例如眼睛、衣服。"}, {"u": 1, "t": "描寫", "q": "「心裏想道：好在王大夫同汪大夫也差不多」屬於…", "zh": "描寫方法", "o": ["心理描寫", "肖像描寫", "行動描寫", "語言描寫"], "a": 0, "e": "寫人物心裏想的。"}, {"u": 1, "t": "描寫", "q": "寫人物說的話，屬於…", "zh": "描寫方法", "o": ["語言描寫", "心理描寫", "肖像描寫", "景物描寫"], "a": 0, "e": "例如「不是差不多嗎？」"}, {"u": 2, "t": "差不多", "q": "作者說差不多先生是「中國全國人的代表」，暗示…", "zh": "暗示", "o": ["這種習性隨處可見", "他受國人推崇", "他聲名遠播", "他樣子普通"], "a": 0, "e": "答案 D。"}, {"u": 2, "t": "差不多", "q": "五件事按甚麼順序鋪排？", "zh": "鋪排", "o": ["由輕微到嚴重", "由嚴重到輕微", "由成功到失敗", "隨意排列"], "a": 0, "e": "最後他因治病而死。"}, {"u": 2, "t": "差不多", "q": "差不多先生記賬時把哪兩個字混淆？", "zh": "記賬", "o": ["千字和十字", "百字和千字", "一字和二字", "萬字和千字"], "a": 0, "e": "「千字比十字只多一小撇」。"}, {"u": 2, "t": "差不多", "q": "差不多先生生病時請了誰醫治？", "zh": "治病", "o": ["牛醫王大夫", "汪大夫", "藤野先生", "岳飛"], "a": 0, "e": "他認為王大夫同汪大夫差不多。"}, {"u": 2, "t": "差不多", "q": "為甚麼作者只略寫差不多先生的外貌？", "zh": "略寫", "o": ["突顯他是普通中國人的寫照", "作者不知道他的樣子", "他長得很醜", "篇幅不夠"], "a": 0, "e": "他的相貌和大家差不多。"}, {"u": 2, "t": "差不多", "q": "「圓通大師」這個稱號用了甚麼手法？", "zh": "手法", "o": ["諷刺", "比喻", "排比", "誇張"], "a": 0, "e": "表面稱讚，實際批評他馬虎。"}, {"u": 2, "t": "差不多", "q": "本文主要批評甚麼態度？", "zh": "主旨", "o": ["做事馬虎、不認真", "太過認真", "太愛讀書", "不肯吃虧"], "a": 0, "e": "馬虎態度是社會的病。"}, {"u": 3, "t": "岳飛", "q": "岳飛的名字「飛」從何而來？", "zh": "名字", "o": ["出生時有大鳥飛鳴屋上", "他跑得很快", "父親喜歡鳥", "他會飛"], "a": 0, "e": "「有大禽若鵠，飛鳴室上，因以為名」。"}, {"u": 3, "t": "岳飛", "q": "岳飛出生和未滿月時的兩件事暗示了甚麼？", "zh": "暗示", "o": ["他是不平凡的人", "他身體虛弱", "他家很富有", "他不喜歡水"], "a": 0, "e": "出生異象和幼年遇險不死。"}, {"u": 3, "t": "岳飛", "q": "「拾薪為燭，誦習達旦」反映岳飛…", "zh": "學習態度", "o": ["學習認真努力", "家裏很富有", "不喜歡讀書", "愛玩火"], "a": 0, "e": "因家貧，拾柴枝作蠟燭照明讀書。"}, {"u": 3, "t": "岳飛", "q": "岳飛在周同死後朔望到墓前拜祭，反映他…", "zh": "品德", "o": ["知恩圖報、尊師重道", "想得到弓", "喜歡喝酒", "不聽父親話"], "a": 0, "e": "他對周同的離世十分悲痛。"}, {"u": 3, "t": "岳飛", "q": "「朔望」的意思是？", "zh": "字詞", "o": ["初一和十五", "早上和晚上", "春天和秋天", "月亮"], "a": 0, "e": "每月初一、十五拜祭。"}, {"u": 3, "t": "岳飛", "q": "「惟大人許兒以身報國家」反映岳飛的甚麼抱負？", "zh": "抱負", "o": ["精忠報國", "做大官", "發大財", "做射箭老師"], "a": 0, "e": "也反映他尊重父親，孝順。"}, {"u": 3, "t": "岳飛", "q": "「未冠」的意思是？", "zh": "字詞", "o": ["未成年", "沒有帽子", "沒有冠軍", "沒有官職"], "a": 0, "e": "古代男子二十歲行冠禮。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

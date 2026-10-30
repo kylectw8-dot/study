@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中國語文 單元五小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 中文</a> · <a href="F1_chi-unit5-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>中文 單元五小測 ✍️</h1>
+  <p class="sub">大地景象（景物描寫）。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">描寫方法<small>動靜、感官、角度</small></button><button class="big u2" data-set="2">風雪中的北平<small>風與雪</small></button><button class="big u3" data-set="3">海上的日出<small>巴金</small></button><button class="big" data-set="all">全部題目<small>共 15 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示提示 💡</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "方法", "q": "描寫景物的變化和動作，稱為…", "zh": "方法", "o": ["動態描寫", "靜態描寫", "心理描寫", "肖像描寫"], "a": 0, "e": "例如風捲泥塊。"}, {"u": 1, "t": "方法", "q": "「光明的、皎潔的、靜默的雪」屬於…", "zh": "方法", "o": ["靜態描寫", "動態描寫", "聽覺描寫", "語言描寫"], "a": 0, "e": "寫雪靜止的樣子。"}, {"u": 1, "t": "方法", "q": "「臉上又是疼，又是冷」運用了哪種感官？", "zh": "感官", "o": ["觸覺", "視覺", "嗅覺", "味覺"], "a": 0, "e": "疼和冷是身體的感受。"}, {"u": 1, "t": "方法", "q": "「一覺醒來，風聲沒有了」運用了哪種感官？", "zh": "感官", "o": ["聽覺", "視覺", "觸覺", "嗅覺"], "a": 0, "e": "寫聲音。"}, {"u": 1, "t": "方法", "q": "「北風一陣緊似一陣的颳，天也黑將下來」主要運用哪種感官？", "zh": "感官", "o": ["視覺", "味覺", "嗅覺", "聽覺"], "a": 0, "e": "天黑是看到的。"}, {"u": 1, "t": "方法", "q": "從高處向下看景物，稱為…", "zh": "角度", "o": ["俯瞰", "仰視", "平視", "近觀"], "a": 0, "e": "作者在高處看北平內城。"}, {"u": 2, "t": "北平", "q": "作者頂風回家時，用了誰的走法？", "zh": "方法", "o": ["縴夫", "騾馬", "巡警", "小孩"], "a": 0, "e": "斜着身子一步一步和風拼命。"}, {"u": 2, "t": "北平", "q": "作者描寫大風時用了甚麼描寫？", "zh": "描寫", "o": ["動態描寫", "靜態描寫", "心理描寫", "肖像描寫"], "a": 0, "e": "突出風勢猛烈。"}, {"u": 2, "t": "北平", "q": "作者成功奪路回家，值得我們學習的是…", "zh": "學習", "o": ["面對困難要堅持、想辦法", "遇到困難要放棄", "不要出門", "不怕冷"], "a": 0, "e": "他沒有放棄。"}, {"u": 2, "t": "北平", "q": "作者先寫平日熱鬧的大街，再寫颳風時的街道，有甚麼效果？", "zh": "效果", "o": ["襯托颳風時街道冷清，突出風的猛烈", "表示他喜歡買東西", "表示街道很長", "沒有效果"], "a": 0, "e": "用對比襯托。"}, {"u": 3, "t": "日出", "q": "太陽初出時有甚麼特點？", "zh": "日出", "o": ["紅色但沒有亮光", "發出奪目亮光", "是藍色的", "看不見"], "a": 0, "e": "升起後才有奪目亮光。"}, {"u": 3, "t": "日出", "q": "作者描寫太陽升起的過程，運用了…", "zh": "描寫", "o": ["動態描寫", "靜態描寫", "心理描寫", "語言描寫"], "a": 0, "e": "寫太陽的變化。"}, {"u": 3, "t": "日出", "q": "作者說「要分辨出哪裏是水，哪裏是天，也不容易」，突出太陽的甚麼特點？", "zh": "特點", "o": ["耀眼", "灼熱", "神祕", "模糊"], "a": 0, "e": "光芒射到水面，眼前一片亮光。答案 D。"}, {"u": 3, "t": "日出", "q": "「太陽才慢慢地衝出重圍」運用了甚麼修辭？", "zh": "修辭", "o": ["擬人", "排比", "誇張", "對偶"], "a": 0, "e": "把太陽當成人，衝出重圍。"}, {"u": 3, "t": "日出", "q": "作者認為海上日出是…", "zh": "評價", "o": ["偉大的奇觀", "平凡的景色", "可怕的景象", "無聊的事"], "a": 0, "e": "抒發讚歎之情。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

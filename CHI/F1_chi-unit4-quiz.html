@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中國語文 單元四小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 中文</a> · <a href="F1_chi-unit4-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>中文 單元四小測 ✍️</h1>
+  <p class="sub">孝道與友情（抒情）。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">燕詩<small>白居易</small></button><button class="big u2" data-set="2">送友人<small>李白</small></button><button class="big" data-set="all">全部題目<small>共 15 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示提示 💡</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "燕詩", "q": "《燕詩》中「舉翅不回顧」表現雛燕的甚麼特點？", "zh": "雛燕", "o": ["不念親恩", "熱愛自由", "無憂無慮", "勤力"], "a": 0, "e": "答案 A。"}, {"u": 1, "t": "燕詩", "q": "「嘴爪雖欲敝，心力不知疲」像人類的哪種行為？", "zh": "比喻", "o": ["父母為子女辛勤工作，不覺辛苦", "子女離棄父母", "父母教導子女說話", "子女孝順父母"], "a": 0, "e": "對應選項 B。"}, {"u": 1, "t": "燕詩", "q": "「喃喃教言語，一一刷毛衣」像人類的哪種行為？", "zh": "比喻", "o": ["父母悉心教導子女，打點一切", "父母擔心子女挨餓", "子女長大離家", "父母工作辛苦"], "a": 0, "e": "對應選項 C。"}, {"u": 1, "t": "燕詩", "q": "「須臾十來往，猶恐巢中飢」像人類的哪種行為？", "zh": "比喻", "o": ["父母擔心子女挨餓，奔波勞碌", "子女離棄父母", "父母教子女說話", "父母梳理羽毛"], "a": 0, "e": "對應選項 E。"}, {"u": 1, "t": "燕詩", "q": "《燕詩》運用了甚麼手法？", "zh": "手法", "o": ["以燕喻人", "以花喻人", "以景喻情", "對比"], "a": 0, "e": "借燕子的故事說人的道理。"}, {"u": 1, "t": "燕詩", "q": "「翩翩」「喃喃」「啁啾」是甚麼修辭手法？", "zh": "修辭", "o": ["疊字", "比喻", "排比", "誇張"], "a": 0, "e": "重複同一個字。"}, {"u": 1, "t": "燕詩", "q": "詩人為甚麼責備雙燕要反省？", "zh": "責備", "o": ["牠們年幼時也曾離棄父母", "牠們不會飛", "牠們吃太多", "牠們不築巢"], "a": 0, "e": "「思爾為雛日，高飛背母時」。"}, {"u": 1, "t": "燕詩", "q": "《燕詩》的主旨是？", "zh": "主旨", "o": ["勸人孝順父母，勿忘親恩", "讚美燕子漂亮", "教人捕蟲", "描寫春天"], "a": 0, "e": "以燕喻人。"}, {"u": 2, "t": "送友人", "q": "《送友人》的體裁是？", "zh": "體裁", "o": ["五言律詩", "七言絕句", "五言絕句", "七言律詩"], "a": 0, "e": "八句、每句五字。"}, {"u": 2, "t": "送友人", "q": "《送友人》第幾句押韻？", "zh": "押韻", "o": ["第二、四、六、八句", "每一句", "第一、三、五、七句", "沒有押韻"], "a": 0, "e": "韻腳：城、征、情、鳴。"}, {"u": 2, "t": "送友人", "q": "詩人在甚麼時分送別朋友？", "zh": "時間", "o": ["黃昏", "清晨", "正午", "深夜"], "a": 0, "e": "「落日故人情」。"}, {"u": 2, "t": "送友人", "q": "「孤蓬萬里征」中，「孤蓬」比喻…", "zh": "比喻", "o": ["友人將過漂泊的生活", "一艘船", "一棵樹", "一座山"], "a": 0, "e": "蓬草隨風飄轉。"}, {"u": 2, "t": "送友人", "q": "「落日故人情」寄寓了詩人怎樣的感情？", "zh": "寄意", "o": ["對友人依依不捨", "高興", "憤怒", "無聊"], "a": 0, "e": "落日像不忍離開大地。"}, {"u": 2, "t": "送友人", "q": "「蕭蕭班馬鳴」以馬的嘶叫聲作結，有甚麼效果？", "zh": "效果", "o": ["借馬寫人，突出離別的不捨", "描寫馬很強壯", "表示天氣很冷", "表示路途很近"], "a": 0, "e": "連馬也不忍分離。"}, {"u": 2, "t": "送友人", "q": "首聯「青山橫北郭，白水繞東城」對表達感情有甚麼作用？", "zh": "首聯", "o": ["以美景反襯離別的愁緒", "表示詩人很快樂", "介紹城市歷史", "描寫天氣"], "a": 0, "e": "美景本應相聚，卻要分別。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

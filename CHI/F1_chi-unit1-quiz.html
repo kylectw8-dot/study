@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中國語文 單元一小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+</head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 中文</a> · <a href="F1_chi-unit1-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>中文 單元一小測 ✍️</h1>
+  <p class="sub">回想當年（記敍）。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">記敍基礎<small>六要素與記敍方法</small></button><button class="big u2" data-set="2">一件小事<small>魯迅</small></button><button class="big u3" data-set="3">陳太丘與友期行<small>《世說新語》</small></button><button class="big" data-set="all">全部題目<small>共 20 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示提示 💡</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "記敍", "q": "以下哪項不是記敍六要素？", "zh": "六要素", "o": ["修辭", "時間", "人物", "結果"], "a": 0, "e": "六要素：時間、地點、人物、起因、經過、結果。"}, {"u": 1, "t": "記敍", "q": "按事情發生的先後次序記述，稱為…", "zh": "記敍方法", "o": ["順敍法", "倒敍法", "插敍法", "補敍法"], "a": 0, "e": "好處：清楚交代來龍去脈。"}, {"u": 1, "t": "記敍", "q": "先寫結果，再交代經過，稱為…", "zh": "記敍方法", "o": ["倒敍法", "順敍法", "對比法", "比喻法"], "a": 0, "e": "好處：營造懸念，吸引讀者。"}, {"u": 1, "t": "記敍", "q": "倒敍法的好處是…", "zh": "好處", "o": ["營造懸念，吸引讀者追看", "令文章變短", "只交代時間", "令人物變多"], "a": 0, "e": "開首已引起好奇。"}, {"u": 1, "t": "記敍", "q": "首尾呼應有甚麼效果？", "zh": "效果", "o": ["令結構嚴謹，突出主題", "加強讀者想像力", "突出人物外貌", "令文章更長"], "a": 0, "e": "《一件小事》答案是 B 和 D。"}, {"u": 2, "t": "一件小事", "q": "《一件小事》運用了甚麼記敍方法？", "zh": "魯迅", "o": ["倒敍法", "順敍法", "插敍法", "沒有"], "a": 0, "e": "開首先說小事的意義。"}, {"u": 2, "t": "一件小事", "q": "老女人跌倒後，「我」的性格特點是…", "zh": "我", "o": ["自私、缺乏同情心", "善良正直", "勇於負責", "積極勤力"], "a": 0, "e": "「我」以為她裝腔作勢。"}, {"u": 2, "t": "一件小事", "q": "車夫的性格特點是…", "zh": "車夫", "o": ["善良正直、勇於負責", "自私冷漠", "霸道", "膽小怕事"], "a": 0, "e": "他毫不躊躇扶老女人去巡警分駐所。"}, {"u": 2, "t": "一件小事", "q": "車夫的背影「高大」指甚麼？", "zh": "高大", "o": ["車夫負責任的行為顯得偉大", "車夫長得很高", "車夫走得很遠", "車夫很有錢"], "a": 0, "e": "這是心理感受，不是真的身高。"}, {"u": 2, "t": "一件小事", "q": "「我」的心理變化最後是？", "zh": "心理", "o": ["慚愧", "輕視", "驚訝", "高興"], "a": 0, "e": "輕視 → 驚訝 → 惘然 → 慚愧。"}, {"u": 2, "t": "一件小事", "q": "對「我」來說，哪件才是真正的大事？", "zh": "大事", "o": ["這一件小事", "國家大事", "坐人力車", "天氣寒冷"], "a": 0, "e": "它增長了改過自新的勇氣和希望。"}, {"u": 3, "t": "陳太丘", "q": "「陳太丘與友期行」中「期」的意思是？", "zh": "字詞", "o": ["約定", "時期", "期望", "日期"], "a": 0, "e": "陳太丘和朋友約定一同出行。"}, {"u": 3, "t": "陳太丘", "q": "「日中」的意思是？", "zh": "字詞", "o": ["中午", "太陽", "日本", "白天"], "a": 0, "e": "相約在中午見面。"}, {"u": 3, "t": "陳太丘", "q": "「尊君在不？」中「尊君」是指？", "zh": "字詞", "o": ["你的父親（敬稱）", "我的父親", "尊貴的君主", "朋友"], "a": 0, "e": "「家君」才是謙稱自己的父親。"}, {"u": 3, "t": "陳太丘", "q": "「入門不顧」中「顧」的意思是？", "zh": "字詞", "o": ["回頭看", "照顧", "顧客", "顧慮"], "a": 0, "e": "元方頭也不回走入家門。"}, {"u": 3, "t": "陳太丘", "q": "元方指出友人有甚麼不對？", "zh": "反駁", "o": ["無信和無禮", "太遲吃飯", "太早到", "沒有帶禮物"], "a": 0, "e": "失約是無信；對子罵父是無禮。"}, {"u": 3, "t": "陳太丘", "q": "友人聽了元方的話後感到…", "zh": "情緒", "o": ["慚愧", "憤怒", "高興", "害怕"], "a": 0, "e": "情緒由「怒」轉為「慚」。"}, {"u": 3, "t": "陳太丘", "q": "元方為甚麼入門不顧？", "zh": "原因", "o": ["用行動表示看不起友人的失信和無禮", "害怕友人罵他", "他感到慚愧", "父親回來了"], "a": 0, "e": "答案 C。"}, {"u": 3, "t": "陳太丘", "q": "本文的主旨是？", "zh": "主旨", "o": ["世人應重視守信和知禮", "慨歎社會風氣敗壞", "只是讚美元方聰明", "諷刺陳太丘"], "a": 0, "e": "答案 B。"}, {"u": 3, "t": "陳太丘", "q": "《陳太丘與友期行》運用了甚麼記敍方法？", "zh": "方法", "o": ["順敍法", "倒敍法", "插敍法", "補敍法"], "a": 0, "e": "按事情先後次序記述。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>
