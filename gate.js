@@ -1,6 +1,6 @@
 /* Simple password gate for the study site. To change the password, replace HASH with the SHA-256 of the new password. */
 (function(){
-  var HASH='d7a9b9ef8565e533f072c6eff39ae1a6d2a983b7ed458c23200562fcdd7547aa', KEY='studyGate';
+  var HASH='fbb7b714c6bdd6bc5ed928761c08623beecd87db5af8716adcd1823add89c560', KEY='studyGate';
   try{ if(localStorage.getItem(KEY)===HASH) return; }catch(e){}
   var de=document.documentElement; de.style.visibility='hidden';
   function sha(t){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')})}
