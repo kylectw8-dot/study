@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宗教及倫理 第5課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 宗倫</a> · <a href="F1_rse-unit5-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>宗倫 第5課小測 ✝️</h1>
+  <p class="sub">耶穌降生——天主與人在一起。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">降生與將臨期<small>禮物、將臨期、12月25日</small></button><button class="big u2" data-set="2">出生證明書<small>名字、領報</small></button><button class="big u3" data-set="3">聖誕人物<small>瑪利亞、若瑟、牧羊人、賢士</small></button><button class="big" data-set="all">全部題目<small>共 23 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "禮物", "q": "天主送給人的寶貴禮物是？", "zh": "gift", "o": ["天主子耶穌降生為人，與人一起生活", "很多金錢", "一座聖殿", "一本書"], "a": 0, "e": "天主願意人認識祂及分享祂的愛。"}, {"u": 1, "t": "降生", "q": "耶穌降生為人，成為人類的一份子，與人…", "zh": "share life", "o": ["同甘共苦", "保持距離", "互相比較", "分開生活"], "a": 0, "e": "教導人如何獲得幸福的生活。"}, {"u": 1, "t": "將臨期", "q": "天主教會將聖誕節的前多久定為將臨期？", "zh": "Advent", "o": ["四星期", "四十天", "一星期", "三個月"], "a": 0, "e": "改正題：不是四十天。"}, {"u": 1, "t": "將臨期", "q": "將臨期是一個怎樣的階段？", "zh": "Advent", "o": ["迎接聖誕節來臨的準備階段", "慶祝復活的階段", "紀念亡者的階段", "放暑假的階段"], "a": 0, "e": "以喜悅、希望及悔改的精神期待救主。"}, {"u": 1, "t": "12月25日", "q": "12月25日原是羅馬人的甚麼節日？", "zh": "Dec 25", "o": ["太陽神誕", "新年", "豐收節", "月神節"], "a": 0, "e": "教會表明耶穌是世界的真光。"}, {"u": 1, "t": "12月25日", "q": "教會選擇12月25日慶祝聖誕，表明耶穌是…", "zh": "true light", "o": ["世界的真光、正義的太陽", "羅馬的皇帝", "最強的戰士", "月亮之神"], "a": 0, "e": "取代太陽神誕。"}, {"u": 1, "t": "改正", "q": "天主教會以將臨期及___來慶祝耶穌降生。", "zh": "seasons", "o": ["聖誕期", "四旬期", "復活期", "常年期"], "a": 0, "e": "四旬期是復活節前的準備期。"}, {"u": 1, "t": "分享", "q": "人為有需要的人付出時間、金錢、愛心時…", "zh": "sharing", "o": ["施予者及接受者都能感受到愛的連繫", "只有接受者得益", "施予者會損失一切", "沒有意義"], "a": 0, "e": "分享的同時，人獲得更豐盛的生命。"}, {"u": 2, "t": "名字", "q": "「耶穌」這名字的意思是？", "zh": "Jesus", "o": ["天主拯救", "天主與我們同在", "和平之王", "光明"], "a": 0, "e": "拯救人離開罪惡。"}, {"u": 2, "t": "名字", "q": "耶穌的別名「厄瑪奴耳」意思是？", "zh": "Emmanuel", "o": ["天主與我們同在", "天主拯救", "天主的僕人", "君王"], "a": 0, "e": "Emmanuel = God with us。"}, {"u": 2, "t": "出生", "q": "耶穌在哪裡出生？", "zh": "birthplace", "o": ["白冷", "耶路撒冷", "納匝肋", "羅馬"], "a": 0, "e": "改正題：若瑟和瑪利亞回家鄉白冷登記戶籍。"}, {"u": 2, "t": "身份", "q": "耶穌作為天主子，有甚麼特質？", "zh": "identity", "o": ["又是天主、又是人", "只是人", "只是天使", "只是先知"], "a": 0, "e": "天主子降生成人。"}, {"u": 2, "t": "目的", "q": "耶穌降生的目的是？", "zh": "purpose", "o": ["拯救人離開罪惡，得到永遠的生命", "成為羅馬皇帝", "建立軍隊", "收集禮物"], "a": 0, "e": "天主子的出生證明書。"}, {"u": 2, "t": "出生", "q": "耶穌約在哪一年出生？", "zh": "year", "o": ["公元前三至五年", "公元一年", "公元三十三年", "公元前一百年"], "a": 0, "e": "約在公元前三至五年。"}, {"u": 2, "t": "領報", "q": "天使祝福瑪利亞時，她的反應是？", "zh": "Annunciation", "o": ["驚惶、害怕", "大笑", "生氣離開", "立即跳舞"], "a": 0, "e": "因為她不明白天使請安的意思。"}, {"u": 2, "t": "領報", "q": "天使邀請瑪利亞作天主子的母親，她說「這事怎能成就？」因為…", "zh": "question", "o": ["她還未結婚", "她不喜歡小孩", "她太年老", "她要去旅行"], "a": 0, "e": "天使回答：天主前沒有不可能的事。"}, {"u": 3, "t": "牧羊人", "q": "首先分享到耶穌降生喜訊的牧羊人，在當時社會是…", "zh": "shepherds", "o": ["貧窮人（卑微的人）", "權貴", "皇帝", "外邦的賢士"], "a": 0, "e": "改正題：不是權貴。"}, {"u": 3, "t": "牧羊人", "q": "為甚麼天使首先向牧羊人分享喜訊？", "zh": "why shepherds", "o": ["天主愛每一個人，包括卑微的人", "牧羊人最富有", "牧羊人是國王", "牧羊人住在羅馬"], "a": 0, "e": "天主也是貧窮人及卑微人的救主。"}, {"u": 3, "t": "賢士", "q": "賢士對當時的以色列人來說是…", "zh": "Magi", "o": ["外邦人", "本地人", "祭司", "牧羊人"], "a": 0, "e": "改正題：不是本地人。"}, {"u": 3, "t": "賢士", "q": "為甚麼天主提示賢士前來朝拜耶穌？", "zh": "why Magi", "o": ["天主也願意外邦人認識祂，祂是普世的君王", "賢士要收稅", "賢士迷路了", "賢士是耶穌的親戚"], "a": 0, "e": "天主不單是以色列人的主。"}, {"u": 3, "t": "若瑟", "q": "若瑟是耶穌的…", "zh": "Joseph", "o": ["法律上的父親", "親生父親", "哥哥", "老師"], "a": 0, "e": "若瑟聽從天主，娶瑪利亞為妻，保護妻兒。"}, {"u": 3, "t": "牧羊人", "q": "牧羊人在哪裡找到嬰孩耶穌？", "zh": "manger", "o": ["馬槽", "皇宮", "聖殿", "旅館的房間"], "a": 0, "e": "找到後立即傳揚開去。"}, {"u": 3, "t": "賢士", "q": "賢士找到耶穌後做了甚麼？", "zh": "worship", "o": ["朝拜祂，並獻上禮物", "帶祂回國", "告訴黑落德後離開", "甚麼都沒做"], "a": 0, "e": "他們跟隨星光指引而來。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

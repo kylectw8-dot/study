@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宗教及倫理 第1課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 宗倫</a> · <a href="F1_rse-unit1-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>宗倫 第1課小測 ✝️</h1>
+  <p class="sub">聖經——天主的說話。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">聖經是甚麼<small>作者、默感、形成</small></button><button class="big u2" data-set="2">舊約與新約<small>盟約、福音</small></button><button class="big u3" data-set="3">書卷與生命<small>分類、查閱、意義</small></button><button class="big" data-set="all">全部題目<small>共 26 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "名稱", "q": "「Bible」源自希臘文 Biblios，意思是？", "zh": "The Book", "o": ["那本書", "神聖的話", "好消息", "盟約"], "a": 0, "e": "Biblios = The Book，即「那本書」。"}, {"u": 1, "t": "作者", "q": "天主教會認為聖經的主要作者是？", "zh": "author", "o": ["天主", "梅瑟", "耶穌的門徒", "教宗"], "a": 0, "e": "聖經記載天主的說話及祂與人交往的救恩歷史。"}, {"u": 1, "t": "作者", "q": "「天主揀選了世上的一些人，默感他們撰寫及編輯各書卷」說明聖經是…", "zh": "human book", "o": ["人的書", "天主的書", "教會的書", "歷史的書"], "a": 0, "e": "是由人寫成的，所以是「人的書」。"}, {"u": 1, "t": "作者", "q": "「天父與他的子女談話，所以聖經又稱為聖言」說明聖經是…", "zh": "God's book", "o": ["天主的書", "人的書", "教會的書", "先知的書"], "a": 0, "e": "聖經是天主的說話。"}, {"u": 1, "t": "作者", "q": "「在聖神推動下，教會辨認哪些著作應包括在聖經裡」說明聖經是…", "zh": "Church's book", "o": ["教會的書", "人的書", "天主的書", "智慧的書"], "a": 0, "e": "由教會辨認及確認。"}, {"u": 1, "t": "默感", "q": "「默感」是指天主藉著人，以人的___把自己的說話記錄下來。", "zh": "inspiration", "o": ["言語", "圖畫", "夢境", "法律"], "a": 0, "e": "天主的能力啟發及推動作者寫出救恩真理。"}, {"u": 1, "t": "形成", "q": "聖經形成過程中，在信仰團體中廣泛傳誦的階段稱為？", "zh": "oral tradition", "o": ["口傳", "默感", "編輯", "確認"], "a": 0, "e": "先口傳，後寫成文字。"}, {"u": 1, "t": "形成", "q": "聖經形成的最後一步是？", "zh": "last step", "o": ["由教會辨別及確認", "寫成文字資料", "在團體中口傳", "耶穌的生活事件"], "a": 0, "e": "編輯成書卷後，由教會辨別及確認。"}, {"u": 2, "t": "盟約", "q": "舊約和新約的分界線是？", "zh": "dividing line", "o": ["耶穌降生", "梅瑟出生", "耶穌復活", "教會成立"], "a": 0, "e": "以耶穌降生的事蹟為分界。"}, {"u": 2, "t": "盟約", "q": "舊約的盟約是在哪裡訂立的？", "zh": "Old Covenant", "o": ["西乃山", "十字架", "白冷", "耶路撒冷聖殿"], "a": 0, "e": "天主在西乃山藉梅瑟與以色列民族立約。"}, {"u": 2, "t": "盟約", "q": "舊約時，天主藉著誰與以色列民族訂立盟約？", "zh": "Moses", "o": ["梅瑟", "耶穌", "亞巴郎", "達味"], "a": 0, "e": "西乃山上，藉著梅瑟。"}, {"u": 2, "t": "盟約", "q": "新約的盟約，天主是與誰訂立的？", "zh": "New Covenant", "o": ["全人類", "以色列民族", "羅馬人", "只有門徒"], "a": 0, "e": "在十字架上，藉著耶穌，與全人類訂立新盟約。"}, {"u": 2, "t": "盟約", "q": "聖經總稱為「約」，因為中心思想是天主願意與人…", "zh": "covenant", "o": ["建立關係，訂立盟約", "比賽力量", "交換禮物", "分開生活"], "a": 0, "e": "天主願意與人建立關係。"}, {"u": 2, "t": "福音", "q": "「福音」的意思是？", "zh": "Gospel", "o": ["喜訊、好消息", "法律", "歷史", "預言"], "a": 0, "e": "天主藉耶穌在人間建立天國，帶來永遠的救恩。"}, {"u": 2, "t": "愛不止息", "q": "「五餅二魚」的故事說明耶穌照顧人哪些需要？", "zh": "compassion", "o": ["心靈和肉身的需要", "只有金錢的需要", "只有讀書的需要", "只有睡眠的需要"], "a": 0, "e": "耶穌起了憐憫的心，教導群眾又增餅給他們吃。"}, {"u": 3, "t": "書卷", "q": "整部聖經合共多少卷？", "zh": "total books", "o": ["73 卷", "66 卷", "46 卷", "27 卷"], "a": 0, "e": "舊約 46 + 新約 27 = 73。"}, {"u": 3, "t": "書卷", "q": "舊約共多少卷？", "zh": "Old Testament", "o": ["46 卷", "27 卷", "73 卷", "39 卷"], "a": 0, "e": "法律5 + 歷史16 + 智慧文學7 + 先知18 = 46。"}, {"u": 3, "t": "書卷", "q": "新約共多少卷？", "zh": "New Testament", "o": ["27 卷", "46 卷", "13 卷", "4 卷"], "a": 0, "e": "福音4 + 歷史1 + 保祿書信13 + 其他書信8 + 默示錄1 = 27。"}, {"u": 3, "t": "書卷", "q": "新約中「保祿書信」共多少卷？", "zh": "Paul's letters", "o": ["13 卷", "8 卷", "4 卷", "18 卷"], "a": 0, "e": "其他書信是 8 卷。"}, {"u": 3, "t": "書卷", "q": "舊約中「先知書」共多少卷？", "zh": "prophets", "o": ["18 卷", "5 卷", "16 卷", "7 卷"], "a": 0, "e": "法律書 5、歷史書 16、智慧文學 7、先知書 18。"}, {"u": 3, "t": "福音書", "q": "以下哪一部是聖經中的福音書？", "zh": "Gospels", "o": ["馬爾谷福音", "多默福音", "猶大福音", "伯多祿福音"], "a": 0, "e": "四部福音：瑪竇、馬爾谷、路加、若望。"}, {"u": 3, "t": "福音書", "q": "以下哪一部「不是」聖經中的福音書？", "zh": "not a Gospel", "o": ["瑪利亞福音", "若望福音", "路加福音", "瑪竇福音"], "a": 0, "e": "瑪利亞福音不在聖經內。"}, {"u": 3, "t": "查閱", "q": "「詠 119:1-3」中，119 是指？", "zh": "chapter", "o": ["篇（章）", "節", "頁數", "卷數"], "a": 0, "e": "冒號前是篇，冒號後是節。"}, {"u": 3, "t": "查閱", "q": "「弟前 4:12」是指哪一卷？", "zh": "abbreviation", "o": ["弟茂德前書", "伯多祿前書", "若望一書", "箴言"], "a": 0, "e": "弟前 = 弟茂德前書。"}, {"u": 3, "t": "查閱", "q": "「若一 4:9」是指？", "zh": "abbreviation", "o": ["若望一書第 4 篇第 9 節", "若望福音第 1 篇第 4 節", "若望一書第 9 篇第 4 節", "依撒意亞第 4 篇第 9 節"], "a": 0, "e": "若一 = 若望一書。"}, {"u": 3, "t": "生命", "q": "聖經「照亮生命」，包括教導人認識有關___的教訓。", "zh": "truth", "o": ["信仰及道德", "數學及科學", "金錢及投資", "運動及健康"], "a": 0, "e": "指示道路、教導真理、滋養生命。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

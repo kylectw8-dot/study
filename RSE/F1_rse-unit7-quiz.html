@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宗教及倫理 第7課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 宗倫</a> · <a href="F1_rse-unit7-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>宗倫 第7課小測 ✝️</h1>
+  <p class="sub">不可崇拜偶像——追尋美善的價值。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">崇拜偶像<small>十誡、金牛像</small></button><button class="big u2" data-set="2">迷信<small>定義、個案分析</small></button><button class="big u3" data-set="3">價值選擇<small>物質與精神、富少年</small></button><button class="big" data-set="all">全部題目<small>共 24 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "偶像", "q": "把受造物視為天主般看待和尊敬，稱為？", "zh": "idolatry", "o": ["崇拜偶像", "祈禱", "信德", "感恩"], "a": 0, "e": "例如把金錢、權力當作生命的中心。"}, {"u": 1, "t": "偶像", "q": "以下哪一項可以成為被崇拜的「受造物」？", "zh": "idol", "o": ["金錢", "天主", "聖神", "耶穌"], "a": 0, "e": "金錢、權力、國家領導等。"}, {"u": 1, "t": "十誡", "q": "崇拜偶像違反了十誡中的哪一誡？", "zh": "commandment", "o": ["第一誡", "第三誡", "第五誡", "第十誡"], "a": 0, "e": "改正題：不是第三誡。"}, {"u": 1, "t": "十誡", "q": "十誡第一誡是？", "zh": "1st commandment", "o": ["欽崇一天主在萬有之上", "孝敬父母", "不可殺人", "守瞻禮主日"], "a": 0, "e": "即「不可有別的神」。"}, {"u": 1, "t": "十誡", "q": "「孝敬父母」是十誡中的第幾誡？", "zh": "4th", "o": ["第四誡", "第一誡", "第五誡", "第七誡"], "a": 0, "e": "第五誡是不可殺人。"}, {"u": 1, "t": "十誡", "q": "「不可偷盜」是十誡中的第幾誡？", "zh": "7th", "o": ["第七誡", "第六誡", "第八誡", "第十誡"], "a": 0, "e": "第八誡是不可作假見證。"}, {"u": 1, "t": "出谷紀", "q": "天主召叫梅瑟，引領以色列子民經過紅海，離開…", "zh": "Exodus", "o": ["埃及", "哈蘭", "客納罕", "羅馬"], "a": 0, "e": "改正題：不是哈蘭。"}, {"u": 1, "t": "出谷紀", "q": "以色列子民在曠野中，天主降下甚麼作食糧？", "zh": "manna", "o": ["瑪納", "五餅二魚", "葡萄", "金牛"], "a": 0, "e": "這是天主照顧子民的例子。"}, {"u": 1, "t": "金牛像", "q": "以色列子民鑄造金牛像，因為他們認為金牛像能…", "zh": "golden calf", "o": ["代替天主，為他們領路和保護他們", "變成金錢", "帶他們回埃及", "讓梅瑟回來"], "a": 0, "e": "他們把金牛像看作帶領他們離開埃及的神。"}, {"u": 1, "t": "金牛像", "q": "梅瑟獨自留在山上時，以色列子民的心情是？", "zh": "feelings", "o": ["擔憂、惶恐", "非常興奮", "完全不在乎", "十分驕傲"], "a": 0, "e": "怕梅瑟遭遇不測而失去領袖。"}, {"u": 2, "t": "迷信", "q": "「迷信」是指___地相信某種行為、儀式或物品具有神奇效力。", "zh": "superstition", "o": ["非理性", "用邏輯", "科學", "有證據"], "a": 0, "e": "改正題：不是「用邏輯」。"}, {"u": 2, "t": "迷信", "q": "以下哪一項「不是」人產生迷信的原因？", "zh": "causes", "o": ["努力讀書", "貪念", "不勞而獲的心態", "對將來的恐懼"], "a": 0, "e": "迷信源於貪念、不勞而獲、對將來的恐懼。"}, {"u": 2, "t": "迷信", "q": "迷信會令人…", "zh": "effects", "o": ["焦慮不安，忘記責任，不善用能力", "更加努力", "更有信德", "更健康"], "a": 0, "e": "處處依賴它、受它牽制。"}, {"u": 2, "t": "個案", "q": "中學生認為十字架有驅邪治鬼的力量，放在房間保護自己。這是…", "zh": "case 1", "o": ["屬於迷信", "不屬於迷信", "一種信德", "一種科學"], "a": 0, "e": "非理性地相信十字架有神奇效力。"}, {"u": 2, "t": "個案", "q": "一家人按傳統拜祭祖先，祈求亡者得到安息。這是…", "zh": "case 2", "o": ["不屬於迷信", "屬於迷信", "崇拜偶像", "違反第一誡"], "a": 0, "e": "他們沒有認為拜祭會帶來神奇效力。"}, {"u": 2, "t": "個案", "q": "婆婆把二十萬元交給騙子做祈福儀式，希望改變命運。這是…", "zh": "example", "o": ["屬於迷信", "不屬於迷信", "一種投資", "愛德服務"], "a": 0, "e": "她希望透過儀式改變自己及家人的命運。"}, {"u": 2, "t": "聖像", "q": "天主教的___包括宗教塑像、雕像，還有禮儀用的聖相。", "zh": "sacred images", "o": ["聖像", "聖枝", "偶像", "金牛"], "a": 0, "e": "改正題：不是聖枝。"}, {"u": 2, "t": "盼望", "q": "天主照顧所有愛慕祂的人，賜給他們…", "zh": "peace", "o": ["平安及喜樂", "金錢及權力", "焦慮及恐懼", "名氣"], "a": 0, "e": "在困難中仍可將希望寄託給天主。"}, {"u": 3, "t": "價值", "q": "鄭欣傑到盧旺達做義工，得到的是？", "zh": "value", "o": ["精神價值", "物質價值", "金錢回報", "獎品"], "a": 0, "e": "幫助人的滿足及對自己能力的肯定。"}, {"u": 3, "t": "價值", "q": "拾錢「不歸還」的人放棄了…", "zh": "lost", "o": ["信用、正直、誠實的品格", "金錢", "時間", "朋友的禮物"], "a": 0, "e": "為了不屬於自己的錢而作出不誠實行為。"}, {"u": 3, "t": "價值", "q": "拾錢「歸還」是追求美善的生活方式，因為…", "zh": "good life", "o": ["把精神價值排於比物質價值更高的優次", "可以得到更多錢", "怕被人看見", "想上電視"], "a": 0, "e": "信用及正義比金錢更重要。"}, {"u": 3, "t": "富少年", "q": "耶穌教導富少年除了遵守誡命，還要…", "zh": "rich young man", "o": ["把財富施捨給窮人，然後跟隨耶穌", "賺更多錢", "建一座聖殿", "離開家鄉經商"], "a": 0, "e": "承擔使命，不怕困難。"}, {"u": 3, "t": "富少年", "q": "富少年為甚麼憂愁地走了？", "zh": "sad", "o": ["他把財富放在較高的優次，不捨得放棄", "他找不到耶穌", "他生病了", "耶穌罵了他"], "a": 0, "e": "各項追求中，他最重視財富。"}, {"u": 3, "t": "選擇", "q": "售貨員多找了錢給你，應怎樣做？", "zh": "choice", "o": ["歸還，因為那些錢不屬於我", "收下，因為是他的錯", "花掉", "分給朋友"], "a": 0, "e": "選擇誠實的精神價值。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

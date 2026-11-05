@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宗教及倫理 第8課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 宗倫</a> · <a href="F1_rse-unit8-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>宗倫 第8課小測 ✝️</h1>
+  <p class="sub">罪與寬恕——修和。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">罪是甚麼<small>法律、道德、愛</small></button><button class="big u2" data-set="2">四旬期與蕩子<small>慈父的寬恕</small></button><button class="big u3" data-set="3">和好十步曲<small>認錯與寬恕</small></button><button class="big" data-set="all">全部題目<small>共 23 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "罪", "q": "從天主教會角度，犯罪是指做出違反___的言行。", "zh": "sin", "o": ["愛德", "校規", "潮流", "交通規則"], "a": 0, "e": "天主的法律就是愛的誡命。"}, {"u": 1, "t": "罪", "q": "天主的法律就是…", "zh": "God's law", "o": ["愛的誡命", "社會法律", "交通規則", "學校規則"], "a": 0, "e": "犯罪即違反愛德，傷害自己及他人。"}, {"u": 1, "t": "罪", "q": "以下哪一項是教會提及的罪的例子？", "zh": "examples", "o": ["貪婪、驕傲", "努力讀書", "幫助同學", "孝敬父母"], "a": 0, "e": "不聽從天主的教導。"}, {"u": 1, "t": "和好", "q": "罪過破壞關係後，要再次和好需要…", "zh": "reconcile", "o": ["犯錯者及被罪的人都懷著願意和好的心", "只需犯錯者道歉", "只需時間過去", "請老師處理"], "a": 0, "e": "雙方都要願意和好。"}, {"u": 1, "t": "分析", "q": "小息時拿走同學文具作弄他，往後才歸還，有否違反社會法律？", "zh": "analysis", "o": ["沒有，但違反道德倫理及愛的誡命", "有，會被拘捕", "沒有違反任何東西", "只違反了社會法律"], "a": 0, "e": "不問自取不道德，也不尊重同學。"}, {"u": 1, "t": "分析", "q": "在巴士上塗污座椅違反社會法律，因為…", "zh": "vandalism", "o": ["破壞公物是違法行為", "巴士太舊", "沒有人看見", "司機不准"], "a": 0, "e": "也不關心別人的不快及不便。"}, {"u": 1, "t": "分析", "q": "兒子因玩電腦與母親吵架，違反了哪一項道德倫理？", "zh": "filial piety", "o": ["服從父母之孝道", "交通規則", "不可偷盜", "環保法例"], "a": 0, "e": "也傷害了母子關係。"}, {"u": 2, "t": "四旬期", "q": "四旬期是指…", "zh": "Lent", "o": ["復活節前的四十天準備期", "聖誕節前四星期", "十一月的紀念期", "暑假"], "a": 0, "e": "將臨期才是聖誕節前四星期。"}, {"u": 2, "t": "四旬期", "q": "教會鼓勵人在四旬期內以祈禱及___悔改更新。", "zh": "Lent", "o": ["愛德的工作", "購物", "旅行", "玩遊戲"], "a": 0, "e": "行善避惡，與他人和好。"}, {"u": 2, "t": "蕩子", "q": "耶穌以哪個比喻教導人認識天主無限的慈愛？", "zh": "parable", "o": ["慈父與蕩子", "五餅二魚", "金牛像", "亞巴郎獻子"], "a": 0, "e": "天父願意寬恕所有犯錯的人。"}, {"u": 2, "t": "蕩子", "q": "小兒子替人放豬，說明他的處境是…", "zh": "pigs", "o": ["窮困到極點、走投無路", "非常富有", "很受尊重", "很快樂"], "a": 0, "e": "猶太人認為豬不潔，餵豬是最可恥的工作。"}, {"u": 2, "t": "蕩子", "q": "為甚麼猶太人覺得餵豬是可恥的工作？", "zh": "unclean", "o": ["猶太人認為豬是不潔的動物", "豬太重", "豬很貴", "豬會咬人"], "a": 0, "e": "這說明小兒子做最卑賤的工作。"}, {"u": 2, "t": "慈父", "q": "小兒子還未認錯道歉，父親已經…", "zh": "father", "o": ["動了憐憫的心，跑上前親吻他", "趕他走", "罵他一頓", "假裝看不見"], "a": 0, "e": "父親一直在外等候他回來。"}, {"u": 2, "t": "慈父", "q": "父親給回家的小兒子甚麼？", "zh": "gifts", "o": ["上等衣服、戒指和鞋", "一份工作", "一封信", "一些豬"], "a": 0, "e": "還宰了肥牛犢歡宴慶祝。"}, {"u": 2, "t": "慈父", "q": "父親形容兒子悔改的喜樂猶如…", "zh": "joy", "o": ["死而復生、失而復得", "中了獎", "考試第一", "收到禮物"], "a": 0, "e": "天父的愛是無條件的。"}, {"u": 3, "t": "十步曲", "q": "以下哪一項屬於犯錯者的「認錯」步驟？", "zh": "apology steps", "o": ["痛悔己過", "承認忿怒", "避免仇恨", "釋放身心"], "a": 0, "e": "認錯：易地而處、痛悔己過、明認罪責、道歉認錯、補償過失。"}, {"u": 3, "t": "十步曲", "q": "以下哪一項屬於被傷害者的「寬恕」步驟？", "zh": "forgiving steps", "o": ["接納傷痛", "道歉認錯", "補償過失", "明認罪責"], "a": 0, "e": "寬恕：承認忿怒、避免仇恨、易地而處、接納傷痛、釋放身心。"}, {"u": 3, "t": "十步曲", "q": "認錯和寬恕兩邊都有的步驟是？", "zh": "both", "o": ["易地而處", "補償過失", "承認忿怒", "道歉認錯"], "a": 0, "e": "要明白對方的感受。"}, {"u": 3, "t": "負荊請罪", "q": "廉頗以甚麼方式向藺相如道歉認錯？", "zh": "apology", "o": ["背著荊條親自到他家認錯", "寫一封信", "送很多黃金", "請皇帝代為道歉"], "a": 0, "e": "這也是「補償過失」，不只口頭認錯。"}, {"u": 3, "t": "負荊請罪", "q": "藺相如不斷忍讓廉頗，是因為他認為…", "zh": "reason", "o": ["國家的安危重於私人恩怨", "自己很怕廉頗", "自己生病了", "廉頗是他的老師"], "a": 0, "e": "這是「易地而處」。"}, {"u": 3, "t": "負荊請罪", "q": "藺相如刻意迴避廉頗，屬於寬恕步驟中的…", "zh": "step", "o": ["避免仇恨", "釋放身心", "道歉認錯", "補償過失"], "a": 0, "e": "以生病為由不出席朝會，路上讓車避開。"}, {"u": 3, "t": "寬恕", "q": "被害人之孫比爾為寶拉說情、到監獄探視她，顯示了…", "zh": "forgiveness", "o": ["釋放身心", "補償過失", "承認忿怒", "明認罪責"], "a": 0, "e": "他在寶拉被判死刑三個月後已原諒她（接納傷痛）。"}, {"u": 3, "t": "悔改", "q": "寶拉．庫柏怎樣「痛悔己過」？", "zh": "repentance", "o": ["痛切悔改、發奮求學，獲得學士學位", "逃離監獄", "責怪別人", "甚麼都沒做"], "a": 0, "e": "她又希望為成長不順遂的孩子做好事。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

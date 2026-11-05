@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宗教及倫理 第2課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 宗倫</a> · <a href="F1_rse-unit2-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>宗倫 第2課小測 ✝️</h1>
+  <p class="sub">祈禱——與天主談話。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">祈禱是甚麼<small>種類、形式、方式</small></button><button class="big u2" data-set="2">常用經文<small>天主經、光榮經、聖母經</small></button><button class="big u3" data-set="3">祈禱態度<small>相遇、尊重</small></button><button class="big" data-set="all">全部題目<small>共 23 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "定義", "q": "在天主教會內，「祈禱」是指？", "zh": "prayer", "o": ["人與天主互相談話", "向別人借東西", "只在教堂唱歌", "背誦課文"], "a": 0, "e": "人可向天主訴說思念，表達信靠。"}, {"u": 1, "t": "種類", "q": "為別人向天主祈禱，稱為？", "zh": "intercession", "o": ["轉求（代禱）", "讚美", "悔罪", "感謝"], "a": 0, "e": "轉求即代禱。"}, {"u": 1, "t": "種類", "q": "向天主承認自己的過錯，屬於哪類祈禱？", "zh": "repentance", "o": ["悔罪", "讚美", "祈求", "感謝"], "a": 0, "e": "五類：祈求、轉求、感謝、讚美、悔罪。"}, {"u": 1, "t": "亞孟", "q": "以下哪一項「不是」「亞孟」的意思？", "zh": "Amen", "o": ["再見", "誠心所願", "願這一切得以實現", "我信"], "a": 0, "e": "亞孟 = 誠心所願、願這一切得以實現、我信。"}, {"u": 1, "t": "形式", "q": "祈禱的常用形式，第一部分是？", "zh": "form", "o": ["天主的名號", "結束語", "感謝", "新聞內容"], "a": 0, "e": "名號 → 對天主的說話 → 結束語。"}, {"u": 1, "t": "形式", "q": "祈禱文常用的結束語是？", "zh": "ending", "o": ["亞孟", "多謝", "完", "再會"], "a": 0, "e": "以「亞孟」結束。"}, {"u": 1, "t": "方式", "q": "個人祈禱不受方式、時間及___的限制。", "zh": "no limits", "o": ["地點", "天氣", "年齡", "金錢"], "a": 0, "e": "隨時隨地都可以祈禱。"}, {"u": 1, "t": "姿勢", "q": "以下哪一項是工作紙提及的祈禱姿勢？", "zh": "posture", "o": ["下跪", "躺下睡覺", "跑步", "跳繩"], "a": 0, "e": "下跪、坐下、站立／舉手。"}, {"u": 2, "t": "天主經", "q": "天主經又稱為？", "zh": "Lord's Prayer", "o": ["主禱文", "聖三經", "玫瑰經", "信經"], "a": 0, "e": "耶穌親自教門徒的禱文。"}, {"u": 2, "t": "天主經", "q": "「願你的國來臨」屬於哪種祈禱意向？", "zh": "praise", "o": ["讚美", "祈求", "悔罪", "轉求"], "a": 0, "e": "「願你的名…願你的國…願你的旨意…」都是讚美。"}, {"u": 2, "t": "天主經", "q": "「求你寬恕我們的罪過」屬於哪種祈禱意向？", "zh": "petition", "o": ["祈求", "讚美", "感謝", "結束語"], "a": 0, "e": "「求…／不要…／救…」都是祈求。"}, {"u": 2, "t": "天主經", "q": "耶穌教導我們祈禱時「首先」要祈求甚麼？", "zh": "first", "o": ["天主的光榮及天國的來臨", "自己考試合格", "有很多金錢", "肉身的需要"], "a": 0, "e": "然後才為肉身及靈魂的需要祈禱。"}, {"u": 2, "t": "天國", "q": "「天國」甚麼時候臨現在人間？", "zh": "Kingdom", "o": ["當人實行天主的教導時", "當人去旅行時", "當人有很多錢時", "只在死後"], "a": 0, "e": "天國即天主的國。"}, {"u": 2, "t": "光榮經", "q": "光榮經又稱為？", "zh": "Glory Be", "o": ["聖三光榮經", "主禱文", "聖母經", "感恩經"], "a": 0, "e": "表達對聖父、聖子、聖神的信仰。"}, {"u": 2, "t": "聖母經", "q": "聖母經中「萬福瑪利亞，妳充滿聖寵」的來源是？", "zh": "source", "o": ["聖經", "教會傳統", "新聞", "詩歌"], "a": 0, "e": "前半部分來自聖經。"}, {"u": 2, "t": "聖母經", "q": "聖母經中哪一句是「代禱」的內容？", "zh": "intercession", "o": ["求妳現在和我們臨終時，為我們罪人祈求天主", "萬福瑪利亞，妳充滿聖寵", "主與妳同在", "妳在婦女中受讚頌"], "a": 0, "e": "這部分來自教會傳統。"}, {"u": 2, "t": "聖母", "q": "教會尊稱瑪利亞為聖母，是因為…", "zh": "Mother of God", "o": ["她是天主子耶穌的母親", "教會相信她是神", "她是以色列的女王", "她寫了聖經"], "a": 0, "e": "教會不是相信瑪利亞是神。"}, {"u": 2, "t": "聖母", "q": "誦念聖母經時，信友懇求瑪利亞做甚麼？", "zh": "pray for us", "o": ["為世人代禱", "代替天主", "給我們金錢", "幫我們做功課"], "a": 0, "e": "同時讚美天主在瑪利亞身上的奇妙工作。"}, {"u": 3, "t": "相遇", "q": "祈禱就如朋友之間的___，加深認識，增進情誼。", "zh": "conversation", "o": ["談話", "比賽", "爭吵", "交易"], "a": 0, "e": "人與天主的距離漸漸拉近。"}, {"u": 3, "t": "態度", "q": "在祈禱前，人要…", "zh": "before prayer", "o": ["專注，好好準備內心", "盡量多說話", "看手機", "大聲叫喊"], "a": 0, "e": "準備內心，與天主親密交談。"}, {"u": 3, "t": "態度", "q": "在祈禱時，以下哪一項「不是」正確態度？", "zh": "attitude", "o": ["不停嘮叨", "信賴", "虔誠恭敬", "謙遜"], "a": 0, "e": "耶穌教人切勿嘮叨。"}, {"u": 3, "t": "和而不同", "q": "沒有宗教信仰的人參與教會團體祈禱時，應…", "zh": "respect", "o": ["保持靜默，不騷擾別人", "大聲說話", "離場抗議", "取笑他人"], "a": 0, "e": "尊重他人宗教，和諧共處。"}, {"u": 3, "t": "感恩", "q": "聖詠作者看見穹蒼、大地、光明，便懷著甚麼心讚美上主？", "zh": "gratitude", "o": ["感恩", "恐懼", "憤怒", "驕傲"], "a": 0, "e": "詠 136 篇。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

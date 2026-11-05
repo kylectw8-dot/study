@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宗教及倫理 第9課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 宗倫</a> · <a href="F1_rse-unit9-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>宗倫 第9課小測 ✝️</h1>
+  <p class="sub">耶穌復活——跨越困苦的希望。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">面對困苦<small>逾越、希望</small></button><button class="big u2" data-set="2">耶穌復活<small>復活與復生</small></button><button class="big u3" data-set="3">重獲希望<small>門徒的改變</small></button><button class="big" data-set="all">全部題目<small>共 23 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "困苦", "q": "以下哪一項「不是」工作紙提及的面對困苦的回應？", "zh": "responses", "o": ["責怪天主", "逃避它", "克服它", "改變自己的態度"], "a": 0, "e": "有些人逃避、有些克服、有些改變態度。"}, {"u": 1, "t": "門徒", "q": "耶穌被捕時，門徒的反應是？", "zh": "disciples", "o": ["膽怯得逃跑了", "勇敢地救祂", "去找羅馬軍隊", "在聖殿唱歌"], "a": 0, "e": "耶穌死後，有些失望離開，有些害怕躲藏。"}, {"u": 1, "t": "門徒", "q": "耶穌死後，門徒感到十分…", "zh": "feelings", "o": ["懼怕及失望", "高興及興奮", "驕傲", "輕鬆"], "a": 0, "e": "後來因信仰帶來的希望重獲力量。"}, {"u": 1, "t": "逾越", "q": "「逾越」的意思是？", "zh": "Passover", "o": ["超過、越過", "後退", "停止", "忘記"], "a": 0, "e": "耶穌的逾越 = 從死者中復活。"}, {"u": 1, "t": "希望", "q": "希望是一種力量，鼓勵人___面前的限制，走向美善。", "zh": "hope", "o": ["突破", "接受", "害怕", "避開"], "a": 0, "e": "希望可指美好的願望或理想。"}, {"u": 1, "t": "希望", "q": "人若存有希望及心中懷有___，便有力量跨越困難與痛苦。", "zh": "love", "o": ["愛", "恨", "錢", "怒"], "a": 0, "e": "工作紙甲部 Q9。"}, {"u": 1, "t": "接納", "q": "因著耶穌的愛，基督徒能接納自己的___，跨越自己的有限。", "zh": "accept", "o": ["不足", "成績", "財富", "名氣"], "a": 0, "e": "甚至有力量面對死亡的恐懼。"}, {"u": 2, "t": "復活節", "q": "天主教會在復活節慶祝甚麼？", "zh": "Easter", "o": ["耶穌從死者中復活", "耶穌誕生", "聖人", "亡者"], "a": 0, "e": "慶祝耶穌的逾越。"}, {"u": 2, "t": "復活", "q": "「復活」是指整個人…", "zh": "resurrection", "o": ["進入一個新而永恆的生命", "回復昔日的生命", "變成天使", "睡了很久"], "a": 0, "e": "復活的人不會再面對死亡。"}, {"u": 2, "t": "復生", "q": "「復生」是指…", "zh": "revival", "o": ["回復昔日的生命", "進入永恆的生命", "永遠不會死", "升上天堂"], "a": 0, "e": "復活並不同復生。"}, {"u": 2, "t": "復活", "q": "復活的人還會再面對甚麼？", "zh": "death", "o": ["不會再面對死亡", "會再死一次", "會變老", "會生病"], "a": 0, "e": "進入新而永恆的生命。"}, {"u": 2, "t": "顯現", "q": "耶穌復活後首先向誰顯現？", "zh": "appearance", "o": ["婦女", "羅馬皇帝", "大司祭", "賢士"], "a": 0, "e": "然後再向門徒顯現，祝福他們平安。"}, {"u": 2, "t": "顯現", "q": "耶穌向門徒顯現時祝福他們…", "zh": "peace", "o": ["平安", "富有", "長壽", "勝利"], "a": 0, "e": "使門徒體會耶穌的愛及接納。"}, {"u": 2, "t": "證據", "q": "以下哪一項是耶穌讓門徒相信祂已復活的方法？", "zh": "proof", "o": ["展示自己的傷痕", "寫信給門徒", "派天使去說", "在報紙刊登"], "a": 0, "e": "還有與門徒對話、一起吃魚。"}, {"u": 2, "t": "證據", "q": "耶穌與門徒一起吃甚麼，讓他們相信祂已復活？", "zh": "fish", "o": ["魚", "麵包和酒", "羔羊", "瑪納"], "a": 0, "e": "與門徒對話、展示傷痕、一起吃魚。"}, {"u": 2, "t": "失望", "q": "為甚麼耶穌的死對門徒來說是困苦及失望的事？", "zh": "despair", "o": ["他們的希望及理想落空，要與師傅永別", "他們沒有飯吃", "他們要考試", "他們生病了"], "a": 0, "e": "工作紙乙部 4-1。"}, {"u": 2, "t": "永生", "q": "基督徒相信人有永遠的生命，所以在現世遇上痛苦時能…", "zh": "endure", "o": ["堅忍面對，對未來存有希望", "放棄", "逃避", "怪責別人"], "a": 0, "e": "耶穌為人帶來永生的希望。"}, {"u": 3, "t": "相遇", "q": "門徒憑甚麼跨越耶穌死亡帶來的困苦？", "zh": "overcome", "o": ["與復活的耶穌相遇的經驗", "找到很多錢", "離開信仰", "忘記耶穌"], "a": 0, "e": "明白死亡不是生命的終結。"}, {"u": 3, "t": "新體會", "q": "門徒對死亡有甚麼新的體會？", "zh": "death", "o": ["死亡不是人的終結", "死亡是一切的終結", "死亡很可怕", "死亡可以避免"], "a": 0, "e": "人可以在死後復活。"}, {"u": 3, "t": "新認識", "q": "門徒對耶穌有甚麼新的認識？", "zh": "new understanding", "o": ["耶穌可以從死者中復活", "耶穌只是普通老師", "耶穌已經永遠離開", "耶穌是羅馬人"], "a": 0, "e": "跨越困苦及重獲希望的方法之一。"}, {"u": 3, "t": "同行", "q": "「門徒找到同行者」是指…", "zh": "companion", "o": ["耶穌與門徒在一起，給予他們平安", "門徒找到新老師", "門徒去旅行", "門徒加入軍隊"], "a": 0, "e": "耶穌陪伴他們。"}, {"u": 3, "t": "改變", "q": "耶穌死後，門徒打算…", "zh": "after death", "o": ["離開耶路撒冷，返回家鄉", "到聖殿祈禱", "傳揚福音", "建立教會"], "a": 0, "e": "因為他們對將來已沒有希望。"}, {"u": 3, "t": "改變", "q": "耶穌升天後，門徒的表現是？", "zh": "after Ascension", "o": ["歡天喜地，返回耶路撒冷到聖殿祈禱", "害怕躲藏", "逃回家鄉", "離開信仰"], "a": 0, "e": "他們不再害怕。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

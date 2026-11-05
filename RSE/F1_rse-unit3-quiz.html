@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宗教及倫理 第3課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 宗倫</a> · <a href="F1_rse-unit3-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>宗倫 第3課小測 ✝️</h1>
+  <p class="sub">天主的創造與人的尊嚴。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">創造與人<small>肖像、治理、尊貴</small></button><button class="big u2" data-set="2">科學與創世<small>How / Why、六天</small></button><button class="big u3" data-set="3">獨特與尊嚴<small>肢體、人性價值</small></button><button class="big" data-set="all">全部題目<small>共 20 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "創造", "q": "據《創世紀》，天主在多少天內創造了天地萬物及人類？", "zh": "Genesis", "o": ["六天", "七天", "三天", "四十天"], "a": 0, "e": "第七天休息。"}, {"u": 1, "t": "肖像", "q": "人是按照天主的___而造。", "zh": "image of God", "o": ["肖像", "影子", "聲音", "名字"], "a": 0, "e": "能分享天主的愛及智慧。"}, {"u": 1, "t": "責任", "q": "天主叫人負起甚麼責任？", "zh": "stewardship", "o": ["治理大地、管理萬物", "破壞大地", "只照顧自己", "收集金錢"], "a": 0, "e": "人是天主在萬物中的代表。"}, {"u": 1, "t": "地位", "q": "在天主的創造工程中，人類具有怎樣的地位？", "zh": "status", "o": ["獨特及尊貴", "普通及低下", "與動物完全一樣", "可以被取代"], "a": 0, "e": "每人都是獨一無二的創作。"}, {"u": 1, "t": "關係", "q": "人能自由與天主交往，建立有如___的關係。", "zh": "relationship", "o": ["父子之愛", "老闆與員工", "敵人", "陌生人"], "a": 0, "e": "天主是父親，人是子女。"}, {"u": 1, "t": "才能", "q": "人應以天主的恩賜，___及發揮一己的才能。", "zh": "talents", "o": ["善用", "浪費", "隱藏", "出售"], "a": 0, "e": "按個人生活境況選擇適合方式。"}, {"u": 2, "t": "科學", "q": "現代科學透過甚麼方法解釋事物？", "zh": "science", "o": ["觀察物質世界", "祈禱", "閱讀聖經", "猜測"], "a": 0, "e": "科學解釋事物怎樣發生（How）。"}, {"u": 2, "t": "宗教", "q": "宗教主要解釋事物的…", "zh": "religion", "o": ["原因及存在的意義（Why）", "溫度和重量", "怎樣製造", "價錢"], "a": 0, "e": "宗教回答「為甚麼」。"}, {"u": 2, "t": "科學與宗教", "q": "科學與宗教對宇宙產生的解釋有沒有衝突？", "zh": "conflict?", "o": ["沒有，兩者從不同角度解釋，可以共存", "有，只能相信一個", "有，科學證明宗教是錯的", "有，宗教證明科學是錯的"], "a": 0, "e": "科學說過程，宗教說源由及意義。"}, {"u": 2, "t": "六天", "q": "天主在第一天創造了甚麼？", "zh": "day 1", "o": ["光", "光體", "穹蒼", "人類"], "a": 0, "e": "第四天的光體與第一天的光對應。"}, {"u": 2, "t": "六天", "q": "天主在第二天創造了甚麼？", "zh": "day 2", "o": ["穹蒼", "陸地及海洋", "飛鳥", "光"], "a": 0, "e": "第五天的水中生物及飛鳥與它對應。"}, {"u": 2, "t": "六天", "q": "天主在第三天創造了甚麼？", "zh": "day 3", "o": ["陸地及海洋", "光體", "穹蒼", "地上生物"], "a": 0, "e": "第六天的地上生物及人類與它對應。"}, {"u": 2, "t": "六天", "q": "天主在第五天創造了甚麼？", "zh": "day 5", "o": ["水中生物及飛鳥", "地上生物及人類", "光體", "陸地及海洋"], "a": 0, "e": "對應第二天的穹蒼（天空和水）。"}, {"u": 2, "t": "六天", "q": "人類是在第幾天被創造的？", "zh": "day 6", "o": ["第六天", "第一天", "第三天", "第五天"], "a": 0, "e": "第六天：地上生物及人類。"}, {"u": 2, "t": "六天", "q": "創世六天的鋪排說明天主的創造是…", "zh": "meaning", "o": ["充滿智慧、有計劃、按步就班", "隨意和混亂的", "偶然發生的", "沒有次序的"], "a": 0, "e": "世界也充滿秩序及規律。"}, {"u": 2, "t": "愛", "q": "從創世的過程可見，天主的愛是…", "zh": "love", "o": ["無條件的", "有條件的", "只給富人的", "要付錢的"], "a": 0, "e": "天主是「愛」。"}, {"u": 3, "t": "肢體", "q": "經文以肢體與身體的關係說明甚麼？", "zh": "body parts", "o": ["不同的肢體有不同作用，都是身體的重要部分", "有些肢體沒有用", "只有頭最重要", "肢體可以隨便丟棄"], "a": 0, "e": "每個人都重要。"}, {"u": 3, "t": "獨特", "q": "天主為何創造每一個人都各有不同？", "zh": "uniqueness", "o": ["每人都獨特，反映天主不同的美善", "天主不夠時間", "為了讓人互相比較", "沒有原因"], "a": 0, "e": "每人與他人和天主有不可取代的關係。"}, {"u": 3, "t": "尊嚴", "q": "人從甚麼時候起便具有人性的尊嚴？", "zh": "dignity", "o": ["自受孕一刻起", "出生滿一歲", "成年以後", "受洗以後"], "a": 0, "e": "因為每個人都按天主的肖像受造。"}, {"u": 3, "t": "尊嚴", "q": "嬰孩、青少年、長者、傷殘人士是否需要相同的尊重？", "zh": "respect", "o": ["需要，因為每人都有相同的人性尊嚴", "不需要，要看他們的能力", "只有青少年需要", "只有長者需要"], "a": 0, "e": "每個人的價值都是相同及平等的。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

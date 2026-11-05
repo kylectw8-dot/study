@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宗教及倫理 第6課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 宗倫</a> · <a href="F1_rse-unit6-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>宗倫 第6課小測 ✝️</h1>
+  <p class="sub">信德之父亞巴郎。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">信賴與信德<small>定義、三個過程</small></button><button class="big u2" data-set="2">年老離鄉<small>吩咐、許諾</small></button><button class="big u3" data-set="3">得子與獻子<small>依撒格、兩個稱號</small></button><button class="big" data-set="all">全部題目<small>共 20 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "信賴", "q": "人與人之間的信賴是指…", "zh": "trust", "o": ["信任及依靠", "比較及競爭", "命令及控制", "借錢及還錢"], "a": 0, "e": "在逐步了解的過程中加深。"}, {"u": 1, "t": "信德", "q": "人對天主的說話及照顧，抱信靠、聽從的態度，教會稱之為？", "zh": "faith", "o": ["信德", "望德", "愛德", "智德"], "a": 0, "e": "信德 = 信賴 + 服從。"}, {"u": 1, "t": "信德", "q": "信德是結合信賴和___的態度及行為。", "zh": "faith", "o": ["服從", "依自己意思", "懷疑", "反抗"], "a": 0, "e": "改正題：不是「依自己意思」。"}, {"u": 1, "t": "過程", "q": "與天主及與人建立互相信賴關係的三個過程是？", "zh": "process", "o": ["認識、交往、同行", "爭吵、和好、分開", "觀察、懷疑、離開", "比較、競爭、勝利"], "a": 0, "e": "工作紙甲部 Q6。"}, {"u": 1, "t": "信德", "q": "人縱然不能完全明白天主的計劃，只要懷著信心、服從天主，便可體會到…", "zh": "blessing", "o": ["信德使人蒙福", "信德沒有用", "要依靠自己", "不用理會天主"], "a": 0, "e": "人可學習亞巴郎的信德。"}, {"u": 2, "t": "離鄉", "q": "天主吩咐亞巴郎離開哪裡？", "zh": "Haran", "o": ["哈蘭", "客納罕", "埃及", "白冷"], "a": 0, "e": "離開故鄉、家族及父家。"}, {"u": 2, "t": "離鄉", "q": "天主吩咐亞巴郎前往哪裡？", "zh": "Canaan", "o": ["客納罕", "哈蘭", "羅馬", "耶路撒冷"], "a": 0, "e": "上主指定給他的地方。"}, {"u": 2, "t": "離鄉", "q": "亞巴郎離開故鄉時多少歲？", "zh": "age", "o": ["七十五歲", "二十五歲", "一百歲", "四十歲"], "a": 0, "e": "他帶著妻子、姪兒、僕婢及財物出發。"}, {"u": 2, "t": "許諾", "q": "天主許諾亞巴郎的子孫多如…", "zh": "descendants", "o": ["天上繁星、岸上沙粒", "一個小村莊", "十二個人", "樹上的葉子"], "a": 0, "e": "他會成為大民族的祖先。"}, {"u": 2, "t": "許諾", "q": "以下哪一項「不是」天主對亞巴郎的許諾？", "zh": "promise", "o": ["成為埃及的法郎", "成為大民族的祖先", "要成名、成為一個福源", "後裔世世代代成為天主的子民"], "a": 0, "e": "天主許諾的是大民族、子孫眾多、子民、福源。"}, {"u": 2, "t": "相同", "q": "亞巴郎年老離鄉與「神秘旅行」的相同之處是？", "zh": "similarity", "o": ["不知道目的地", "有很多時間準備", "知道全部細節", "不用花錢"], "a": 0, "e": "也要在短時間內起程。"}, {"u": 2, "t": "信德", "q": "亞巴郎途中遇到困難危險，他對天主的信靠…", "zh": "faith", "o": ["沒有動搖，反而更堅定", "完全消失", "變成懷疑", "轉向別的神"], "a": 0, "e": "天主沿途的領導照顧更堅定了他的信賴。"}, {"u": 3, "t": "得子", "q": "亞巴郎晚年得到的兒子叫甚麼名字？", "zh": "Isaac", "o": ["依撒格", "雅各伯", "梅瑟", "若瑟"], "a": 0, "e": "依撒格的誕生使亞巴郎的信德更堅固。"}, {"u": 3, "t": "得子", "q": "晚年得子令亞巴郎進一步認識到…", "zh": "power", "o": ["上主的能力及慈愛", "自己很厲害", "天主不可信", "金錢最重要"], "a": 0, "e": "自己沒能力實現的事，天主也可實現。"}, {"u": 3, "t": "獻子", "q": "天主要亞巴郎獻子，是給他一個重大的…", "zh": "test", "o": ["信德考驗", "懲罰", "獎勵", "遊戲"], "a": 0, "e": "亞巴郎深信天主必會看顧兒子。"}, {"u": 3, "t": "獻子", "q": "亞巴郎從心裏說出的話是？", "zh": "quote", "o": ["上主自會照料", "我不願意", "為甚麼是我", "讓我想一想"], "a": 0, "e": "「我兒，天主自會照料作全燔祭的羔羊。」"}, {"u": 3, "t": "稱號", "q": "「亞巴辣罕」這個名字的意思是？", "zh": "Abraham", "o": ["萬民之父", "信德之父", "先知之父", "以色列之王"], "a": 0, "e": "改正題：不是「信德之父」。"}, {"u": 3, "t": "稱號", "q": "亞巴郎被稱為「信德之父」，因為…", "zh": "father of faith", "o": ["他憑堅強的信德，成為所有信賴天主的人的榜樣", "他有很多兒子", "他很富有", "他建了聖殿"], "a": 0, "e": "教會鼓勵人效法他的信德。"}, {"u": 3, "t": "三考驗", "q": "以下哪一項「不是」亞巴郎面對的三個考驗？", "zh": "tests", "o": ["帶領以色列人過紅海", "年老離鄉", "晚年得子", "奉獻獨子"], "a": 0, "e": "帶領以色列人過紅海的是梅瑟。"}, {"u": 3, "t": "信念", "q": "亞巴郎憑著甚麼信念面對考驗？", "zh": "belief", "o": ["不怕困難、無懼犧牲、常懷希望", "害怕失敗", "只靠自己", "放棄希望"], "a": 0, "e": "工作紙甲部 Q5。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>

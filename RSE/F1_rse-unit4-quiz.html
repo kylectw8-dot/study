@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>宗教及倫理 第4課小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 宗倫</a> · <a href="F1_rse-unit4-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>宗倫 第4課小測 ✝️</h1>
+  <p class="sub">諸聖相通——聖人與聖母。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">諸聖節<small>節日、Halloween</small></button><button class="big u2" data-set="2">聖人<small>定義、冊封過程</small></button><button class="big u3" data-set="3">聖母瑪利亞<small>信賴、謙虛、服務</small></button><button class="big" data-set="all">全部題目<small>共 22 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "節日", "q": "11月1日是甚麼節日？", "zh": "Nov 1", "o": ["諸聖節", "追思已亡節", "聖誕節", "復活節"], "a": 0, "e": "紀念教會內的各位聖人。"}, {"u": 1, "t": "節日", "q": "11月2日是甚麼節日？", "zh": "Nov 2", "o": ["追思已亡節", "諸聖節", "聖母月", "將臨期"], "a": 0, "e": "為所有亡者祈禱。"}, {"u": 1, "t": "教會", "q": "教會的大家庭「不包括」以下哪一項？", "zh": "Church family", "o": ["只有神職人員", "聖人", "亡者", "在世的信友"], "a": 0, "e": "教會由聖人、亡者及在世的信友組成。"}, {"u": 1, "t": "亡者", "q": "天主教會教導信徒應怎樣對待亡者？", "zh": "the dead", "o": ["為亡者祈禱，盼望他們得到永遠的安息", "嚇退亡魂", "害怕亡者", "忘記亡者"], "a": 0, "e": "盼望最終在天國相聚。"}, {"u": 1, "t": "習俗", "q": "面對愛爾蘭的亡魂習俗，教會把習俗…", "zh": "Irish custom", "o": ["信仰化", "忘記", "禁止", "商業化"], "a": 0, "e": "訂下11月1日紀念聖人。"}, {"u": 1, "t": "Halloween", "q": "Halloween 是指甚麼時候？", "zh": "Halloween", "o": ["諸聖節的前一天晚上", "追思已亡節的晚上", "聖誕節前夕", "復活節早上"], "a": 0, "e": "All Hallow's Eve = The eve of All Saints' Day。"}, {"u": 1, "t": "諸聖節", "q": "「光榮天主及讚美聖人，鼓勵眾人效法聖人德行」是哪個節日的目的？", "zh": "purpose", "o": ["諸聖節", "追思已亡節", "萬聖節之夜", "聖母月"], "a": 0, "e": "改正題：不是追思已亡節。"}, {"u": 2, "t": "聖人", "q": "聖人一定是毫無過失的人嗎？", "zh": "perfect?", "o": ["不一定，他們也可能犯錯，但能悔改歸向天主", "是，聖人從不犯錯", "是，聖人生來神聖", "不知道"], "a": 0, "e": "聖人藉信仰的力量悔改。"}, {"u": 2, "t": "聖人", "q": "被冊封的聖人來自…", "zh": "variety", "o": ["不同年代、民族及職業，有男有女、有長有幼", "只有神父", "只有歐洲人", "只有老人"], "a": 0, "e": "聖人各有不同。"}, {"u": 2, "t": "聖人", "q": "狹義來說，聖人是指…", "zh": "narrow sense", "o": ["教會宣認或公開冊封的聖人", "所有好人", "所有受洗的人", "所有亡者"], "a": 0, "e": "廣義包括受洗的人及在天上的亡者。"}, {"u": 2, "t": "冊封", "q": "冊封聖人過程中，完成審查後被列為…", "zh": "step 1", "o": ["可敬者", "真福", "聖人", "教宗"], "a": 0, "e": "次序：可敬者 → 真福 → 聖人。"}, {"u": 2, "t": "冊封", "q": "可敬者要有多少個因其代禱而產生的奇蹟，才被列為真福？", "zh": "Blessed", "o": ["一個", "兩個", "三個", "不用奇蹟"], "a": 0, "e": "第二個奇蹟才可冊封為聖人。"}, {"u": 2, "t": "冊封", "q": "冊封聖人的正確次序是？", "zh": "order", "o": ["可敬者 → 真福 → 聖人", "真福 → 可敬者 → 聖人", "聖人 → 真福 → 可敬者", "可敬者 → 聖人 → 真福"], "a": 0, "e": "Venerable → Blessed → Saint。"}, {"u": 2, "t": "聖人", "q": "聖人藉著信仰的力量悔改，最終成為天主的…", "zh": "witness", "o": ["忠僕及見證人", "敵人", "老闆", "旁觀者"], "a": 0, "e": "他們引領他人認識天主。"}, {"u": 3, "t": "瑪利亞", "q": "瑪利亞去探望的親戚依撒伯爾是她的…", "zh": "Elizabeth", "o": ["表姐", "表妹", "母親", "女兒"], "a": 0, "e": "改正題：不是表妹。"}, {"u": 3, "t": "瑪利亞", "q": "瑪利亞即使不完全明白天主的計劃，仍選擇…", "zh": "trust", "o": ["與天主合作", "拒絕天主", "逃走", "要求解釋才答應"], "a": 0, "e": "這表現她「全心信賴天主」。"}, {"u": 3, "t": "瑪利亞", "q": "瑪利亞「謙虛地行愛德服務」的證據是？", "zh": "service", "o": ["懷孕時仍起程探訪表姐並提供協助", "在聖殿講道", "寫了一本書", "成為女王"], "a": 0, "e": "這是瑪利亞訪親的記載。"}, {"u": 3, "t": "瑪利亞", "q": "依撒伯爾稱瑪利亞為救主的母親時，瑪利亞的反應是？", "zh": "humility", "o": ["謙遜地承認自己的卑微，並讚頌天主", "誇耀自己", "覺得驕傲", "生氣"], "a": 0, "e": "她沒有誇耀自己。"}, {"u": 3, "t": "瑪利亞", "q": "「瑪利亞訪親」表現出她的兩項德行是？", "zh": "virtues", "o": ["謙虛自下、愛德服務", "勇敢作戰、富有", "聰明、美麗", "驕傲、自信"], "a": 0, "e": "工作紙丙部 Q9。"}, {"u": 3, "t": "聖母", "q": "天主教的「玫瑰月」是哪一個月？", "zh": "Rosary", "o": ["十月", "五月", "十二月", "一月"], "a": 0, "e": "五月是聖母月。"}, {"u": 3, "t": "聖母", "q": "天主教的「聖母月」是哪一個月？", "zh": "Month of Mary", "o": ["五月", "十月", "十一月", "三月"], "a": 0, "e": "十月是玫瑰月。"}, {"u": 3, "t": "應用", "q": "歲月號船長應效法甚麼德行？", "zh": "responsibility", "o": ["勇於承擔：先照顧好乘客才離開", "先逃生保護自己", "責怪乘客", "躲起來"], "a": 0, "e": "船長有責任確保乘客安全。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>
