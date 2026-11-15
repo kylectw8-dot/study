@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>公經社 單元4簡報小測</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← 公經社</a> · <a href="F1_ces-1A-unit4-slides-study-guide.html" style="color:inherit">📘 溫習筆記</a></p>
+  <h1>公經社 單元4簡報小測 📝</h1>
+  <p class="sub">青少年建立良好社交關係。慢慢做，沒有時間限制。</p>
+  <div class="card">
+    <b>選擇小測範圍</b>
+    <div class="choose"><button class="big u1" data-set="1">友誼的重要<small>四項作用</small></button><button class="big u2" data-set="2">友誼發展<small>五階段、廣度深度</small></button><button class="big u3" data-set="3">朋輩壓力<small>三原則、三方法、個案</small></button><button class="big" data-set="all">全部題目<small>共 30 題</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> 顯示英文關鍵詞 English hints</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> 自動讀出題目 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">第 1 題，共 10 題</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 讀出</button>
+    <div class="opts" id="opts" role="group" aria-label="選項"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">下一題</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>做完了，好叻！🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">再做答錯的題目</button>
+      <button class="btn alt" id="again" type="button">重新開始</button>
+      <button class="btn alt" id="home" type="button">選擇其他範圍</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "重要性", "q": "以下哪一項「不是」簡報提及的友誼對個人成長的重要性？", "zh": "importance", "o": ["提供生活所需", "滿足情感需求", "增進自我瞭解", "培養社交能力"], "a": 0, "e": "四項：情感需求、自我瞭解、社交能力、彼此進步。"}, {"u": 1, "t": "情感", "q": "與年齡和興趣相若的人組成群體，令人有甚麼感覺？", "zh": "belonging", "o": ["歸屬感", "孤獨感", "壓迫感", "罪惡感"], "a": 0, "e": "這是滿足情感需求。"}, {"u": 1, "t": "自我瞭解", "q": "朋友之間___對等，所以可以自在表達想法。", "zh": "equal", "o": ["地位和權力", "年齡和身高", "金錢和成績", "名氣和外表"], "a": 0, "e": "也可從朋友的評價中了解自己。"}, {"u": 1, "t": "自我瞭解", "q": "從朋友的評價和意見中了解自己的優點和缺點，屬於…", "zh": "self-understanding", "o": ["增進自我瞭解", "培養社交能力", "滿足情感需求", "促進彼此進步"], "a": 0, "e": "朋友像一面鏡子。"}, {"u": 1, "t": "社交能力", "q": "掌握待人接物的技巧、恰當表達情緒、以同理心待人，屬於…", "zh": "social skills", "o": ["培養社交能力", "增進自我瞭解", "促進彼此進步", "滿足情感需求"], "a": 0, "e": "友誼的第三項作用。"}, {"u": 1, "t": "進步", "q": "學習朋友長處、改善個人不足，屬於…", "zh": "growth", "o": ["促進彼此進步", "滿足情感需求", "增進自我瞭解", "友誼衰退"], "a": 0, "e": "互相討論交流也可擴闊視野。"}, {"u": 2, "t": "階段", "q": "友誼發展五個階段的正確次序是？", "zh": "stages", "o": ["相識 → 建立 → 延續 → 衰退 → 結束", "建立 → 相識 → 延續 → 結束 → 衰退", "相識 → 延續 → 建立 → 衰退 → 結束", "延續 → 相識 → 建立 → 衰退 → 結束"], "a": 0, "e": "萊文格「關係階段理論」。"}, {"u": 2, "t": "階段", "q": "「注意對方存在，認識限於表面」是哪一個階段？", "zh": "stage", "o": ["相識", "建立", "延續", "衰退"], "a": 0, "e": "可主動介紹自己，態度親切友善。"}, {"u": 2, "t": "階段", "q": "「真誠交流，互相尊重，信任和依賴」是哪一個階段？", "zh": "stage", "o": ["延續", "相識", "建立", "結束"], "a": 0, "e": "要定期聯絡、欣賞優點、包容缺點。"}, {"u": 2, "t": "階段", "q": "在「建立」階段，可以怎樣做？", "zh": "build", "o": ["找出共同興趣，深入聊天", "不再聯絡", "只顧說自己", "批評對方"], "a": 0, "e": "多溝通以了解對方的想法和感受。"}, {"u": 2, "t": "衰退", "q": "以下哪一項是友誼衰退的原因？", "zh": "decline", "o": ["自我中心，忽略朋友需要", "定期聯絡", "欣賞朋友優點", "真誠交流"], "a": 0, "e": "還有環境轉變、缺乏共同話題、價值觀分歧。"}, {"u": 2, "t": "理論", "q": "「關係階段理論」是由誰提出的？", "zh": "Levinger", "o": ["德國心理學家喬治・萊文格", "馬斯洛", "薩提爾", "盧森堡"], "a": 0, "e": "友誼的發展是漸進而互動的過程。"}, {"u": 2, "t": "廣深", "q": "友誼的親密程度與話題的甚麼有密切關係？", "zh": "breadth & depth", "o": ["廣度和深度", "長度和速度", "價錢和時間", "音量和語調"], "a": 0, "e": "社會滲透理論。"}, {"u": 2, "t": "廣深", "q": "話題的「深度」是指話題的…", "zh": "depth", "o": ["內容（由表面到深入）", "範圍（由狹窄到廣闊）", "說話的速度", "說話的人數"], "a": 0, "e": "廣度 = 話題的範圍。"}, {"u": 2, "t": "知己", "q": "「知己」是指…", "zh": "close friend", "o": ["最親密的朋友，無所不談，感情深厚", "剛認識的同學", "只在網上認識的人", "鄰居"], "a": 0, "e": "話題又廣又深。"}, {"u": 2, "t": "情境", "q": "朋友只顧表達自己的意見，應怎樣改善？", "zh": "scenario", "o": ["避免自我中心，聆聽對方想法，令朋友感到受尊重", "說得更大聲", "不再理會朋友", "換一班朋友"], "a": 0, "e": "情境題 2。"}, {"u": 2, "t": "情境", "q": "想認識新同學，以下哪一個做法最合適？", "zh": "scenario", "o": ["主動介紹自己或提供協助，展現友善態度", "等對方先開口", "取笑對方", "只在網上留言"], "a": 0, "e": "可打開話匣子。"}, {"u": 3, "t": "壓力", "q": "朋輩或從眾壓力是指青少年為了___，因而願意跟隨朋友的行為。", "zh": "peer pressure", "o": ["獲得朋輩接納", "獲得金錢", "考試合格", "父母讚賞"], "a": 0, "e": "從眾不一定有問題，但不當行為要拒絕。"}, {"u": 3, "t": "原則", "q": "以下哪一項「不是」應對朋輩壓力的原則？", "zh": "principles", "o": ["少數服從多數", "自我肯定", "慎思明辨", "遵守法律"], "a": 0, "e": "多數人的意見不一定是對的。"}, {"u": 3, "t": "原則", "q": "「相信自己判斷，拒絕跟隨錯誤行為」屬於哪個原則？", "zh": "principle", "o": ["自我肯定", "慎思明辨", "遵守法律", "尋求協助"], "a": 0, "e": "例如拒絕作弊、欺凌。"}, {"u": 3, "t": "原則", "q": "「跟隨朋友行動前，從個人和人際等不同角度分析影響」屬於…", "zh": "principle", "o": ["慎思明辨", "自我肯定", "堅定拒絕", "離開現場"], "a": 0, "e": "不認同時可提出異議。"}, {"u": 3, "t": "法律", "q": "根據香港法例，刑事責任的最低年齡為？", "zh": "age", "o": ["十歲", "十二歲", "十五歲", "十八歲"], "a": 0, "e": "青少年違法須負上刑責。"}, {"u": 3, "t": "法律", "q": "售賣盜版貨品屬於哪一種罪行？", "zh": "crime", "o": ["侵犯知識產權", "襲擊及毆打", "盜竊", "危害國家安全"], "a": 0, "e": "哲銘的個案。"}, {"u": 3, "t": "方法", "q": "以下哪一項「不是」應對朋輩壓力的方法？", "zh": "methods", "o": ["跟隨大家一起做", "堅定拒絕", "離開現場", "尋求協助"], "a": 0, "e": "三個方法：堅定拒絕、離開現場、尋求協助。"}, {"u": 3, "t": "方法", "q": "「我感到不適，先回家休息」屬於哪一種方法？", "zh": "leave", "o": ["離開現場", "堅定拒絕", "尋求協助", "慎思明辨"], "a": 0, "e": "藉故離開，冷靜思考應對方法。"}, {"u": 3, "t": "方法", "q": "堅定拒絕時，以下哪一項做法是正確的？", "zh": "refuse firmly", "o": ["眼神專注、神情自信、語調平穩", "眼望地下、小聲說話", "大聲罵對方", "含糊不清地回答"], "a": 0, "e": "並說明自己的立場、意見和感受。"}, {"u": 3, "t": "個案", "q": "秀妍面對甚麼朋輩壓力？", "zh": "case", "o": ["考試前一天被邀請看演唱會，但她想温習", "被要求賣盜版貨品", "被要求作弊", "被要求塗鴉"], "a": 0, "e": "她應慎思明辨，並堅定拒絕。"}, {"u": 3, "t": "個案", "q": "哲銘發現會長焯然想在年宵攤位出售盜版貨品，他可以向誰尋求協助？", "zh": "case", "o": ["學會導師", "買家", "其他售賣盜版的人", "沒有人"], "a": 0, "e": "也應自我肯定，相信自己的判斷。"}, {"u": 3, "t": "答題", "q": "回應朋友不當要求時，應做到…", "zh": "response", "o": ["直接表達、具體陳述、態度堅定", "含糊其詞", "先答應再算", "不回覆訊息"], "a": 0, "e": "例：「我不贊成……因為這是違法行為……」"}, {"u": 3, "t": "非暴力溝通", "q": "皓賢說「錯過飯局，我感到可惜」，屬於非暴力溝通的哪一個要素？", "zh": "NVC", "o": ["感受", "觀察", "需要", "請求"], "a": 0, "e": "觀察 → 感受 → 需要 → 請求。"}];</script>
+<script src="ces-quiz.js"></script>
+</body>
+</html>
