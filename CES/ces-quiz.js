@@ -85,3 +85,16 @@ document.addEventListener("keydown",e=>{
   const k=e.key.toUpperCase(), opts=[...document.querySelectorAll(".opt")];
   if("ABCD".includes(k)&&k.length===1&&!answered){const b=opts["ABCD".indexOf(k)]; if(b) b.click();}
 });
+
+// Back buttons: always shown at the top of every quiz screen
+(function(){
+  const zh=(document.documentElement.lang||"").toLowerCase().startsWith("zh");
+  const bar=document.createElement("nav");
+  bar.className="backbar";bar.setAttribute("aria-label",zh?"返回":"Go back");
+  bar.innerHTML='<a href="./">'+(zh?"← 返回科目主頁":"← Back to subject page")+'</a><a href="/study/">'+(zh?"🏠 所有科目":"🏠 All subjects")+'</a>';
+  const st=document.createElement("style");
+  st.textContent=".backbar{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 14px}.backbar a{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:999px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font-weight:700;text-decoration:none}.backbar a:hover,.backbar a:focus-visible{background:var(--ink);color:var(--paper);outline:none}";
+  document.head.appendChild(st);
+  const wrap=document.querySelector(".wrap")||document.body;
+  wrap.insertBefore(bar,wrap.firstChild);
+})();
