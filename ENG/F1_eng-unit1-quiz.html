@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English Unit 1 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← English</a> · <a href="F1_eng-unit1-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>English Unit 1 Quiz 📖</h1>
+  <p class="sub">Interests & Personality. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Vocabulary<small>Unit 1 words</small></button><button class="big u2" data-set="2">Grammar<small>Present tense, articles, frequency</small></button><button class="big u3" data-set="3">Writing<small>Personal description</small></button><button class="big" data-set="all">Everything<small>All 39 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "Vocabulary", "q": "An activity that you enjoy doing in your free time is a…", "zh": "嗜好", "o": ["hobby", "habit", "nerd", "preference"], "a": 0, "e": "A hobby is something you enjoy in your free time."}, {"u": 1, "t": "Vocabulary", "q": "A feeling of liking one thing more than another is a…", "zh": "偏好", "o": ["preference", "personality", "interest", "hobby"], "a": 0, "e": "preference = 偏好."}, {"u": 1, "t": "Vocabulary", "q": "Which word means \"quiet, shy, and preferring to spend time alone\"?", "zh": "內向的", "o": ["introverted", "outgoing", "energetic", "adventurous"], "a": 0, "e": "The opposite is outgoing."}, {"u": 1, "t": "Vocabulary", "q": "Which word means \"willing to try new, exciting things\"?", "zh": "有冒險精神的", "o": ["adventurous", "considerate", "laid-back", "introverted"], "a": 0, "e": "adventurous = 有冒險精神的."}, {"u": 1, "t": "Vocabulary", "q": "Tom always thinks about other people's feelings. He is…", "zh": "體貼的", "o": ["considerate", "stubborn", "energetic", "introverted"], "a": 0, "e": "considerate = kind and thinks about others."}, {"u": 1, "t": "Vocabulary", "q": "I ___ the piano every day to improve my skills.", "zh": "練習", "o": ["practise", "relax", "admire", "affect"], "a": 0, "e": "practise = do regularly to improve."}, {"u": 1, "t": "Vocabulary", "q": "We stood on the hill to ___ the beautiful view.", "zh": "欣賞", "o": ["admire", "volunteer", "socialize", "practise"], "a": 0, "e": "admire = look and think it is beautiful."}, {"u": 1, "t": "Vocabulary", "q": "Something you do often and regularly, sometimes without knowing it, is a…", "zh": "習慣", "o": ["habit", "hobby", "interest", "preference"], "a": 0, "e": "habit = 習慣."}, {"u": 1, "t": "Vocabulary", "q": "Which word describes a friendly person who finds it easy to talk to others?", "zh": "外向的", "o": ["outgoing", "introverted", "laid-back", "generous"], "a": 0, "e": "outgoing = 外向的."}, {"u": 1, "t": "Vocabulary", "q": "She gives her time freely to help others. She is…", "zh": "慷慨的", "o": ["generous", "confident", "energetic", "nerd"], "a": 0, "e": "generous = willing to give money, help or time."}, {"u": 1, "t": "Vocabulary", "q": "To help at an elderly home without being paid is to…", "zh": "當義工", "o": ["volunteer", "socialize", "relax", "affect"], "a": 0, "e": "volunteer = offer your time without pay."}, {"u": 1, "t": "Vocabulary", "q": "He is relaxed and is not easily worried. He is…", "zh": "隨和的", "o": ["laid-back", "energetic", "introverted", "stubborn"], "a": 0, "e": "laid-back = 隨和的 / 悠閒的."}, {"u": 1, "t": "Vocabulary", "q": "Lack of sleep can ___ your mood.", "zh": "影響", "o": ["affect", "admire", "collect", "practise"], "a": 0, "e": "affect = have an influence on."}, {"u": 1, "t": "Vocabulary", "q": "Feeling sure about your own abilities is being…", "zh": "自信的", "o": ["confident", "considerate", "generous", "laid-back"], "a": 0, "e": "confident = 有信心的."}, {"u": 2, "t": "Simple present", "q": "My mum ___ me to work hard.", "zh": "he/she → +s", "o": ["encourages", "encourage", "encouraging", "is encourage"], "a": 0, "e": "Mum (she) → verb + s."}, {"u": 2, "t": "Simple present", "q": "My classmates ___ a party every year.", "zh": "they → base verb", "o": ["organize", "organizes", "organizing", "does organize"], "a": 0, "e": "Plural subject → base verb."}, {"u": 2, "t": "Simple present", "q": "___ you enjoy playing football?", "zh": "問句", "o": ["Do", "Does", "Are", "Is"], "a": 0, "e": "You → Do."}, {"u": 2, "t": "Simple present", "q": "The weather report ___ not show any rain.", "zh": "否定", "o": ["does", "do", "is", "are"], "a": 0, "e": "It → does not + base verb."}, {"u": 2, "t": "Simple present", "q": "Which sentence is correct?", "zh": "正確句子", "o": ["She doesn't like coffee.", "She doesn't likes coffee.", "She don't like coffee.", "She not like coffee."], "a": 0, "e": "After doesn't → base verb."}, {"u": 2, "t": "Articles", "q": "I bought ___ umbrella yesterday.", "zh": "a / an", "o": ["an", "a", "the", "X (no article)"], "a": 0, "e": "umbrella starts with a vowel sound."}, {"u": 2, "t": "Articles", "q": "She ate ___ delicious waffle.", "zh": "a / an", "o": ["a", "an", "the", "X (no article)"], "a": 0, "e": "delicious starts with a consonant sound."}, {"u": 2, "t": "Articles", "q": "Please wait for me at ___ MTR station near our school.", "zh": "the", "o": ["the", "a", "an", "X (no article)"], "a": 0, "e": "A specific place both people know."}, {"u": 2, "t": "Articles", "q": "Have you finished ___ homework?", "zh": "物主代詞", "o": ["your", "the your", "a your", "an your"], "a": 0, "e": "No article after possessives like your."}, {"u": 2, "t": "Articles", "q": "It was ___ unusually humid morning.", "zh": "a / an", "o": ["an", "a", "the", "X (no article)"], "a": 0, "e": "unusually starts with a vowel sound."}, {"u": 2, "t": "Frequency", "q": "I eat fruit every day. I ___ eat fruit.", "zh": "每天", "o": ["always", "sometimes", "seldom", "never"], "a": 0, "e": "7 days = always."}, {"u": 2, "t": "Frequency", "q": "He plays tennis 2–3 days a week. He ___ plays tennis.", "zh": "有時", "o": ["sometimes", "always", "never", "seldom"], "a": 0, "e": "2–3 days = sometimes."}, {"u": 2, "t": "Frequency", "q": "She goes shopping only 1 day a week. She ___ goes shopping.", "zh": "很少", "o": ["seldom", "usually", "always", "often"], "a": 0, "e": "1 day = seldom."}, {"u": 2, "t": "Frequency", "q": "Which sentence puts the adverb in the right place?", "zh": "位置", "o": ["He never skips breakfast.", "He skips never breakfast.", "Never he skips breakfast.", "He skips breakfast never."], "a": 0, "e": "Adverb goes before the main verb."}, {"u": 2, "t": "Frequency", "q": "4–5 days a week is…", "zh": "經常", "o": ["usually / often", "always", "seldom", "never"], "a": 0, "e": "always = 7, usually/often = 4–5."}, {"u": 3, "t": "Writing", "q": "How many words should your personal description be?", "zh": "字數", "o": ["120–150 words", "50–80 words", "200–250 words", "300 words"], "a": 0, "e": "Word limit: 120–150."}, {"u": 3, "t": "Writing", "q": "What goes in Paragraph 1 of a personal description?", "zh": "第一段", "o": ["Background: name, age, home, family", "Hobbies and interests", "Appearance", "Personality"], "a": 0, "e": "Para 1 = background information."}, {"u": 3, "t": "Writing", "q": "Paragraph 2 describes your…", "zh": "第二段", "o": ["appearance", "hobbies", "family", "school"], "a": 0, "e": "Look, height/build, face, hair."}, {"u": 3, "t": "Writing", "q": "In Paragraph 3 (personality) you should give…", "zh": "第三段", "o": ["a concrete example showing the trait", "your address", "a list of hobbies", "your height"], "a": 0, "e": "Back up the trait with an example."}, {"u": 3, "t": "Writing", "q": "Paragraph 4 should say what you do in your spare time and…", "zh": "第四段", "o": ["when and how often", "how tall you are", "your age", "your hair colour"], "a": 0, "e": "Use adverbs of frequency here."}, {"u": 3, "t": "Writing", "q": "Which word is for APPEARANCE?", "zh": "外貌", "o": ["slender", "stubborn", "calligraphy", "modest"], "a": 0, "e": "slender = thin in a nice way."}, {"u": 3, "t": "Writing", "q": "Which word is for PERSONALITY?", "zh": "性格", "o": ["easy-going", "chubby", "gardening", "petite"], "a": 0, "e": "easy-going = relaxed and friendly."}, {"u": 3, "t": "Writing", "q": "Which is a HOBBY from the word bank?", "zh": "興趣", "o": ["photography", "well-built", "ambitious", "rosy cheeks"], "a": 0, "e": "photography = 攝影."}, {"u": 3, "t": "Writing", "q": "How many marks is \"Language\" worth?", "zh": "評分", "o": ["4", "2", "12", "6"], "a": 0, "e": "Content 4, Organisation 2, Language 4, Features 2."}, {"u": 3, "t": "Writing", "q": "Words like \"first\" and \"then\" help your ___ mark.", "zh": "組織", "o": ["Organisation", "Features", "Content", "Title"], "a": 0, "e": "Connectives and sequencers = Organisation."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>

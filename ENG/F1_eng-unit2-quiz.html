@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English Unit 2 Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="is-quiz.css">
+<script src="/study/gate.js"></script></head>
+<body>
+<div class="wrap">
+<section id="start">
+  <p style="margin:0"><a href="./" style="color:inherit">← English</a> · <a href="F1_eng-unit2-study-guide.html" style="color:inherit">📘 Study guide</a></p>
+  <h1>English Unit 2 Quiz 📖</h1>
+  <p class="sub">School Life. Take your time. There is no timer.</p>
+  <div class="card">
+    <b>Choose a quiz</b>
+    <div class="choose"><button class="big u1" data-set="1">Vocabulary<small>Unit 2 words</small></button><button class="big u2" data-set="2">Grammar<small>Prepositions, there is/are, continuous</small></button><button class="big u3" data-set="3">Writing<small>Vlog script</small></button><button class="big" data-set="all">Everything<small>All 39 questions</small></button></div>
+    <label class="toggle"><input type="checkbox" id="zhToggle" checked> Show Chinese help words 中文提示</label>
+    <label class="toggle"><input type="checkbox" id="autoRead"> Read each question aloud 🔊</label>
+  </div>
+</section>
+<section id="quiz" class="hidden">
+  <div class="top"><span id="count">Question 1 of 10</span><span id="pts">⭐ 0</span></div>
+  <div class="bar" aria-hidden="true"><span id="barFill"></span></div>
+  <div class="card">
+    <span class="tag" id="topic"></span>
+    <p class="qtext" id="qtext"></p>
+    <p class="zh" id="qzh"></p>
+    <button class="btn alt speak" id="speakBtn" type="button">🔊 Read aloud</button>
+    <div class="opts" id="opts" role="group" aria-label="Answer choices"></div>
+    <div id="fb" class="fb hidden" role="status" aria-live="polite"></div>
+    <div class="row"><button class="btn hidden" id="nextBtn" type="button">Next question</button></div>
+  </div>
+</section>
+<section id="end" class="hidden">
+  <h1>Well done for finishing! 🎉</h1>
+  <div class="card">
+    <div class="stars" id="stars"></div>
+    <div class="score" id="final"></div>
+    <p id="msg"></p>
+    <div id="reviewBox"></div>
+    <div class="row">
+      <button class="btn" id="retryWrong" type="button">Try my wrong ones again</button>
+      <button class="btn alt" id="again" type="button">Start again</button>
+      <button class="btn alt" id="home" type="button">Choose another quiz</button>
+    </div>
+  </div>
+</section>
+</div>
+<script>window.QUIZ=[{"u": 1, "t": "Vocabulary", "q": "A building or room with beds for students is a…", "zh": "宿舍", "o": ["dormitory", "laboratory", "facility", "structure"], "a": 0, "e": "dormitory = 宿舍."}, {"u": 1, "t": "Vocabulary", "q": "A place or piece of equipment for a specific purpose is a…", "zh": "設施", "o": ["facility", "landscape", "technology", "responsibility"], "a": 0, "e": "facility = 設施."}, {"u": 1, "t": "Vocabulary", "q": "We ___ with classmates to finish the group project.", "zh": "合作", "o": ["collaborate", "unwind", "access", "recycle"], "a": 0, "e": "collaborate = work together."}, {"u": 1, "t": "Vocabulary", "q": "After exams, I like to ___ by listening to music.", "zh": "放鬆", "o": ["unwind", "design", "collaborate", "research"], "a": 0, "e": "unwind = relax after working or studying."}, {"u": 1, "t": "Vocabulary", "q": "Students can ___ their notes from any computer.", "zh": "存取", "o": ["access", "admire", "collect", "design"], "a": 0, "e": "access = reach, open or use."}, {"u": 1, "t": "Vocabulary", "q": "Files stored over the internet are…", "zh": "雲端", "o": ["cloud-based", "recyclable", "diverse", "virtual"], "a": 0, "e": "cloud-based = stored or accessed online."}, {"u": 1, "t": "Vocabulary", "q": "The hall is used for sports, concerts and exams. It is…", "zh": "多功能的", "o": ["multifunctional", "extraordinary", "productive", "diverse"], "a": 0, "e": "multifunctional = several uses."}, {"u": 1, "t": "Vocabulary", "q": "Our school has students from many countries. It is very…", "zh": "多元的", "o": ["diverse", "virtual", "recyclable", "cloud-based"], "a": 0, "e": "diverse = a wide variety."}, {"u": 1, "t": "Vocabulary", "q": "A specialized room for scientific experiments is a…", "zh": "實驗室", "o": ["laboratory", "dormitory", "landscape", "facility"], "a": 0, "e": "laboratory = 實驗室."}, {"u": 1, "t": "Vocabulary", "q": "Something created by a computer and existing online is…", "zh": "虛擬的", "o": ["virtual", "productive", "extraordinary", "diverse"], "a": 0, "e": "virtual = 虛擬的."}, {"u": 1, "t": "Vocabulary", "q": "Plastic bottles are ___, so put them in the blue bin.", "zh": "可回收的", "o": ["recyclable", "virtual", "multifunctional", "cloud-based"], "a": 0, "e": "recyclable = able to be used again."}, {"u": 1, "t": "Vocabulary", "q": "The visible natural features of an area of land are its…", "zh": "景觀", "o": ["landscape", "structure", "technology", "facility"], "a": 0, "e": "landscape = 景觀、地形."}, {"u": 1, "t": "Vocabulary", "q": "Finnish students have the ___ to choose their own projects.", "zh": "責任", "o": ["responsibility", "laboratory", "dormitory", "landscape"], "a": 0, "e": "responsibility = duty of making choices."}, {"u": 1, "t": "Vocabulary", "q": "We finished all our work early. It was a ___ day.", "zh": "高效的", "o": ["productive", "recyclable", "virtual", "diverse"], "a": 0, "e": "productive = achieving a lot."}, {"u": 1, "t": "Vocabulary", "q": "Very unusual, special or surprising =", "zh": "非凡的", "o": ["extraordinary", "multifunctional", "cloud-based", "productive"], "a": 0, "e": "extraordinary = 特別的、非凡的."}, {"u": 2, "t": "Prepositions", "q": "The poster is ___ the wall.", "zh": "表面", "o": ["on", "in", "at", "between"], "a": 0, "e": "Touching a surface → on."}, {"u": 2, "t": "Prepositions", "q": "My grandparents live ___ Guangdong.", "zh": "地方", "o": ["in", "on", "at", "above"], "a": 0, "e": "Cities and provinces/countries → in."}, {"u": 2, "t": "Prepositions", "q": "Turn left ___ the traffic lights.", "zh": "某一點", "o": ["at", "in", "on", "under"], "a": 0, "e": "A specific spot → at."}, {"u": 2, "t": "Prepositions", "q": "The plane is flying ___ the clouds.", "zh": "上方", "o": ["above", "on", "under", "below"], "a": 0, "e": "Higher than, not touching → above."}, {"u": 2, "t": "Prepositions", "q": "The temperature dropped ___ zero last night.", "zh": "低於", "o": ["below", "under", "behind", "in"], "a": 0, "e": "Lower than a level → below."}, {"u": 2, "t": "Prepositions", "q": "The bookshelf is ___ the sofa and the wall.", "zh": "之間", "o": ["between", "next to", "behind", "above"], "a": 0, "e": "In the middle of two things → between."}, {"u": 2, "t": "Prepositions", "q": "He rides to work ___ a motorbike.", "zh": "交通", "o": ["on", "in", "at", "by the"], "a": 0, "e": "Transport you sit on → on."}, {"u": 2, "t": "There is/are", "q": "There ___ 25 fish in the aquarium.", "zh": "眾數", "o": ["are", "is", "am", "be"], "a": 0, "e": "Plural noun → there are."}, {"u": 2, "t": "There is/are", "q": "There ___ any water in the pond.", "zh": "不可數", "o": ["isn't", "aren't", "are", "am"], "a": 0, "e": "Water is uncountable → there isn't."}, {"u": 2, "t": "There is/are", "q": "There ___ a post office on this street.", "zh": "單數", "o": ["is", "are", "were", "be"], "a": 0, "e": "Singular noun → there is."}, {"u": 2, "t": "Continuous", "q": "Look! He ___ his homework right now.", "zh": "現在進行式", "o": ["is doing", "does", "do", "doing"], "a": 0, "e": "Happening now → am/is/are + -ing."}, {"u": 2, "t": "Continuous", "q": "___ the baby sleeping?", "zh": "問句", "o": ["Is", "Does", "Are", "Do"], "a": 0, "e": "Is + subject + verb-ing?"}, {"u": 2, "t": "Continuous", "q": "Which sentence is correct?", "zh": "狀態動詞", "o": ["I know the answer.", "I am knowing the answer.", "I knowing the answer.", "I am know the answer."], "a": 0, "e": "know is a stative verb — no -ing."}, {"u": 2, "t": "Continuous", "q": "That cake ___ good.", "zh": "感官", "o": ["tastes", "is tasting", "tasting", "are tasting"], "a": 0, "e": "Sense verbs use simple present."}, {"u": 2, "t": "Continuous", "q": "I ___ a new phone.", "zh": "需要", "o": ["need", "am needing", "needing", "is needing"], "a": 0, "e": "want/need → simple present."}, {"u": 2, "t": "Continuous", "q": "They ___ a holiday in Japan at the moment.", "zh": "have = 活動", "o": ["are having", "have", "has", "is having"], "a": 0, "e": "have = an action here, so -ing is OK."}, {"u": 2, "t": "Continuous", "q": "I ___ at a hostel during this trip.", "zh": "暫時", "o": ["am staying", "stay", "stays", "staying"], "a": 0, "e": "Temporary situation → present continuous."}, {"u": 3, "t": "Vlog script", "q": "Where do you write the setting in a vlog script?", "zh": "場景", "o": ["In [square brackets]", "In the title", "After a colon", "At the very end"], "a": 0, "e": "[Scene 1 – in front of the school, morning]"}, {"u": 3, "t": "Vlog script", "q": "What comes right after the speaker's name?", "zh": "說話者", "o": ["a colon ( : )", "a question mark", "brackets", "a full stop"], "a": 0, "e": "Joona: Hi everyone!"}, {"u": 3, "t": "Vlog script", "q": "\"Joona waves. Walks into the music room.\" These are…", "zh": "舞台指示", "o": ["stage directions", "dialogue", "the title", "the setting"], "a": 0, "e": "Stage directions describe actions or camera movements."}, {"u": 3, "t": "Vlog script", "q": "A vlog title is often written as…", "zh": "標題", "o": ["an engaging question", "a list of names", "a date only", "a long paragraph"], "a": 0, "e": "e.g. What are Hong Kong schools like?"}, {"u": 3, "t": "Vlog script", "q": "The exact words the vlogger says are the…", "zh": "對白", "o": ["dialogue", "setting", "stage directions", "title"], "a": 0, "e": "Dialogue = words spoken."}, {"u": 3, "t": "Vlog script", "q": "Which grammar best describes what is happening on camera?", "zh": "文法", "o": ["present continuous (I am walking…)", "past tense (I walked…)", "no verbs", "future only"], "a": 0, "e": "Actions happening now → present continuous."}, {"u": 3, "t": "Vlog script", "q": "What is the word limit for the writing task?", "zh": "字數", "o": ["120–150 words", "50 words", "300 words", "500 words"], "a": 0, "e": "Same as the personal description."}];</script>
+<script src="is-quiz.js"></script>
+</body>
+</html>
